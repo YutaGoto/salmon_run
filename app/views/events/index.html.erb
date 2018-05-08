@@ -1,0 +1,22 @@
+<h1>サーモンラン履歴</h1>
+<table>
+  <tr>
+    <th>開始日時</th>
+    <th>終了日時</th>
+    <th>ステージ</th>
+    <th>ブキ1</th>
+    <th>ブキ2</th>
+    <th>ブキ3</th>
+    <th>ブキ4</th>
+  </tr>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
+      <td><%= event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
+      <td><%= event.stage.name %></td>
+      <% event.weapons.each do |weapon| %>
+        <td><%= weapon.name %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

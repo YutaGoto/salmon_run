@@ -42,3 +42,6 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore Mac temp file
+.DS_Store
