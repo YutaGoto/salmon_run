@@ -46,6 +46,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     bindex (0.5.0)
+    bower-rails (0.11.0)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (2.18.0)
@@ -145,7 +146,7 @@ GEM
     seed-fu (2.3.9)
       activerecord (>= 3.1)
       activesupport (>= 3.1)
-    selenium-webdriver (3.11.0)
+    selenium-webdriver (3.12.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sprockets (3.7.1)
@@ -180,6 +181,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bower-rails
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)

@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'seed-fu', '~> 2.3'
 
+# bundle exec rake bower:install
+gem 'bower-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
