@@ -2,6 +2,10 @@ class Ajax::EventsController < ::ApplicationController
   layout false
 
   def index
-    @events = Event.includes(:stage, :weapons).joins(:events_weapons).where(events_weapons: {weapon_id: params[:weapons].split(",")}).order(:id)
+    if params[:weapons].present?
+      @events = Event.includes(:stage, :weapons).joins(:events_weapons).by_weapon_ids(params[:weapons].split(",")).order(:id)
+    else
+      @events = Event.includes(:stage, :weapons).all.order(:id)
+    end
   end
 end
