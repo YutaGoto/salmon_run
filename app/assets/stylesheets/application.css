@@ -12,6 +12,7 @@
  *
  *= require 'fontawesome/svg-with-js/css/fa-svg-with-js'
  *= require 'honoka/dist/css/bootstrap.min'
+ *= require select2/dist/css/select2
  *= require_tree .
  *= require_self
  */

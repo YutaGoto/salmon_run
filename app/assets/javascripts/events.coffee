@@ -1,3 +1,19 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+class @EventsController
+  index: ->
+    $('#event').select2
+      minimumInputLength: 1
+
+    SearchEvents = (selectBox) ->
+      url = selectBox.data("url") + "?weapons=" + selectBox.val()
+
+      $.ajax
+        method: "GET"
+        url: url
+        success: (data)->
+          $('.event-list').html data
+
+    $('#event').on 'change', ->
+      SearchEvents($(@))
+
+    $ ->
+      SearchEvents($('#event'))

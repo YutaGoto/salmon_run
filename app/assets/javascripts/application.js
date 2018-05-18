@@ -10,6 +10,23 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery/dist/jquery
+//= require select2/dist/js/select2
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+(function() {
+  $(function() {
+    var action, controller, obj;
+    controller = $('body').data('controller');
+    action = $('body').data('action');
+    if (controller && window[controller]) {
+      obj = new window[controller];
+      if (action && obj[action]) {
+        return obj[action]();
+      }
+    }
+  });
+
+}).call(this);
