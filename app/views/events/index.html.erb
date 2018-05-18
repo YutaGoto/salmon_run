@@ -23,6 +23,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>回</th>
           <th>開始日時</th>
           <th>終了日時</th>
           <th>ステージ</th>
@@ -35,6 +36,7 @@
       <tbody class="event-list">
         <% @events.each do |event| %>
           <tr>
+            <td><%= event.id %></td>
             <td><%= event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
             <td><%= event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
             <td><%= event.stage.name %></td>
