@@ -10,7 +10,10 @@
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
-
-class EventTest < ActiveSupport::TestCase
+FactoryBot.define do
+  factory :event do
+    start_at {Time.zone.now}
+    end_at {Time.zone.now + 30.hours}
+    stage
+  end
 end

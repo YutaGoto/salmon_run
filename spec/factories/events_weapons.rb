@@ -9,10 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
-
-class EventsWeaponTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+FactoryBot.define do
+  factory :events_weapon do
+    event
+    weapon
+  end
 end
