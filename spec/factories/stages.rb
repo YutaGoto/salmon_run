@@ -9,10 +9,8 @@
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
-
-class StageTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+FactoryBot.define do
+  factory :stage do
+    name {"しゃけ"}
+  end
 end

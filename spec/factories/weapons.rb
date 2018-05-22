@@ -9,10 +9,8 @@
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
-
-class WeaponTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+FactoryBot.define do
+  factory :weapon do
+    name {"フライパン"}
+  end
 end
