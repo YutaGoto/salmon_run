@@ -32,12 +32,14 @@ ActiveRecord::Schema.define(version: 2018_03_06_160312) do
 
   create_table "stages", force: :cascade do |t|
     t.string "name", null: false
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "weapons", force: :cascade do |t|
     t.string "name", null: false
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
