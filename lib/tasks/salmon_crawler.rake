@@ -7,7 +7,7 @@ namespace :salmon_crawler do
     base_url = 'https://wikiwiki.jp/splatoon2mix/%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3%E3%83%A9%E3%83%B3/%E9%96%8B%E5%82%AC%E5%B1%A5%E6%AD%B4'
     CSV.open('./tmp/file.csv', 'w') do |csv|
       doc = Nokogiri::HTML(
-        open(
+        IO.open(
           base_url.to_s
         )
       )

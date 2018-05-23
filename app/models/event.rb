@@ -19,7 +19,5 @@ class Event < ApplicationRecord
   validates :end_at, presence: true
   validates :stage_id, presence: true
 
-  scope :by_weapon_ids, ->(weapon_ids) {
-    joins(:events_weapons).where(events_weapons: { weapon_id: weapon_ids })
-  }
+  scope :by_weapon_ids, ->(weapon_ids) { joins(:events_weapons).where(events_weapons: { weapon_id: weapon_ids }) }
 end

@@ -15,7 +15,7 @@ namespace :salmon do
                 Stage.find_by(name: '海上集落シャケト場')
               when '工'
                 Stage.find_by(name: 'トキシラズいぶし工房')
-      end
+              end
 
       Event.create!(
         stage_id: stage.id,

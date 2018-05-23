@@ -4,6 +4,9 @@ Metrics/LineLength:
 Metrics/BlockLength:
   Max: 30
 
+Style/MixinUsage:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
@@ -12,3 +15,6 @@ Style/Documentation:
 
 Style/AsciiComments:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
