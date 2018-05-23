@@ -8,8 +8,8 @@ namespace :salmon_crawler do
     CSV.open('./tmp/file.csv', 'w') do |csv|
       doc = Nokogiri::HTML(
         open(
-          "#{base_url}",
-        ),
+          base_url.to_s
+        )
       )
       i = 0
       arr = []

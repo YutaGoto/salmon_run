@@ -12,8 +12,8 @@
 
 FactoryBot.define do
   factory :event do
-    start_at {Time.zone.now}
-    end_at {Time.zone.now + 30.hours}
+    start_at { Time.zone.now }
+    end_at { Time.zone.now + 30.hours }
     stage
   end
 end

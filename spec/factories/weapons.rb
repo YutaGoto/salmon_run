@@ -11,6 +11,6 @@
 
 FactoryBot.define do
   factory :weapon do
-    name {"フライパン"}
+    name { 'フライパン' }
   end
 end
