@@ -11,6 +11,6 @@
 
 FactoryBot.define do
   factory :stage do
-    name {"しゃけ"}
+    name { 'しゃけ' }
   end
 end
