@@ -25,7 +25,7 @@ namespace :salmon_update do
             Weapon.find_by(name: eve_info['weapons'][0]['name']).id,
             Weapon.find_by(name: eve_info['weapons'][1]['name']).id,
             Weapon.find_by(name: eve_info['weapons'][2]['name']).id,
-            Weapon.find_by(name: eve_info['weapons'][3]['name']).id
+            Weapon.find_by(name: eve_info['weapons'][3]['name']).id,
           ]
         )
       end

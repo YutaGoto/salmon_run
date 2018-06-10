@@ -25,7 +25,7 @@ namespace :salmon do
           Weapon.find_by(name: data[4]).id,
           Weapon.find_by(name: data[5]).id,
           Weapon.find_by(name: data[6]).id,
-          Weapon.find_by(name: data[7]).id
+          Weapon.find_by(name: data[7]).id,
         ]
       )
     end
