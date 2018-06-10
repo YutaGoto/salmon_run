@@ -47,10 +47,9 @@ group :development, :test do
   gem 'selenium-webdriver'
 
   # testing framework
+  gem 'factory_bot_rails'
   gem 'rspec'
   gem 'rspec-rails'
-
-  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -66,6 +65,3 @@ group :development do
   # a Ruby static code analyzer
   gem 'rubocop', require: false
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

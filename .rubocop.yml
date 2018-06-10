@@ -1,3 +1,12 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+
+Rails:
+  Enabled: true
+
 Metrics/LineLength:
   Max: 200
 
@@ -17,4 +26,13 @@ Style/AsciiComments:
   Enabled: false
 
 Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Lint/UriEscapeUnescape:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
   Enabled: false
