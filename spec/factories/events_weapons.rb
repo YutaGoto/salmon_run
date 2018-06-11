@@ -1,16 +1,17 @@
 # == Schema Information
 #
-# Table name: stages
+# Table name: events_weapons
 #
 #  id         :bigint(8)        not null, primary key
-#  name       :string           not null
-#  image_url  :string
+#  event_id   :integer
+#  weapon_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Stage < ApplicationRecord
-  has_many :events
-
-  validates :name, presence: true
+FactoryBot.define do
+  factory :events_weapon do
+    event
+    weapon
+  end
 end

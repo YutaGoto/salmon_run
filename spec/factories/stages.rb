@@ -9,8 +9,8 @@
 #  updated_at :datetime         not null
 #
 
-class Stage < ApplicationRecord
-  has_many :events
-
-  validates :name, presence: true
+FactoryBot.define do
+  factory :stage do
+    name { 'しゃけ' }
+  end
 end

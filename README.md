@@ -1,6 +1,8 @@
 # salmon_run
 Splatoon2のサーモン・ランブキ変遷
 
+[![CircleCI](https://circleci.com/gh/YutaGoto/salmon_run.svg?style=svg)](https://circleci.com/gh/YutaGoto/salmon_run)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

@@ -10,38 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306160312) do
-
+ActiveRecord::Schema.define(version: 20_180_306_160_312) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "events", force: :cascade do |t|
-    t.datetime "start_at", null: false
-    t.datetime "end_at", null: false
-    t.integer "stage_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'events', force: :cascade do |t|
+    t.datetime 'start_at', null: false
+    t.datetime 'end_at', null: false
+    t.integer 'stage_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "events_weapons", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "weapon_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'events_weapons', force: :cascade do |t|
+    t.integer 'event_id'
+    t.integer 'weapon_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "stages", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "short_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'stages', force: :cascade do |t|
+    t.string 'name', null: false
+    t.string 'image_url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "weapons", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "short_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'weapons', force: :cascade do |t|
+    t.string 'name', null: false
+    t.string 'image_url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

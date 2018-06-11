@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: stages
+# Table name: weapons
 #
 #  id         :bigint(8)        not null, primary key
 #  name       :string           not null
@@ -9,8 +9,8 @@
 #  updated_at :datetime         not null
 #
 
-class Stage < ApplicationRecord
-  has_many :events
-
-  validates :name, presence: true
+FactoryBot.define do
+  factory :weapon do
+    name { 'フライパン' }
+  end
 end

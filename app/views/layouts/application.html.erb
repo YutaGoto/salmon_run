@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-controller=<%= controller.class.name.gsub('::', '_') %> data-action=<%= controller.action_name%> >
     <%= yield %>
   </body>
 </html>

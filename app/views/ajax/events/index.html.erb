@@ -1,0 +1,13 @@
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.id %></td>
+    <td><%= event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
+    <td><%= event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
+    <td><%= event.stage.name %></td>
+    <% event.weapons.each do |weapon| %>
+      <td><%= weapon.name %></td>
+    <% end %>
+  </tr>
+<% end %>
+
+<p><%= @events.size %>回</p>
