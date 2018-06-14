@@ -28,6 +28,24 @@ namespace :salmon_update do
             Weapon.find_by(name: eve_info['weapons'][3]['name']).id,
           ]
         )
+        p 'イベントを更新しました。'
+      end
+
+      eve_info = result['result'][1]
+      event = Event.find_by(start_at: Time.zone.parse(eve_info['start']))
+      if event.blank?
+        Event.create!(
+          stage_id: Stage.find_by(name: eve_info['stage']['name']).id,
+          start_at: Time.zone.parse(eve_info['start']),
+          end_at: Time.zone.parse(eve_info['end']),
+          weapon_ids: [
+            Weapon.find_by(name: eve_info['weapons'][0]['name']).id,
+            Weapon.find_by(name: eve_info['weapons'][1]['name']).id,
+            Weapon.find_by(name: eve_info['weapons'][2]['name']).id,
+            Weapon.find_by(name: eve_info['weapons'][3]['name']).id,
+          ]
+        )
+        p 'イベントを更新しました。'
       end
     end
   end
