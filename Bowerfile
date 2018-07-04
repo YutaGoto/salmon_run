@@ -1,8 +1,8 @@
 # A sample Bowerfile
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
 
-asset 'jquery'
-asset 'bootstrap'
-asset 'honoka'
+asset 'jquery', "3.3.1"
+asset 'bootstrap', "4.1.0"
+asset 'honoka', "4.0.0"
 asset 'fontawesome'
 asset 'select2'
