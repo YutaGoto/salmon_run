@@ -1,5 +1,19 @@
 {
   "name": "salmon_run",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "fontawesome": "latest",
+    "honoka": "latest",
+    "jquery": "latest",
+    "npm": "^6.1.0",
+    "select2": "latest"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend_install": "yarn install --modules-folder ./vendor/assets/components/"
+  }
 }
