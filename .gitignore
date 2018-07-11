@@ -45,3 +45,7 @@ bower.json
 
 # Ignore Mac temp file
 .DS_Store
+
+# npm packages
+node_modules
+vendor/assets/components
