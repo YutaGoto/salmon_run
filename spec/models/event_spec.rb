@@ -16,10 +16,17 @@ RSpec.describe Event, type: :model do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }
+  let(:stage) { event.stage }
 
   describe 'scope by_weapon_ids' do
     it 'weapon_id指定でイベントを参照できる' do
       expect(Event.by_weapon_ids(weapon.id)).to include event
+    end
+  end
+
+  describe 'scope by_stage_id' do
+    it 'weapon_id指定でイベントを参照できる' do
+      expect(Event.by_stage_id(stage.id)).to include event
     end
   end
 end
