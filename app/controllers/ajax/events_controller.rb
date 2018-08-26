@@ -2,8 +2,8 @@ class Ajax::EventsController < ::ApplicationController
   layout false
 
   def index
-    @events = if params[:weapons].present?
-                Event.includes(:stage, :weapons).by_weapon_ids(params[:weapons].split(',')).order(:id)
+    @events = if params[:stages].present? || params[:weapons].present?
+                Event.includes(:stage, :weapons).by_weapon_ids(params[:weapons]).by_stage_id(params[:stages]).order(:id)
               else
                 Event.includes(:stage, :weapons).all.order(:id)
               end
