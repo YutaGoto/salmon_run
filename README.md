@@ -1,26 +1,13 @@
 # salmon_run
 Splatoon2のサーモン・ランブキ変遷
 
+このリポジトリは非公式のもので、完全に個人的な趣味で作っているものです。
+
 [![CircleCI](https://circleci.com/gh/YutaGoto/salmon_run.svg?style=svg)](https://circleci.com/gh/YutaGoto/salmon_run)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version: 2.4.2
-* Rails version: 5.1.5
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Ruby version: 2.5.1
+* Rails version: 5.2.1
+* PostgreSQL version: 10.4
+* yarn version: 1.5.1
+* jQuery: v3.3.1
+* Bootstrap: v4.1.1
