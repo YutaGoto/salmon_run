@@ -1,5 +1,6 @@
 language: ruby
-rvm: 2.5.1
+rvm:
+  - 2.5.1
 services: postgresql
 bundler_args: "--without development --deployment -j4"
 cache: bundler
