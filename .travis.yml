@@ -10,3 +10,9 @@ before_script:
   - bundle exec rake db:migrate
 script: bundle exec rubocop
 script: bundle exec rspec
+notifications:
+  email:
+    recipients:
+      - you.goto.510@gmail.com
+    on_success: never
+    on_failure: always
