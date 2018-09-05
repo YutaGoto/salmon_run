@@ -72,3 +72,5 @@ Stage.seed(
   { id: 3, name: '海上集落シャケト場' },
   { id: 4, name: 'トキシラズいぶし工房' },
 )
+
+Rake::Task['salmon:exec'].invoke

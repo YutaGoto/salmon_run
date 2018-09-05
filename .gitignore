@@ -49,3 +49,7 @@ bower.json
 # npm packages
 node_modules
 vendor/assets/components
+
+# yarn error log
+yarn-error.log
+

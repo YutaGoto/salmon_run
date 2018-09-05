@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+  - 2.5.1
+services: postgresql
+bundler_args: "--without development --deployment -j4"
+cache: bundler
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+script: bundle exec rubocop
+script: bundle exec rspec
+notifications:
+  email:
+    recipients:
+      - you.goto.510@gmail.com
+    on_success: never
+    on_failure: always
