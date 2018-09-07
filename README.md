@@ -15,7 +15,7 @@ Splatoon2のサーモン・ランブキ変遷
 
 
 
-![salmon](/Users/yutagoto/Documents/salmon_run/salmon.gif)
+![salmon](salmon.gif)
 
 
 
