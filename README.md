@@ -11,4 +11,8 @@ Splatoon2のサーモン・ランブキ変遷
 * PostgreSQL version: 10.4
 * yarn version: 1.5.1
 * jQuery: v3.3.1
-* Bootstrap: v4.1.1
+* Bootstrap: v4.1.3
+
+# サーモンラン とは
+
+- [サーモンラン | スプラトゥーン2](https://www.nintendo.co.jp/switch/aab6a/coop/index.html)
