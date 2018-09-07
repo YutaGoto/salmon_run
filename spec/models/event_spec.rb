@@ -29,4 +29,16 @@ RSpec.describe Event, type: :model do
       expect(Event.by_stage_id(stage.id)).to include event
     end
   end
+
+  describe 'scope opening' do
+    it '時間内にイベントがあるときは引っかかる' do
+      event
+      expect(Event.opening).to include event
+    end
+
+    it '時間内にイベントがないときは引っかからない' do
+      event.update(start_at: Time.zone.now - 10.days, end_at: Time.zone.now - 9.days)
+      expect(Event.opening).not_to include event
+    end
+  end
 end

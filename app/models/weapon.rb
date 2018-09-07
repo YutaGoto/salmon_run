@@ -14,4 +14,12 @@ class Weapon < ApplicationRecord
   has_many :events, through: :events_weapons
 
   validates :name, presence: true
+
+  def count_text
+    events_weapons.count
+  end
+
+  def last_weapon_event
+    events_weapons.joins(:event).where('events.start_at <= ?', Time.zone.now).last(2).first
+  end
 end
