@@ -5,8 +5,45 @@
         <h1 id="content" class="bd-title">すぷらとぅーん2 サーモンラン開催履歴</h1>
       </div>
     </div>
+    <% if @opening_event.present? %>
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 id="content" class="">現在開催中！</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>回</th>
+                <th>開始日時</th>
+                <th>終了日時</th>
+                <th>ステージ</th>
+                <th>ブキ1</th>
+                <th>ブキ2</th>
+                <th>ブキ3</th>
+                <th>ブキ4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= event.id %></td>
+                <td><%= event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
+                <td><%= event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
+                <td><%= event.stage.name %></td>
+                <% event.weapons.each do |weapon| %>
+                  <td><%= weapon.name %></td>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% end %>
     <div class="row">
       <div class="col-lg-12">
+        <h2 id="content" class="">検索</h2>
         <div class="form-horizontal">
           <fieldset>
             <div class="form-group">
@@ -41,7 +78,7 @@
             <th>ブキ4</th>
           </tr>
         </thead>
-        <tbody class="event-list">
+        <tbody>
           <% @events.each do |event| %>
             <tr>
               <td><%= event.id %></td>
