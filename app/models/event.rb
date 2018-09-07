@@ -21,5 +21,5 @@ class Event < ApplicationRecord
 
   scope :by_stage_id, ->(stage_id) { where(stage_id: stage_id) if stage_id }
   scope :by_weapon_id, ->(weapon_id) { joins(:events_weapons).where(events_weapons: { weapon_id: weapon_id }) if weapon_id }
-  scope :open, ->(time = Time.zone.now) { where('start_at >= ?', time).where('end_at <= ?', time) }
+  scope :opening, ->(time = Time.zone.now) { where('start_at <= ?', time).where('end_at >= ?', time) }
 end

@@ -28,11 +28,11 @@
             </thead>
             <tbody>
               <tr>
-                <td><%= event.id %></td>
-                <td><%= event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
-                <td><%= event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
-                <td><%= event.stage.name %></td>
-                <% event.weapons.each do |weapon| %>
+                <td><%= @opening_event.id %></td>
+                <td><%= @opening_event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
+                <td><%= @opening_event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
+                <td><%= @opening_event.stage.name %></td>
+                <% @opening_event.weapons.each do |weapon| %>
                   <td><%= weapon.name %></td>
                 <% end %>
               </tr>
