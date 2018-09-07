@@ -13,6 +13,12 @@ Splatoon2のサーモン・ランブキ変遷
 * jQuery: v3.3.1
 * Bootstrap: v4.1.3
 
+
+
+![salmon](/Users/yutagoto/Documents/salmon_run/salmon.gif)
+
+
+
 # サーモンラン とは
 
 - [サーモンラン | スプラトゥーン2](https://www.nintendo.co.jp/switch/aab6a/coop/index.html)
