@@ -12,4 +12,8 @@
 class EventsWeapon < ApplicationRecord
   belongs_to :event
   belongs_to :weapon
+
+  def since_last_event_times
+    Event.opening.last.id - event.id - 1
+  end
 end

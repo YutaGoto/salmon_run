@@ -33,7 +33,10 @@
                 <td><%= @opening_event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
                 <td><%= @opening_event.stage.name %></td>
                 <% @opening_event.weapons.each do |weapon| %>
-                  <td><%= weapon.name %></td>
+                  <td>
+                    <%= weapon.name %><br>
+                    <%= "#{weapon.count_text}回目 #{weapon.last_weapon_event.since_last_event_times}回ぶり" %>
+                  </td>
                 <% end %>
               </tr>
             </tbody>
