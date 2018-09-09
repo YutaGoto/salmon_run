@@ -1,0 +1,4 @@
+require 'events.schema'
+require 'events_weapons.schema'
+require 'stages.schema'
+require 'weapons.schema'
