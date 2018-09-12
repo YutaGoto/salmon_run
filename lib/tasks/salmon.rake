@@ -19,8 +19,8 @@ namespace :salmon do
 
       Event.create!(
         stage_id: stage.id,
-        start_at: data[1].to_datetime,
-        end_at: data[1].to_datetime + data[2].to_i.hours,
+        start_at: Time.zone.parse(data[1]),
+        end_at: Time.zone.parse(data[1]) + data[2].to_i.hours,
         weapon_ids: [
           Weapon.find_by(name: data[4]).id,
           Weapon.find_by(name: data[5]).id,
