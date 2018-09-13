@@ -52,6 +52,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec'
   gem 'rspec-rails'
+
+  # Code smell detector for Ruby
+  gem 'reek'
 end
 
 group :development do
