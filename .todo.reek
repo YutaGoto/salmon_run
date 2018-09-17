@@ -1,20 +1,6 @@
 ---
 detectors:
   IrresponsibleModule:
-    exclude:
-    - ApplicationCable::Channel
-    - ApplicationCable::Connection
-    - Ajax::EventsController
-    - Api::ApplicationController
-    - Api::EventsController
-    - ApplicationController
-    - EventsController
-    - Api::ApplicationHelper
-    - Api::EventsHelper
-    - ApplicationHelper
-    - EventsHelper
-    - ApplicationJob
-    - ApplicationMailer
-    - ApplicationRecord
+    enabled: false
   DuplicateMethodCall:
     max_calls: 2
