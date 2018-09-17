@@ -55,6 +55,9 @@ group :development, :test do
 
   # Code smell detector for Ruby
   gem 'reek'
+
+  # Brakeman is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
+  gem 'brakeman'
 end
 
 group :development do
