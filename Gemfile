@@ -41,6 +41,8 @@ gem 'seed-fu', '~> 2.3'
 # Ridgepole is a tool to manage DB schema.
 gem 'ridgepole'
 
+gem 'webpacker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -55,6 +57,9 @@ group :development, :test do
 
   # Code smell detector for Ruby
   gem 'reek'
+
+  # Brakeman is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
+  gem 'brakeman'
 end
 
 group :development do

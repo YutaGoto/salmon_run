@@ -61,6 +61,10 @@ jobs:
           command: bundle exec reek /app -c .todo.reek
 
       - run:
+          name: Analysis of security vulnerabilities by brakeman
+          command: bundle exec brakeman
+
+      - run:
           name: Run rspec in parallel
           command: |
             bundle exec rspec --format progress \
