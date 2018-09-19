@@ -6,6 +6,9 @@ Splatoon2のサーモン・ランブキ変遷
 
 [![CircleCI](https://circleci.com/gh/YutaGoto/salmon_run.svg?style=svg)](https://circleci.com/gh/YutaGoto/salmon_run)
 [![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
+[![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop)
+
+## Spec
 
 * Ruby version: 2.5.1
 * Rails version: 5.2.1
@@ -13,6 +16,13 @@ Splatoon2のサーモン・ランブキ変遷
 * yarn version: 1.5.1
 * jQuery: v3.3.1
 * Bootstrap: v4.1.3
+
+### tools
+
+* [CircleCI 2.0](https://circleci.com/)
+* [travisCI](https://travis-ci.org/)
+* [Sider](https://sider.review/)
+* [codebeat](https://codebeat.co/)
 
 ![salmon](salmon.gif)
 
