@@ -8,6 +8,8 @@ Splatoon2のサーモン・ランブキ変遷
 [![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
 [![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop)
 
+![salmon](salmon.gif)
+
 ## Spec
 
 * Ruby version: 2.5.1
@@ -23,8 +25,6 @@ Splatoon2のサーモン・ランブキ変遷
 * [travisCI](https://travis-ci.org/)
 * [Sider](https://sider.review/)
 * [codebeat](https://codebeat.co/)
-
-![salmon](salmon.gif)
 
 # サーモンラン とは
 
