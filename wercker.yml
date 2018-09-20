@@ -22,7 +22,6 @@ build:
         name: Install node.js
         packages: nodejs
     - bundle-install
-    - npm-install
     # wercker v2に対応したpostgresql
     - rails-database-yml:
         service: postgresql-docker
