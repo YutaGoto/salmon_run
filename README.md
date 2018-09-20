@@ -6,6 +6,7 @@ Splatoon2のサーモン・ランブキ変遷
 
 [![CircleCI](https://circleci.com/gh/YutaGoto/salmon_run.svg?style=svg)](https://circleci.com/gh/YutaGoto/salmon_run)
 [![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
+[![wercker status](https://app.wercker.com/status/a066c5f0fa6c51ef938eb6af5908d9f4/s/development "wercker status")](https://app.wercker.com/project/byKey/a066c5f0fa6c51ef938eb6af5908d9f4)
 [![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop)
 
 ## Spec
