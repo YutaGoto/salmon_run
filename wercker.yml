@@ -1,0 +1,35 @@
+# The container definition we want to use for developing our app
+box:
+  id: ruby:2.5.1
+
+services:
+  - id: postgres
+  env:
+    POSTGRES_USER: root
+    POSTGRES_DB: salmon_run_test
+
+build:
+  steps:
+    # Node.jsは入っていないのでインストールする
+    - script:
+        name: install node.js
+        code: curl -fsSL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -qq nodejs
+    # bundleのキャッシュもしてくれる
+    # https://github.com/wercker/step-bundle-install
+    - bundle-install
+    - script:
+      name: db setup
+      code: bundle exec rails db:create
+      code: bundle exec rails db:schema:load
+    - script:
+      name: Rubocop
+      code: bundle exec rubocop
+    - script:
+      name: Reek
+      code: bundle exec reek /app -c .todo.reek
+    - script:
+      name: Brakeman
+      code: bundle exec brakeman
+    - script:
+      name: rspec
+      code: bundle exec rspec
