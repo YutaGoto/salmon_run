@@ -18,13 +18,8 @@ services:
 # http://devcenter.wercker.com/docs/pipelines/index.html
 build:
   steps:
-    # Node.jsは入っていないのでインストールする
-    - script:
-        name: install node.js
-        code: curl -fsSL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -qq nodejs
-    # bundleのキャッシュもしてくれる
-    # https://github.com/wercker/step-bundle-install
     - bundle-install
+    - npm-install
     # wercker v2に対応したpostgresql
     - rails-database-yml:
         service: postgresql-docker
