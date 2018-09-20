@@ -18,6 +18,9 @@ services:
 # http://devcenter.wercker.com/docs/pipelines/index.html
 build:
   steps:
+    - install-packages:
+        name: Install node.js
+        packages: nodejs
     - bundle-install
     - npm-install
     # wercker v2に対応したpostgresql
