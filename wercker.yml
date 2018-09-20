@@ -33,6 +33,9 @@ build:
             echo "from location $(which ruby)"
             echo -p "gem list: $(gem list)"
     - script:
+      name: install yarn
+      code: npm install -g yarn
+    - script:
       name: yarn
       code: yarn
     - script:
