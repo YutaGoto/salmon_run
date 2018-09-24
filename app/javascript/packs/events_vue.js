@@ -9,9 +9,6 @@ import axios from 'axios';
 window.onload = function(){
   const app = new Vue({
     el: '#events',
-    components: {
-      tbody: App,
-    },
     data: function() {
       return {
         salmon_events: newEvent(),
