@@ -26,6 +26,15 @@ Splatoon2のサーモン・ランブキ変遷
 * [Sider](https://sider.review/)
 * [codebeat](https://codebeat.co/)
 
+### 起動コマンド
+
+```sh
+$ bin/rails s
+
+# 別タブで
+$ bin/webpack-dev-server
+```
+
 # サーモンラン とは
 
 - [サーモンラン | スプラトゥーン2](https://www.nintendo.co.jp/switch/aab6a/coop/index.html)
