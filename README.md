@@ -17,6 +17,7 @@ Splatoon2のサーモン・ランブキ変遷
 * PostgreSQL version: 10.4
 * yarn version: 1.5.1
 * jQuery: v3.3.1
+* vue: 2.5.17
 * Bootstrap: v4.1.3
 
 ### tools
