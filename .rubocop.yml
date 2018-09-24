@@ -3,6 +3,7 @@ AllCops:
     - 'bin/*'
     - 'db/**/*'
     - 'vendor/**/*'
+    - 'node_modules/**/*'
 
 Rails:
   Enabled: true
@@ -14,7 +15,7 @@ Metrics/BlockLength:
   Max: 30
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 35
 
 Metrics/MethodLength:
   Max: 15
