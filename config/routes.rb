@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :events
+  resources :events, only: [:index]
 
   namespace :api do
-    resources :events do
+    resources :events, only: [:index] do
       collection do
         get :open
       end
@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
 
   namespace :ajax do
-    resources :events
+    resources :events, only: [:index]
   end
 end
