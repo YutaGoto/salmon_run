@@ -5,45 +5,45 @@
         <h1 id="content" class="bd-title">すぷらとぅーん2 サーモンラン開催履歴</h1>
       </div>
     </div>
-    <% if @opening_event.present? %>
-      <div class="row">
-        <div class="col-lg-12">
-          <h2 id="content" class="">現在開催中！</h2>
+    <div id="openingEvent">
+      <div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 id="content" class="">現在開催中！</h2>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>回</th>
-                <th>開始日時</th>
-                <th>終了日時</th>
-                <th>ステージ</th>
-                <th>ブキ1</th>
-                <th>ブキ2</th>
-                <th>ブキ3</th>
-                <th>ブキ4</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><%= @opening_event.id %></td>
-                <td><%= @opening_event.start_at.strftime('%Y/%m/%d %H:%M') %></td>
-                <td><%= @opening_event.end_at.strftime('%Y/%m/%d %H:%M') %></td>
-                <td><%= @opening_event.stage.name %></td>
-                <% @opening_event.weapons.each do |weapon| %>
-                  <td>
-                    <%= weapon.name %><br>
-                    <%= "#{weapon.count_text}回目 #{weapon.last_weapon_event.since_last_event_times}回ぶり" %>
+        <div class="row">
+          <div class="col-lg-12">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>回</th>
+                  <th>開始日時</th>
+                  <th>終了日時</th>
+                  <th>ステージ</th>
+                  <th>ブキ1</th>
+                  <th>ブキ2</th>
+                  <th>ブキ3</th>
+                  <th>ブキ4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{opening_event.id}}</td>
+                  <td>{{opening_event.start_at}}</td>
+                  <td>{{opening_event.end_at}}</td>
+                  <td>{{opening_event.stage_name}}</td>
+                  <td v-for="weapon in opening_event.weapons">
+                    {{weapon.name}}<br>
+                    {{weapon.count_text}}回目 {{weapon.since_last_event_time}}回ぶり
                   </td>
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    <% end %>
+    </div>
     <div class="row">
       <div class="col-lg-12">
         <h2 id="content" class="">検索</h2>

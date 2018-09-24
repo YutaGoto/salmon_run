@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :events
 
   namespace :api do
-    resources :events
+    resources :events do
+      collection do
+        get :open
+      end
+    end
   end
 
   namespace :ajax do
