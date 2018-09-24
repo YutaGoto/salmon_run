@@ -2,15 +2,21 @@
   "name": "salmon_run",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "3.5",
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "fontawesome": "latest",
     "honoka": "latest",
     "jquery": "latest",
     "npm": "^6.1.0",
-    "select2": "latest"
+    "select2": "latest",
+    "vue": "^2.5.17",
+    "vue-loader": "14.2.2",
+    "vue-template-compiler": "^2.5.17"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "webpack-dev-server": "2.11.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

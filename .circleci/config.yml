@@ -37,8 +37,7 @@ jobs:
 
       - run:
           name: install dependencies gems
-          command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run:
           name: install dependencies packages
           command: yarn
@@ -53,15 +52,22 @@ jobs:
       - run: bundle exec rails db:schema:load
 
       - run:
-          name: RuboCop checl
+          name: RuboCop check
           command: bundle exec rubocop
+
+      - run:
+          name: Code smell detector by Reek
+          command: bundle exec reek /app -c .todo.reek
+
+      - run:
+          name: Analysis of security vulnerabilities by brakeman
+          command: bundle exec brakeman
 
       - run:
           name: Run rspec in parallel
           command: |
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
-
 
       # collect reports
       - store_test_results:
