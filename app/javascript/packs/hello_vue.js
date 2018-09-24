@@ -19,12 +19,16 @@
 // })
 
 import Vue from 'vue/dist/vue.esm'
+import App from '../app.vue'
 
-const app = new Vue({
-   el: '#hello',
-   data: {
-     message: "こんにちは？"
-   }
+document.addEventListener('DOMContentLoaded', () => {
+  const app = new Vue({
+    el: '#hello',
+    data: {
+      message: "Can you say hello?"
+    },
+    components: { App }
+  })
 })
 
 

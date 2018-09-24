@@ -2,25 +2,23 @@
 // import Vue from 'vue'
 // import App from '../app.vue'
 
-
 import Vue from 'vue/dist/vue.esm'
 import axios from 'axios';
 
-window.onload = function(){
+document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
-    el: '#events',
+    el: "#openingEvent",
     data: function() {
       return {
-        salmon_events: newEvent(),
-      };
+        isOpen: false,
+        opening_event: {},
+      }
     },
-  })
-}
-
-var newEvent = function() {
-  axios.get('/api/events').then((response) => {
-    return response.data.data;
-  }, (error) => {
-    console.log(error);
+    mounted () {
+      axios.get('/api/events/open').then(res => {
+        this.isOpen = res.data.data.is_open
+        this.opening_event = res.data.data.event
+      })
+    }
   });
-}
+})
