@@ -8,6 +8,8 @@ Splatoon2のサーモン・ランブキ変遷
 [![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
 [![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop)
 
+![salmon](salmon.gif)
+
 ## Spec
 
 * Ruby version: 2.5.1
@@ -15,6 +17,7 @@ Splatoon2のサーモン・ランブキ変遷
 * PostgreSQL version: 10.4
 * yarn version: 1.5.1
 * jQuery: v3.3.1
+* vue: 2.5.17
 * Bootstrap: v4.1.3
 
 ### tools
@@ -24,7 +27,14 @@ Splatoon2のサーモン・ランブキ変遷
 * [Sider](https://sider.review/)
 * [codebeat](https://codebeat.co/)
 
-![salmon](salmon.gif)
+### 起動コマンド
+
+```sh
+$ bin/rails s
+
+# 別タブで
+$ bin/webpack-dev-server
+```
 
 # サーモンラン とは
 

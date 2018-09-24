@@ -37,8 +37,7 @@ jobs:
 
       - run:
           name: install dependencies gems
-          command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run:
           name: install dependencies packages
           command: yarn
