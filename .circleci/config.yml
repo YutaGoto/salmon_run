@@ -23,7 +23,7 @@ jobs:
 
       - image: circleci/node:10.1.0-browsers
 
-    working_directory: ~/repo
+    working_directory: ~/salmon_run
 
     steps:
       - checkout
@@ -63,6 +63,8 @@ jobs:
           name: Analysis of security vulnerabilities by brakeman
           command: bundle exec brakeman
 
+      - run: mkdir ~/rspec
+
       - run:
           name: Run rspec in parallel
           command: |
@@ -71,7 +73,4 @@ jobs:
 
       # collect reports
       - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+          path: ~/rspec
