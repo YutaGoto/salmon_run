@@ -27,13 +27,30 @@ Splatoon2のサーモン・ランブキ変遷
 * [Sider](https://sider.review/)
 * [codebeat](https://codebeat.co/)
 
+## 初期設定
+
+```sh
+$ docker-compose build
+$ docker-compose run web bin/setup
+```
+
 ### 起動コマンド
 
 ```sh
-$ bin/rails s
+$ docker-compose up
+```
 
-# 別タブで
-$ bin/webpack-dev-server
+### docker imageの削除
+
+```sh
+$ docker-compose down --rmi all
+$ docker images
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+salmon_run_web         latest              hogehogehoge        8 minutes ago       1.41GB
+salmon_run_webpacker   latest              hogehogehoge        8 minutes ago       1.41GB
+ruby                   2.5.1               hogehoge1234        6 days ago          869MB
+postgres               latest              hogehoge2345        2 weeks ago         228MB
+$ docker rmi [IMAGE ID]
 ```
 
 # サーモンラン とは
