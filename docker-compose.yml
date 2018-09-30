@@ -5,7 +5,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: root
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
@@ -30,7 +30,7 @@ services:
       RAILS_ENV: development
       WEBPACKER_DEV_SERVER_HOST: webpacker
       WEBPACKER_DEV_SERVER_PUBLIC: webpacker:3035
-      DATABASE_USER: root
+      DATABASE_USER: postgres
       DATABASE_PASSWORD:
       DATABASE_PORT: 5432
       DATABASE_HOST: db

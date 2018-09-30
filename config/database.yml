@@ -18,15 +18,13 @@ default: &default
   adapter: postgresql
   encoding: unicode
   timeout: 5000
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
   <<: *default
   database: salmon_run_development
-  username: <%= ENV.fetch('DATABASE_USER') { 'postgres' } %>
-  password: <%= ENV.fetch('DATABASE_PASSWORD') { '' } %>
   port: <%= ENV.fetch('DATABASE_PORT') { 5432 } %>
-  host: <%= ENV.fetch('DATABASE_HOST') { 'db' } %>
-  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  host: <%= ENV.fetch('DATABASE_HOST') { '' } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +58,6 @@ development:
 test:
   <<: *default
   database: salmon_run_test
-  username: <%= ENV.fetch('DATABASE_USER') { 'root' } %>
-  password: <%= ENV.fetch('DATABASE_PASSWORD') { 'password' } %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
