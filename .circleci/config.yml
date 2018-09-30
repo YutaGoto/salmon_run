@@ -11,7 +11,7 @@ bundle_cache_key: &bundle_cache_key
   v1-dependencies-{{ checksum "Gemfile.lock" }}
 
 jobs:
-  build:
+  build_and_test:
     docker:
       # specify the version you desire here
       - image: *ruby_image
@@ -101,10 +101,13 @@ jobs:
             gem update bundler --no-document
             gem install circleci-bundle-update-pr
             bundle config --local path vendor/bundle
-            circleci-bundle-update-pr
+            circleci-bundle-update-pr ${GIT_USER_NAME} ${GIT_USER_EMAIL}
 
 workflows:
   version: 2
+  build:
+    jobs:
+    - build_and_test
 
   ci-bundle-update:
     triggers:
