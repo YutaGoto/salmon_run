@@ -1,6 +1,8 @@
-<p class="lead"><%= @events.size %>回</p>
+<div class="uk-margin">
+  <p><%= @events.size %>回</p>
+</div>
 
-<table class="table table-hover">
+<table class="uk-table uk-table-hover uk-table-small" id="events">
   <thead>
     <tr>
       <th>回</th>
@@ -13,7 +15,7 @@
       <th>ブキ4</th>
     </tr>
   </thead>
-  <tbody class="event-list">
+  <tbody>
     <% @events.each do |event| %>
       <tr>
         <td><%= event.id %></td>

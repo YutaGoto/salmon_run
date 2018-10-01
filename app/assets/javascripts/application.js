@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery/dist/jquery
+//= require uikit/dist/js/uikit
 //= require select2/dist/js/select2
 //= require rails-ujs
 //= require turbolinks

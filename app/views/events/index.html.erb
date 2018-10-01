@@ -1,74 +1,61 @@
-<div class="container py-5">
-  <main>
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 id="content" class="bd-title">すぷらとぅーん2 サーモンラン開催履歴</h1>
-      </div>
-    </div>
+<div class="uk-section">
+  <div class="uk-container">
+    <h1 id="content" class="uk-heading-divider">すぷらとぅーん2 サーモンラン開催履歴</h1>
     <div id="openingEvent">
       <div>
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 id="content" class="">現在開催中！</h2>
+        <h2 id="content" class="uk-heading-divider">現在開催中！</h2>
+        <table class="uk-table uk-table-hover uk-table-small">
+          <thead>
+            <tr>
+              <th>回</th>
+              <th>開始日時</th>
+              <th>終了日時</th>
+              <th>ステージ</th>
+              <th>ブキ1</th>
+              <th>ブキ2</th>
+              <th>ブキ3</th>
+              <th>ブキ4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{opening_event.id}}</td>
+              <td>{{opening_event.start_at}}</td>
+              <td>{{opening_event.end_at}}</td>
+              <td>{{opening_event.stage_name}}</td>
+              <td v-for="weapon in opening_event.weapons">
+                {{weapon.name}}<br>
+                {{weapon.count_text}}回目 {{weapon.since_last_event_time}}回ぶり
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="uk-container">
+    <h2 id="content" class="">検索</h2>
+    <form class="form">
+      <div uk-grid>
+        <div class="uk-width-1-2">
+          <label class="control-label">ブキ</label>
+          <div>
+            <% weapons = Weapon.all.map { |w| [w.name, w.id] }.uniq %>
+            <%= select_tag :event, options_for_select(weapons), include_blank: true, multiple: false, class: 'uk-select', 'data-url' => ajax_events_url %>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>回</th>
-                  <th>開始日時</th>
-                  <th>終了日時</th>
-                  <th>ステージ</th>
-                  <th>ブキ1</th>
-                  <th>ブキ2</th>
-                  <th>ブキ3</th>
-                  <th>ブキ4</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{opening_event.id}}</td>
-                  <td>{{opening_event.start_at}}</td>
-                  <td>{{opening_event.end_at}}</td>
-                  <td>{{opening_event.stage_name}}</td>
-                  <td v-for="weapon in opening_event.weapons">
-                    {{weapon.name}}<br>
-                    {{weapon.count_text}}回目 {{weapon.since_last_event_time}}回ぶり
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="uk-width-1-2">
+          <label class="control-label">ステージ</label>
+          <div>
+            <% stages = Stage.all.map { |s| [s.name, s.id] }.uniq %>
+            <%= select_tag :stage, options_for_select(stages), include_blank: true, multiple: false, class: 'uk-select', 'data-url' => ajax_events_url %>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 id="content" class="">検索</h2>
-        <div class="form-horizontal">
-          <fieldset>
-            <div class="form-group">
-              <label class="control-label">ブキ</label>
-              <div class="col-lg-10">
-                <% weapons = Weapon.all.map { |w| [w.name, w.id] }.uniq %>
-                <%= select_tag :event, options_for_select(weapons), include_blank: true, multiple: false, class: 'form-control', 'data-url' => ajax_events_url %>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label">ステージ</label>
-              <div class="col-lg-10">
-                <% stages = Stage.all.map { |s| [s.name, s.id] }.uniq %>
-                <%= select_tag :stage, options_for_select(stages), include_blank: true, multiple: false, class: 'form-control', 'data-url' => ajax_events_url %>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-    </div>
-    <div class="bs-component event-list">
-      <table class="table table-hover" id="events">
+    </form>
+
+    <div class="event-list">
+      <table class="uk-table uk-table-hover uk-table-small" id="events">
         <thead>
           <tr>
             <th>回</th>
@@ -96,5 +83,5 @@
         </tbody>
       </table>
     </div>
-  </main>
+  </div>
 </div>
