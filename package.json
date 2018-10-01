@@ -4,12 +4,11 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
-    "bootstrap": "^4.1.1",
     "fontawesome": "latest",
-    "honoka": "latest",
     "jquery": "latest",
     "npm": "^6.1.0",
     "select2": "latest",
+    "uikit": "^3.0.0-rc.17",
     "vue": "^2.5.17",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.17"
