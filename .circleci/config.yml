@@ -101,7 +101,7 @@ jobs:
             gem update bundler --no-document
             gem install circleci-bundle-update-pr
             bundle config --local path vendor/bundle
-            circleci-bundle-update-pr ${GIT_USER_NAME} ${GIT_USER_EMAIL}
+            circleci-bundle-update-pr ${GIT_USER_NAME} ${GIT_USER_EMAIL} develop
 
 workflows:
   version: 2
