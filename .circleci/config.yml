@@ -3,11 +3,18 @@
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
 version: 2
+
+ruby_image: &ruby_image
+  circleci/ruby:2.5.1-node-browsers
+
+bundle_cache_key: &bundle_cache_key
+  v1-dependencies-{{ checksum "Gemfile.lock" }}
+
 jobs:
-  build:
+  build_and_test:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: *ruby_image
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
@@ -23,7 +30,7 @@ jobs:
 
       - image: circleci/node:10.1.0-browsers
 
-    working_directory: ~/repo
+    working_directory: ~/salmon_run
 
     steps:
       - checkout
@@ -31,7 +38,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - *bundle_cache_key
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
@@ -45,7 +52,7 @@ jobs:
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          key: *bundle_cache_key
 
       # Database setup
       - run: bundle exec rails db:create
@@ -63,6 +70,8 @@ jobs:
           name: Analysis of security vulnerabilities by brakeman
           command: bundle exec brakeman
 
+      - run: mkdir ~/rspec
+
       - run:
           name: Run rspec in parallel
           command: |
@@ -71,7 +80,42 @@ jobs:
 
       # collect reports
       - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+          path: ~/rspec
+
+  ci-bundle-update:
+    docker:
+      - image: *ruby_image
+
+    environment:
+      TZ: "/usr/share/zoneinfo/Asia/Tokyo"
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: *bundle_cache_key
+
+      - run:
+          name: circleci-bundle-update-pr
+          command: |
+            gem update bundler --no-document
+            gem install circleci-bundle-update-pr
+            bundle config --local path vendor/bundle
+            circleci-bundle-update-pr ${GIT_USER_NAME} ${GIT_USER_EMAIL} develop
+
+workflows:
+  version: 2
+  build:
+    jobs:
+    - build_and_test
+
+  ci-bundle-update:
+    triggers:
+      - schedule:
+          cron: "0 0 * * 1-5"  # UTC
+          filters:
+            branches:
+              only: develop
+
+    jobs:
+      - ci-bundle-update
