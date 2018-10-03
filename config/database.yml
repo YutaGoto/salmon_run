@@ -25,6 +25,7 @@ development:
   database: salmon_run_development
   port: <%= ENV.fetch('DATABASE_PORT') { 5432 } %>
   host: <%= ENV.fetch('DATABASE_HOST') { '' } %>
+  username: <%= ENV.fetch('DATABASE_USER') { '' } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +59,9 @@ development:
 test:
   <<: *default
   database: salmon_run_test
+  port: <%= ENV.fetch('DATABASE_PORT') { 5432 } %>
+  host: <%= ENV.fetch('DATABASE_HOST') { '' } %>
+  username: <%= ENV.fetch('DATABASE_USER') { '' } %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
