@@ -6,7 +6,8 @@ Splatoon2のサーモン・ランブキ変遷
 
 [![CircleCI](https://circleci.com/gh/YutaGoto/salmon_run.svg?style=svg)](https://circleci.com/gh/YutaGoto/salmon_run)
 [![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
-[![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop) [![Greenkeeper badge](https://badges.greenkeeper.io/YutaGoto/salmon_run.svg)](https://greenkeeper.io/)
+[![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop)
+[![Greenkeeper badge](https://badges.greenkeeper.io/YutaGoto/salmon_run.svg)](https://greenkeeper.io/)
 
 ![salmon](salmon.gif)
 
@@ -17,8 +18,8 @@ Splatoon2のサーモン・ランブキ変遷
 * PostgreSQL version: 10.4
 * yarn version: 1.5.1
 * jQuery: v3.3.1
-* vue: 2.5.17
-* Bootstrap: v4.1.3
+* Vue: v2.5.17
+* UIkit 3.0.0-rc.17
 
 ### tools
 
@@ -26,6 +27,7 @@ Splatoon2のサーモン・ランブキ変遷
 * [travisCI](https://travis-ci.org/)
 * [Sider](https://sider.review/)
 * [codebeat](https://codebeat.co/)
+* [Greenkeeper](https://greenkeeper.io/)
 
 ## 初期設定
 
