@@ -11,12 +11,12 @@ class @EventsController
       placeholder: "ステージ検索"
 
     SearchEvents = (selectBox) ->
-      paramaters = $.param({
+      parameters = $.param({
         weapons: $("#event").val(),
         stages: $("#stage").val()
       })
 
-      url = selectBox.data("url") + "?" + paramaters
+      url = selectBox.data("url") + "?" + parameters
 
       $.ajax
         method: "GET"
