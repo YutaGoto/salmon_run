@@ -7,6 +7,8 @@ Rails.application.routes.draw do
         get :open
       end
     end
+    resources :weapons, only: [:index]
+    resources :stages, only: [:index]
   end
 
   namespace :ajax do
