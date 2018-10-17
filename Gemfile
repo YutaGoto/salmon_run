@@ -60,6 +60,9 @@ group :development, :test do
 
   # Brakeman is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
   gem 'brakeman'
+
+  # Code coverage for Ruby
+  gem 'simplecov'
 end
 
 group :development do
