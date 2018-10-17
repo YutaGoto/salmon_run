@@ -8,6 +8,9 @@ Splatoon2のサーモン・ランブキ変遷
 [![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
 [![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop)
 [![Greenkeeper badge](https://badges.greenkeeper.io/YutaGoto/salmon_run.svg)](https://greenkeeper.io/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/maintainability)](https://codeclimate.com/github/YutaGoto/salmon_run/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/test_coverage)](https://codeclimate.com/github/YutaGoto/salmon_run/test_coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/18d67d2bb23e488abbf5689766d5876a)](https://www.codacy.com/app/YutaGoto/salmon_run?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YutaGoto/salmon_run&amp;utm_campaign=Badge_Grade)
 
 ![salmon](salmon.gif)
 
