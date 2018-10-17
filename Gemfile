@@ -52,6 +52,7 @@ group :development, :test do
 
   # testing framework
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'rspec'
   gem 'rspec-rails'
 
