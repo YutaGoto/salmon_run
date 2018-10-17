@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f
 language: ruby
 rvm:
   - 2.5.1
@@ -14,8 +17,12 @@ before_script:
   - bundle exec rails db:create
   - bundle exec rails db:schema:load
   - greenkeeper-lockfile-update
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 after_script:
   - greenkeeper-lockfile-upload
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 script: bundle exec rubocop
 script: bundle exec reek /app -c .todo.reek
 script: bundle exec brakeman
