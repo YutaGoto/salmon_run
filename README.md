@@ -16,21 +16,23 @@ Splatoon2のサーモン・ランブキ変遷
 
 ## Spec
 
-* Ruby version: 2.5.1
-* Rails version: 5.2.1
-* PostgreSQL version: 10.4
-* yarn version: 1.5.1
-* jQuery: v3.3.1
-* Vue: v2.5.17
-* UIkit 3.0.0-rc.19
+*   Ruby version: 2.5.1
+*   Rails version: 5.2.1
+*   PostgreSQL version: 10.5
+*   yarn version: 1.10.1
+*   jQuery: v3.3.1
+*   Vue: v2.5.17
+*   UIkit 3.0.0-rc.19
 
 ### tools
 
-* [CircleCI 2.0](https://circleci.com/)
-* [travisCI](https://travis-ci.org/)
-* [Sider](https://sider.review/)
-* [codebeat](https://codebeat.co/)
-* [Greenkeeper](https://greenkeeper.io/)
+*   [CircleCI 2.0](https://circleci.com/)
+*   [travisCI](https://travis-ci.org/)
+*   [Sider](https://sider.review/)
+*   [codebeat](https://codebeat.co/)
+*   [Greenkeeper](https://greenkeeper.io/)
+*   [CodeClimate](https://codeclimate.com/)
+*   [Codacy](https://www.codacy.com/)
 
 ## 初期設定
 
@@ -57,14 +59,15 @@ $ docker rmi [IMAGE ID]
 
 # サーモンラン とは
 
-- [サーモンラン | スプラトゥーン2](https://www.nintendo.co.jp/switch/aab6a/coop/index.html)
+*   [サーモンラン | スプラトゥーン2](https://www.nintendo.co.jp/switch/aab6a/coop/index.html)
 
 # 活動報告
 
-- [Rails5の練習をしている件](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B6-a9b46a0fb6e5)
-- [Rails5の練習をしている件2](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B62-d4fdce635bcc)
-- [Rails5の練習をしている件3](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B63-40398a24e7b1)
-- [Rails5の練習をしている件4](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B64-a506426e1f71)
+*   [Rails5の練習をしている件](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B6-a9b46a0fb6e5)
+*   [Rails5の練習をしている件2](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B62-d4fdce635bcc)
+*   [Rails5の練習をしている件3](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B63-40398a24e7b1)
+*   [Rails5の練習をしている件4](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B64-a506426e1f71)
+*   [Rails5の練習をしている件5](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B65-da554d093d73)
 
 ## Contributing
 
