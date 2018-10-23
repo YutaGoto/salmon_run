@@ -52,6 +52,7 @@ group :development, :test do
 
   # testing framework
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'rspec'
   gem 'rspec-rails'
 
@@ -60,6 +61,9 @@ group :development, :test do
 
   # Brakeman is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
   gem 'brakeman'
+
+  # Code coverage for Ruby
+  gem 'simplecov'
 end
 
 group :development do

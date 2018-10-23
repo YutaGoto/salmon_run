@@ -17,6 +17,3 @@ tmp/*
 
 ## docker
 .dockerignore
-
-## node
-node_modules
