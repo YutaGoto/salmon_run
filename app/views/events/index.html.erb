@@ -36,20 +36,28 @@
     </div>
     <div class="uk-container">
       <h2 id="content" class="">検索</h2>
-      <form class="form">
+      <form class="form" id="search-form">
         <div uk-grid>
           <div class="uk-width-1-2">
             <label class="control-label">ブキ</label>
             <div>
-              <% weapons = Weapon.all.map { |w| [w.name, w.id] }.uniq %>
-              <%= select_tag :event, options_for_select(weapons), include_blank: true, multiple: false, class: 'uk-select', 'data-url' => ajax_events_url %>
+              <select class="uk-select" name="weapon" v-model="selectedWeapon" @change="eventSearch">
+                <option :value=null selected></option>
+                <option v-for="weapon in weapons" :value="weapon.id">
+                  {{ weapon.name }}
+                </option>
+              </select>
             </div>
           </div>
           <div class="uk-width-1-2">
             <label class="control-label">ステージ</label>
             <div>
-              <% stages = Stage.all.map { |s| [s.name, s.id] }.uniq %>
-              <%= select_tag :stage, options_for_select(stages), include_blank: true, multiple: false, class: 'uk-select', 'data-url' => ajax_events_url %>
+              <select class="uk-select" name="stage" v-model="selectedStage" @change="eventSearch">
+                <option :value=null selected></option>
+                <option v-for="stage in stages" :value="stage.id">
+                  {{ stage.name }}
+                </option>
+              </select>
             </div>
           </div>
         </div>

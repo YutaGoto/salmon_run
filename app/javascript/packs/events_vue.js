@@ -13,6 +13,10 @@ var app = new Vue({
       isOpen: false,
       opening_event: {},
       events: [],
+      weapons: [],
+      stages: [],
+      selectedWeapon: '',
+      selectedStage: '',
     }
   },
   mounted () {
@@ -26,6 +30,25 @@ var app = new Vue({
     axios.get('/api/events').then(res => {
       this.events = res.data.data;
     });
+
+    axios.get('/api/weapons').then(res => {
+      this.weapons = res.data.data;
+    });
+
+    axios.get('/api/stages').then(res => {
+      this.stages = res.data.data;
+    });
+  },
+  methods: {
+    eventSearch: function () {
+      axios.get('/api/events', {
+        params: {
+          weapons: this.selectedWeapon,
+          stages: this.selectedStage,
+        }
+      }).then(res => {
+        this.events = res.data.data;
+      });
+    }
   }
 });
-
