@@ -40,25 +40,21 @@
         <div uk-grid>
           <div class="uk-width-1-2">
             <label class="control-label">ブキ</label>
-            <div>
-              <select class="uk-select" name="weapon" v-model="selectedWeapon" @change="eventSearch">
-                <option :value=null selected></option>
-                <option v-for="weapon in weapons" :value="weapon.id">
-                  {{ weapon.name }}
-                </option>
-              </select>
-            </div>
+            <select class="uk-select" name="weapon" v-model="selectedWeapon" @change="eventSearch">
+              <option :value=null selected></option>
+              <option v-for="weapon in weapons" :value="weapon.id">
+                {{ weapon.name }}
+              </option>
+            </select>
           </div>
           <div class="uk-width-1-2">
             <label class="control-label">ステージ</label>
-            <div>
-              <select class="uk-select" name="stage" v-model="selectedStage" @change="eventSearch">
-                <option :value=null selected></option>
-                <option v-for="stage in stages" :value="stage.id">
-                  {{ stage.name }}
-                </option>
-              </select>
-            </div>
+            <select class="uk-select" name="stage" v-model="selectedStage" @change="eventSearch">
+              <option :value=null selected></option>
+              <option v-for="stage in stages" :value="stage.id">
+                {{ stage.name }}
+              </option>
+            </select>
           </div>
         </div>
       </form>
