@@ -13,18 +13,42 @@ var app = new Vue({
       isOpen: false,
       opening_event: {},
       events: [],
+      weapons: [],
+      stages: [],
+      selectedWeapon: "",
+      selectedStage: "",
     }
   },
   mounted () {
-    axios.get('/api/events/open').then(res => {
+    axios.get("/api/events/open").then((res) => {
       this.isOpen = res.data.data.is_open
       if (this.isOpen) {
         this.opening_event = res.data.data.event
       }
     });
 
-    axios.get('/api/events').then(res => {
+    axios.get("/api/events").then((res) => {
       this.events = res.data.data;
     });
+
+    axios.get("/api/weapons").then((res) => {
+      this.weapons = res.data.data;
+    });
+
+    axios.get("/api/stages").then((res) => {
+      this.stages = res.data.data;
+    });
+  },
+  methods: {
+    eventSearch () {
+      axios.get("/api/events", {
+        params: {
+          weapons: this.selectedWeapon,
+          stages: this.selectedStage,
+        }
+      }).then((res) => {
+        this.events = res.data.data;
+      });
+    }
   }
 });
