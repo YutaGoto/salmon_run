@@ -5,7 +5,6 @@
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
     "fontawesome": "latest",
-    "jquery": "latest",
     "npm": "^6.1.0",
     "select2": "latest",
     "uikit": "^3.0.0-rc.19",
