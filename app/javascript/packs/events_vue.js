@@ -40,7 +40,7 @@ var app = new Vue({
     });
   },
   methods: {
-    eventSearch: function () {
+    eventSearch () {
       axios.get("/api/events", {
         params: {
           weapons: this.selectedWeapon,
