@@ -5,19 +5,19 @@
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
     "fontawesome": "latest",
-    "jquery": "latest",
     "npm": "^6.1.0",
     "select2": "latest",
     "uikit": "^3.0.0-rc.19",
     "vue": "^2.5.17",
     "vue-loader": "15.4.2",
     "vue-router": "^3.0.1",
+    "vue-select": "^2.5.1",
     "vue-template-compiler": "^2.5.17"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

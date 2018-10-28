@@ -12,21 +12,16 @@
 
 require 'rails_helper'
 
-RSpec.describe Weapon, type: :model do
+RSpec.describe EventsWeapon, type: :model do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }
   let(:stage) { event.stage }
 
-  describe '#count_text' do
-    it 'ひとつある' do
-      expect(weapon.count_text).to eq 1
-    end
-  end
-
-  describe '#last_weapon_event' do
-    it '前回のイベントと一致する' do
-      expect(weapon.last_weapon_event).to eq events_weapon
+  describe '#since_last_event_times' do
+    it '何回目かを見れる' do
+      event
+      expect(events_weapon.since_last_event_times).to eq(-1)
     end
   end
 end

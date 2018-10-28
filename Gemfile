@@ -22,8 +22,6 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'mini_racer'
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -52,6 +50,7 @@ group :development, :test do
 
   # testing framework
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'rspec'
   gem 'rspec-rails'
 
@@ -60,6 +59,9 @@ group :development, :test do
 
   # Brakeman is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
   gem 'brakeman'
+
+  # Code coverage for Ruby
+  gem 'simplecov'
 end
 
 group :development do

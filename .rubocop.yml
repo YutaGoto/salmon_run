@@ -43,3 +43,8 @@ Lint/UriEscapeUnescape:
 
 Rails/HasManyOrHasOneDependent:
   Enabled: false
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'spec/**/*'
