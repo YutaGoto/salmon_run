@@ -19,7 +19,7 @@ Splatoon2のサーモン・ランブキ変遷
 *   Ruby version: 2.5.1
 *   Rails version: 5.2.1
 *   PostgreSQL version: 10.5
-*   yarn version: 1.10.1
+*   yarn version: 1.12.1
 *   Vue: v2.5.17
 *   UIkit 3.0.0-rc.19
 
