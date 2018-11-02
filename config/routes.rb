@@ -11,7 +11,5 @@ Rails.application.routes.draw do
     resources :stages, only: [:index]
   end
 
-  namespace :ajax do
-    resources :events, only: [:index]
-  end
+  get '*path' => 'application#render_404'
 end
