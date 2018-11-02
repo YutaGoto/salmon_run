@@ -9,31 +9,31 @@ class Api::ApplicationController < ApplicationController
   rescue_from ApplicationException, with: :render_500
   rescue_from MaintenanceException, with: :render_503
 
-  def render_400
-    render status: '400', json: { message: e.message }
+  def render_400(exception = nil)
+    render status: '400', json: { message: exception.message }
   end
 
-  def render_401
-    render status: '401', json: { message: e.message }
+  def render_401(exception = nil)
+    render status: '401', json: { message: exception.message }
   end
 
-  def render_404
-    render status: '404', json: { message: e.message }
+  def render_404(exception = nil)
+    render status: '404', json: { message: exception.message }
   end
 
-  def render_409
-    render status: '409', json: { message: e.message }
+  def render_409(exception = nil)
+    render status: '409', json: { message: exception.message }
   end
 
-  def render_410
-    render status: '410', json: { message: e.message }
+  def render_410(exception = nil)
+    render status: '410', json: { message: exception.message }
   end
 
-  def render_500
-    render status: '500', json: { message: e.message }
+  def render_500(exception)
+    render status: '500', json: { message: exception.message }
   end
 
-  def render_503
-    render status: '503', json: { message: e.message }
+  def render_503(exception = nil)
+    render status: '503', json: { message: exception.message }
   end
 end

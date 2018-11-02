@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  rescue_from Exception, with: :render_500 if Rails.env.production?
+  rescue_from Exception, with: :render_500 unless Rails.env.development?
   rescue_from InputErrorException, with: :render_400
   rescue_from AuthorityException, with: :render_401
   rescue_from NotFoundException, with: :render_404
