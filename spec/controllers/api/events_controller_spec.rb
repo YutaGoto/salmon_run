@@ -69,4 +69,11 @@ RSpec.describe Api::EventsController, type: :controller do
       expect(assigns(:is_open)).to eq false
     end
   end
+
+  describe 'GET #show' do
+    it 'returns http success' do
+      get :show, params: { id: event.id }
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
