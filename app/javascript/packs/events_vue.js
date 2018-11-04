@@ -2,7 +2,6 @@
 // import Vue from 'vue'
 
 import Vue from 'vue/dist/vue.esm'
-import Router from './router/router'
 import axios from 'axios';
 
 var app = new Vue({

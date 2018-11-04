@@ -1,4 +1,4 @@
-json.status 1
+json.status 200
 json.errors []
 json.data do
   json.array! @events do |event|
