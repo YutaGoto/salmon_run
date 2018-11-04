@@ -1,14 +1,22 @@
 /* eslint no-console: 0 */
 // import Vue from 'vue'
 
-import Vue from 'vue/dist/vue.esm.js';
-import EventsShow from '../components/events_show.vue'
+import Vue from 'vue/dist/vue.esm';
+import axios from 'axios';
 
-document.addEventListener("DOMContentLoaded", () => {
-  new Vue({
-    el: 'events-show',
-    components: {
-      EventsShow,
+var app = new Vue({
+  el: "#salmon-show",
+
+  data: function() {
+    return {
+      event: {},
     }
-  })
+  },
+  mounted () {
+    var d = document.getElementById("salmon-show")
+    axios.get("/api/events/" + d.getAttribute("data-event-id")).then((res) => {
+      this.event = res.data.data;
+    });
+  },
+
 });

@@ -1,2 +1,35 @@
+<div id="salmon-show" data-event-id="<%= params[:id] %>">
+  <div class="uk-section">
+    <div class="uk-container">
+      <h1 id="content" class="uk-heading-divider">すぷらとぅーん2 サーモンラン 詳細</h1>
+      <dl class="uk-description-list">
+        <dt>開催日時</dt>
+        <dd>{{event.start_at}}〜{{event.end_at}}</dd>
+        <dt>ステージ</dt>
+        <dd>
+          <p>{{event.stage_name}}</p>
+          <img v-bind:src='event.stage_image_url' />
+        </dd>
+      </dl>
+      <table class="uk-table uk-table-small uk-table-divider">
+        <thead>
+          <tr>
+            <th>ブキ1</th>
+            <th>ブキ2</th>
+            <th>ブキ3</th>
+            <th>ブキ4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td v-for="weapon in event.weapons">
+              <p>{{weapon.name}}</p>
+              <img v-bind:src='weapon.image_url' class="weapon-image" uk-img />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 <%= javascript_pack_tag 'events/show_vue' %>
-<events-show :eventId="<%= params[:id] %>"></events-show>
