@@ -11,7 +11,7 @@ export default {
       message: "Hello Vue!"
     };
   }
-}
+};
 </script>
 
 <style scoped>
