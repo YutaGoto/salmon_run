@@ -6,17 +6,7 @@ namespace :salmon do
   task exec: :environment do
     csv_data = CSV.read('lib/tasks/csv/file.csv', headers: false)
     csv_data.each do |data|
-      stage = case data[3]
-              when 'ダ'
-                Stage.find_by(name: 'シェケナダム')
-              when '船'
-                Stage.find_by(name: '難破船ドン・ブラコ')
-              when '集'
-                Stage.find_by(name: '海上集落シャケト場')
-              when '工'
-                Stage.find_by(name: 'トキシラズいぶし工房')
-              end
-
+      stage = Stage.find_by(name: data[3])
       Event.create!(
         stage_id: stage.id,
         start_at: Time.zone.parse(data[1]),
