@@ -1,7 +1,7 @@
 class SalmonUpdate
   def event_create(event_info)
     Event.create!(
-      stage_id: Stage.find_by(name: event_info['stage']['name']).id,
+      stage: Stage.find_by(name: event_info['stage']['name']),
       start_at: Time.zone.parse(event_info['start']),
       end_at: Time.zone.parse(event_info['end']),
       weapon_ids: [
