@@ -1,6 +1,6 @@
 Weapon.seed(
   :id,
-  { id: 1, name: 'ランダム', image_url: '' },
+  { id: 1, name: 'ランダム', image_url: 'https://app.splatoon2.nintendo.net/images/coop_weapons/746f7e90bc151334f0bf0d2a1f0987e311b03736.png' },
   { id: 2, name: 'クマサン印のブラスター', image_url: '' },
   { id: 3, name: 'クマサン印のシェルター', image_url: '' },
   { id: 4, name: 'クマサン印のチャージャー', image_url: '' },
@@ -63,6 +63,7 @@ Stage.seed(
   { id: 2, name: '難破船ドン・ブラコ', image_url: 'https://app.splatoon2.nintendo.net/images/coop_stage/e07d73b7d9f0c64e552b34a2e6c29b8564c63388.png' },
   { id: 3, name: '海上集落シャケト場', image_url: 'https://app.splatoon2.nintendo.net/images/coop_stage/6d68f5baa75f3a94e5e9bfb89b82e7377e3ecd2c.png' },
   { id: 4, name: 'トキシラズいぶし工房', image_url: 'https://app.splatoon2.nintendo.net/images/coop_stage/e9f7c7b35e6d46778cd3cbc0d89bd7e1bc3be493.png' },
+  { id: 5, name: '朽ちた箱舟 ポラリス', image_url: 'https://app.splatoon2.nintendo.net/images/coop_stage/50064ec6e97aac91e70df5fc2cfecf61ad8615fd.png' },
 )
 
 Rake::Task['salmon:exec'].invoke

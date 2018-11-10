@@ -14,6 +14,7 @@ class Event < ApplicationRecord
   belongs_to :stage
   has_many :events_weapons
   has_many :weapons, through: :events_weapons
+  accepts_nested_attributes_for :events_weapons
 
   validates :start_at, presence: true
   validates :end_at, presence: true

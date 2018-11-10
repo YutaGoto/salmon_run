@@ -74,7 +74,7 @@
           </thead>
           <tbody>
             <tr v-for="event in events">
-              <td>{{event.id}}</td>
+              <td><a v-bind:href="event.show_url" class="uk-link-muted">{{event.id}}</a></td>
               <td>{{event.start_at}}</td>
               <td>{{event.end_at}}</td>
               <td>{{event.stage_name}}</td>
