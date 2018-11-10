@@ -36,24 +36,24 @@ Splatoon2のサーモン・ランブキ変遷
 ## 初期設定
 
 ```sh
-$ docker-compose build
-$ docker-compose run web bin/setup
+docker-compose build
+docker-compose run web bin/setup
 ```
 
 ### 起動コマンド
 
 ```sh
-$ docker-compose up
+docker-compose up
 ```
 
 ### docker imageの削除
 
 ```sh
-$ docker-compose down --rmi all
-$ docker images
+docker-compose down --rmi all
+docker images
 REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
 ruby                   2.5.1               hogehoge1234        6 days ago          869MB
-$ docker rmi [IMAGE ID]
+docker rmi [IMAGE ID]
 ```
 
 ## サーモンラン とは
