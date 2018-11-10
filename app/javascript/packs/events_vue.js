@@ -1,28 +1,28 @@
 /* eslint no-console: 0 */
 // import Vue from 'vue'
 
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue/dist/vue.esm';
 import axios from 'axios';
 
 var app = new Vue({
   el: "#salmon",
 
-  data: function() {
+  data () {
     return {
       isOpen: false,
-      opening_event: {},
+      openingEvent: {},
       events: [],
       weapons: [],
       stages: [],
       selectedWeapon: "",
       selectedStage: "",
-    }
+    };
   },
   mounted () {
     axios.get("/api/events/open").then((res) => {
       this.isOpen = res.data.data.is_open
       if (this.isOpen) {
-        this.opening_event = res.data.data.event
+        this.openingEvent = res.data.data.event
       }
     });
 
