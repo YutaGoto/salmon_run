@@ -9,16 +9,8 @@ Rails:
   Enabled: true
 
 Metrics/LineLength:
-  Max: 150
+  Max: 140
 
-Metrics/BlockLength:
-  Max: 30
-
-Metrics/AbcSize:
-  Max: 15
-
-Metrics/MethodLength:
-  Max: 15
 
 Style/MixinUsage:
   Enabled: false
@@ -45,6 +37,5 @@ Rails/HasManyOrHasOneDependent:
   Enabled: false
 
 Metrics/BlockLength:
-  Max: 30
   Exclude:
     - 'spec/**/*'
