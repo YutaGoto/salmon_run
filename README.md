@@ -16,7 +16,7 @@ Splatoon2のサーモン・ランブキ変遷
 
 ## Spec
 
-*   Ruby version: 2.5.1
+*   Ruby version: 2.5.3
 *   Rails version: 5.2.1
 *   PostgreSQL version: 10.5
 *   yarn version: 1.12.3
@@ -52,7 +52,7 @@ docker-compose up
 docker-compose down --rmi all
 docker images
 REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
-ruby                   2.5.1               hogehoge1234        6 days ago          869MB
+ruby                   2.5.3               hogehoge1234        6 days ago          869MB
 docker rmi [IMAGE ID]
 ```
 
