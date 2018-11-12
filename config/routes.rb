@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       end
     end
     resources :weapons, only: [:index]
-    resources :stages, only: [:index, :show]
+    resources :stages, only: %i[index show]
   end
 
   get '*path' => 'application#render_404'

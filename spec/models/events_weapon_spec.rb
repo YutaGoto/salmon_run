@@ -1,11 +1,10 @@
 # == Schema Information
 #
-# Table name: events
+# Table name: events_weapons
 #
 #  id         :bigint(8)        not null, primary key
-#  start_at   :datetime         not null
-#  end_at     :datetime         not null
-#  stage_id   :integer          not null
+#  event_id   :integer
+#  weapon_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

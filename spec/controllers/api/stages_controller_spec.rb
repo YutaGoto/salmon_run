@@ -16,4 +16,16 @@ RSpec.describe Api::StagesController, type: :controller do
       expect(assigns(:stages)).to include stage
     end
   end
+
+  describe 'GET #show' do
+    it 'returns http success' do
+      get :show, params: { id: stage.id }
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'assign stage' do
+      get :show, params: { id: stage.id }
+      expect(assigns(:stage)).to eq stage
+    end
+  end
 end

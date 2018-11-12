@@ -15,6 +15,6 @@ class Stage < ApplicationRecord
   validates :name, presence: true
 
   def weapon_count(weapon_id)
-    events.joins(:events_weapons).where(events_weapons: {weapon_id: weapon_id}).size
+    events.joins(:events_weapons).where(events_weapons: { weapon_id: weapon_id }).size
   end
 end

@@ -1,11 +1,10 @@
 # == Schema Information
 #
-# Table name: events
+# Table name: stages
 #
 #  id         :bigint(8)        not null, primary key
-#  start_at   :datetime         not null
-#  end_at     :datetime         not null
-#  stage_id   :integer          not null
+#  name       :string           not null
+#  image_url  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
