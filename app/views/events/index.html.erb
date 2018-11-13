@@ -77,7 +77,7 @@
               <td><a v-bind:href="event.show_url" class="uk-link-muted">{{event.id}}</a></td>
               <td>{{event.start_at}}</td>
               <td>{{event.end_at}}</td>
-              <td>{{event.stage_name}}</td>
+              <td><a v-bind:href="event.stage.show_url" class="uk-link-muted">{{event.stage.name}}</a></td>
               <td v-for="weapon in event.weapons">
                 {{weapon.name}}
               </td>

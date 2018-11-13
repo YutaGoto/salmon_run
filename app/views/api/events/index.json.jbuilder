@@ -5,7 +5,10 @@ json.data do
     json.id event.id
     json.start_at event.end_at.strftime('%Y/%m/%d %H:%M')
     json.end_at event.end_at.strftime('%Y/%m/%d %H:%M')
-    json.stage_name event.stage.name
+    json.stage do
+      json.name event.stage.name
+      json.show_url stage_path(event.stage)
+    end
     json.show_url event_path(event)
     json.weapons do
       json.array! event.weapons do |weapon|
