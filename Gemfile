@@ -77,3 +77,7 @@ group :development do
   # a Ruby static code analyzer
   gem 'rubocop', require: false
 end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: false
+end
