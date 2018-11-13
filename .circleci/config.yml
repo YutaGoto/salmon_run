@@ -77,6 +77,12 @@ jobs:
           command: |
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - run:
+          name: Test coverage reports for CODEBEAT
+          command: |
+            CODECLIMATE_API_HOST=https://codebeat.co/webhooks/code_coverage \
+            CODECLIMATE_REPO_TOKEN=${CODEBEAT_UUID} \
+            bundle exec codeclimate-test-reporter
 
       # collect reports
       - store_test_results:
