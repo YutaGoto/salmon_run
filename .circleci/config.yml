@@ -88,40 +88,8 @@ jobs:
       - store_test_results:
           path: ~/rspec
 
-  ci-bundle-update:
-    docker:
-      - image: *ruby_image
-
-    environment:
-      TZ: "/usr/share/zoneinfo/Asia/Tokyo"
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          key: *bundle_cache_key
-
-      - run:
-          name: circleci-bundle-update-pr
-          command: |
-            gem update bundler --no-document
-            gem install circleci-bundle-update-pr
-            bundle config --local path vendor/bundle
-            circleci-bundle-update-pr ${GIT_USER_NAME} ${GIT_USER_EMAIL} develop
-
 workflows:
   version: 2
   build:
     jobs:
     - build_and_test
-
-  ci-bundle-update:
-    triggers:
-      - schedule:
-          cron: "0 0 * * 1-5"  # UTC
-          filters:
-            branches:
-              only: develop
-
-    jobs:
-      - ci-bundle-update
