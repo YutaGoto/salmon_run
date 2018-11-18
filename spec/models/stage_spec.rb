@@ -1,26 +1,26 @@
 # == Schema Information
 #
-# Table name: events_weapons
+# Table name: stages
 #
 #  id         :bigint(8)        not null, primary key
-#  event_id   :integer
-#  weapon_id  :integer
+#  name       :string           not null
+#  image_url  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'rails_helper'
 
-RSpec.describe EventsWeapon, type: :model do
+RSpec.describe Stage, type: :model do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }
   let(:stage) { event.stage }
 
-  describe '#since_last_event_times' do
-    it '何回目かを見れる' do
-      event
-      expect(events_weapon.since_last_event_times).to eq(-1)
+  describe '#weapon_count' do
+    it 'ステージに紐づくブキの回数が取得できる' do
+      expect(stage.weapon_count(weapon.id)).to eq 1
+      expect(stage.weapon_count(0)).to eq 0
     end
   end
 end

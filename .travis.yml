@@ -3,7 +3,7 @@ env:
     - CC_TEST_REPORTER_ID=c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f
 language: ruby
 rvm:
-  - 2.5.1
+  - 2.5.3
 services: postgresql
 bundler_args: "--without development --deployment -j4"
 cache: bundler

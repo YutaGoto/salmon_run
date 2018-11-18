@@ -1,0 +1,26 @@
+<div id="salmon-show" data-event-id="<%= params[:id] %>">
+  <div class="uk-section">
+    <div class="uk-container">
+      <div><%= link_to 'イベント一覧へ戻る', events_path, class: 'uk-link-muted' %></div>
+      <h1 id="content" class="uk-heading-divider">すぷらとぅーん2 サーモンラン {{ stage.name }} 詳細</h1>
+      <img v-bind:src='stage.image_url' />
+      <table class="uk-table uk-table-small uk-table-divider">
+        <thead>
+          <tr>
+            <th>ブキ</th>
+            <th></th>
+            <th>使用された回数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="weapon in weapons">
+            <td><p>{{weapon.name}}</p></td>
+            <td><img v-bind:src='weapon.image_url' class="weapon-image-small" uk-img /></td>
+            <td>{{ weapon.count }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag 'stages/show_vue' %>
