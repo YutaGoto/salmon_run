@@ -66,4 +66,23 @@ Stage.seed(
   { id: 5, name: '朽ちた箱舟 ポラリス', image_url: 'https://app.splatoon2.nintendo.net/images/coop_stage/50064ec6e97aac91e70df5fc2cfecf61ad8615fd.png' },
 )
 
+Salmon.seed(
+  :id,
+  { id: 1, salmon_type: 1, name: 'シャケ', image_url: '' },
+  { id: 2, salmon_type: 1, name: 'コジャケ', image_url: '' },
+  { id: 2, salmon_type: 1, name: 'ドスコイ', image_url: '' },
+  { id: 2, salmon_type: 1, name: 'タマヒロイ', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'バクダン', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'ヘビ', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'テッパン', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'タワー', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'モグラ', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'コウモリ', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'カタパッド', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'キンシャケ', image_url: '' },
+  { id: 2, salmon_type: 2, name: 'グリル', image_url: '' },
+  { id: 2, salmon_type: 3, name: 'シャケコプター', image_url: '' },
+  { id: 2, salmon_type: 3, name: 'ハコビヤ', image_url: '' },
+)
+
 Rake::Task['salmon:exec'].invoke

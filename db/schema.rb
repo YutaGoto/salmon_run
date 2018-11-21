@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "salmons", force: :cascade do |t|
+    t.integer "salmon_type", null: false
+    t.string "name", null: false
+    t.string "image_url"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "stages", force: :cascade do |t|
     t.string "name", null: false
     t.string "image_url"
