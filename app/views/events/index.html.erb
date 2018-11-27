@@ -20,11 +20,11 @@
             </thead>
             <tbody>
               <tr>
-                <td>{{opening_event.id}}</td>
-                <td>{{opening_event.start_at}}</td>
-                <td>{{opening_event.end_at}}</td>
-                <td>{{opening_event.stage_name}}</td>
-                <td v-for="weapon in opening_event.weapons">
+                <td>{{openingEvent.id}}</td>
+                <td>{{openingEvent.start_at}}</td>
+                <td>{{openingEvent.end_at}}</td>
+                <td>{{openingEvent.stage_name}}</td>
+                <td v-for="weapon in openingEvent.weapons">
                   {{weapon.name}}<br>
                   {{weapon.count_text}}回目 {{weapon.since_last_event_time}}回ぶり
                 </td>
