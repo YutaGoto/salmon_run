@@ -1,0 +1,8 @@
+create_table "salmons", force: :cascade do |t|
+  t.integer "salmon_type", null: false
+  t.string "name", null: false
+  t.string "image_url"
+  t.string "description"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end
