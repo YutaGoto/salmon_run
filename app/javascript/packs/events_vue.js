@@ -20,7 +20,7 @@ var app = new Vue({
   },
   mounted () {
     axios.get("/api/events/open").then((res) => {
-      this.isOpen = res.data.data.is_open
+      this.isOpen = res.data.data.is_open;
       if (this.isOpen) {
         this.openingEvent = res.data.data.event;
       }
