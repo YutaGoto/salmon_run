@@ -62,6 +62,9 @@ group :development, :test do
 
   # Code coverage for Ruby
   gem 'simplecov'
+
+  # a Ruby static code analyzer
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -73,7 +76,4 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
   # gem 'spring-watcher-listen', '~> 2.0.0'
-
-  # a Ruby static code analyzer
-  gem 'rubocop', require: false
 end

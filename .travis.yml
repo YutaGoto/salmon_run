@@ -1,17 +1,25 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f
+sudo: required
+dist: trusty
 language: ruby
 rvm:
   - 2.5.3
 services: postgresql
 bundler_args: "--without development --deployment -j4"
-cache: bundler
+cache:
+  bundler: true
+  yarn: true
+  directories:
+    - node_modules
 before_install:
   - nvm install 6.11.2
   - npm config set spin false
   - npm install -g yarn
   - yarn global add greenkeeper-lockfile@1
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
 before_script:
   - cp config/database.travis.yml config/database.yml
   - bundle exec rails db:create
@@ -23,10 +31,11 @@ before_script:
 after_script:
   - greenkeeper-lockfile-upload
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-script: bundle exec rubocop
-script: bundle exec reek /app -c .todo.reek
-script: bundle exec brakeman
-script: bundle exec rspec
+script:
+  - bundle exec rubocop
+  - bundle exec reek /app -c .todo.reek
+  - bundle exec brakeman
+  - bundle exec rspec
 notifications:
   email:
     recipients:
