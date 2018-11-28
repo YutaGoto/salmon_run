@@ -6,7 +6,9 @@ rvm:
   - 2.5.3
 services: postgresql
 bundler_args: "--without development --deployment -j4"
-cache: bundler
+cache:
+  - bundler
+  - yarn
 before_install:
   - nvm install 6.11.2
   - npm config set spin false
@@ -23,10 +25,11 @@ before_script:
 after_script:
   - greenkeeper-lockfile-upload
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-script: bundle exec rubocop
-script: bundle exec reek /app -c .todo.reek
-script: bundle exec brakeman
-script: bundle exec rspec
+script:
+  - bundle exec rubocop
+  - bundle exec reek /app -c .todo.reek
+  - bundle exec brakeman
+  - bundle exec rspec
 notifications:
   email:
     recipients:
