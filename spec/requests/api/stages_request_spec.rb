@@ -10,11 +10,6 @@ describe 'Api::Stage', type: :request do
       get api_stages_path
       expect(response).to have_http_status(:success)
     end
-
-    it 'include stages' do
-      get api_stages_path
-      expect(assigns(:stages)).to include stage
-    end
   end
 
   describe 'api_stage#show' do
@@ -24,9 +19,9 @@ describe 'Api::Stage', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it 'assign stage' do
+    it 'to show stage name' do
       get api_stage_path params
-      expect(assigns(:stage)).to eq stage
+      expect(response.body).to include(stage.name)
     end
   end
 end

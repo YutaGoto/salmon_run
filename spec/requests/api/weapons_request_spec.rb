@@ -10,10 +10,5 @@ describe 'Api::Weapon', type: :request do
       get api_weapons_path
       expect(response).to have_http_status(:success)
     end
-
-    it 'include weapons' do
-      get api_weapons_path
-      expect(assigns(:weapons)).to include weapon
-    end
   end
 end
