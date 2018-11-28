@@ -1,6 +1,8 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f
+sudo: required
+dist: trusty
 language: ruby
 rvm:
   - 2.5.3
@@ -16,6 +18,8 @@ before_install:
   - npm config set spin false
   - npm install -g yarn
   - yarn global add greenkeeper-lockfile@1
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
 before_script:
   - cp config/database.travis.yml config/database.yml
   - bundle exec rails db:create
