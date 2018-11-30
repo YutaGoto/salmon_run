@@ -7,7 +7,7 @@
     "fontawesome": "latest",
     "npm": "^6.1.0",
     "select2": "latest",
-    "uikit": "^3.0.0-rc.19",
+    "uikit": "^3.0.0-rc.25",
     "vue": "^2.5.17",
     "vue-loader": "14.2.2",
     "vue-select": "^2.5.1",
