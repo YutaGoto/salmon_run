@@ -13,8 +13,6 @@ cache:
   yarn: true
   directories:
     - node_modules
-addons:
-  chrome: stable
 before_install:
   - nvm install 6.11.2
   - npm config set spin false
@@ -41,3 +39,8 @@ notifications:
       - you.goto.510@gmail.com
     on_success: never
     on_failure: always
+addons:
+  chrome: stable
+  apt:
+    packages:
+      - chromium-chromedriver
