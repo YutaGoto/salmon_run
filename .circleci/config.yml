@@ -16,6 +16,7 @@ jobs:
       # specify the version you desire here
       - image: *ruby_image
         environment:
+          CC_TEST_REPORTER_ID: 'c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f'
           RAILS_ENV: test
           PGHOST: 127.0.0.1
           PGUSER: root
@@ -35,12 +36,27 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Install System Dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y libappindicator1 fonts-liberation
+            export CHROME_BIN=/usr/bin/google-chrome
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome*.deb
+
       # Download and cache dependencies
       - restore_cache:
           keys:
           - *bundle_cache_key
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
+
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
 
       - run:
           name: install dependencies gems
@@ -75,8 +91,10 @@ jobs:
       - run:
           name: Run rspec in parallel
           command: |
+            ./cc-test-reporter before-build
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
 
       # collect reports
       - store_test_results:
