@@ -20,8 +20,9 @@ before_install:
   - npm install -g yarn
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
+install:
+  - yarn install
 before_script:
-  - yarn
   - cp config/database.travis.yml config/database.yml
   - bundle exec rails db:create
   - bundle exec rails db:schema:load
