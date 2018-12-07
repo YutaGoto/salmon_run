@@ -104,7 +104,6 @@ RSpec.configure do |config|
   options.add_argument('--headless')
   options.add_argument('--disable-gpu')
 
-  Selenium::WebDriver.for :chrome, options: options
   config.include Capybara::DSL
   SimpleCov.start 'rails'
 end
