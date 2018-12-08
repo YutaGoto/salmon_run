@@ -17,16 +17,15 @@ Splatoon2のサーモン・ランブキ変遷
 ## Spec
 
 *   Ruby version: 2.5.3
-*   Rails version: 5.2.1
+*   Rails version: 5.2.2
 *   PostgreSQL version: 10.5
 *   yarn version: 1.12.3
 *   Vue: v2.5.17
-*   UIkit 3.0.0-rc.19
+*   uikit: 3.0.0-rc.25
 
 ### tools
 
 *   [CircleCI 2.0](https://circleci.com/)
-*   [travisCI](https://travis-ci.org/)
 *   [Sider](https://sider.review/)
 *   [codebeat](https://codebeat.co/)
 *   [Greenkeeper](https://greenkeeper.io/)
@@ -70,6 +69,7 @@ docker rmi [IMAGE ID]
 *   [Rails5の練習をしている件6](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B66-f0c80e802560)
 *   [Rails5の練習をしている件7](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B67-d28b7f3dc276)
 *   [Rails5の練習をしている件8](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B68-4fe7a6ff8911)
+*   [Rails5の練習をしている件9](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B69-aa11e2e22193)
 
 ## Contributing
 

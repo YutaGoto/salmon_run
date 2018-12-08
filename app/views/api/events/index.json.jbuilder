@@ -3,7 +3,7 @@ json.errors []
 json.data do
   json.array! @events do |event|
     json.id event.id
-    json.start_at event.end_at.strftime('%Y/%m/%d %H:%M')
+    json.start_at event.start_at.strftime('%Y/%m/%d %H:%M')
     json.end_at event.end_at.strftime('%Y/%m/%d %H:%M')
     json.stage do
       json.name event.stage.name
