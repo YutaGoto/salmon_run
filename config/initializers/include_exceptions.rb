@@ -1,20 +1,20 @@
-# ページが見つからないとき例外
+# NotFound 404
 class NotFoundException < StandardError; end
 
-# 復活する予定がないコンテンツへの例外
+# Gone 410
 class GoneException < StandardError; end
 
-# 入力エラー
+# Input Error
 class InputErrorException < StandardError; end
 
-# 汎用例外
+# Application Error 500
 class ApplicationException < StandardError; end
 
-# 必要な権限がなかったとき例外
+# Auth Error 401
 class AuthorityException < StandardError; end
 
-# サイトがメンテナンスの場合の例外
+# Maintenance 503
 class MaintenanceException < StandardError; end
 
-# コンフリクトしている（APIでのみ利用）
+# Conflict (only API)
 class ConflictException < StandardError; end
