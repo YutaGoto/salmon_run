@@ -1,5 +1,5 @@
 module Api
-  class ApplicationController < ApplicationController
+  class ApplicationController < ::ApplicationController
     layout false
     rescue_from Exception, with: :render_500 if Rails.env.production?
     rescue_from InputErrorException, with: :render_400
