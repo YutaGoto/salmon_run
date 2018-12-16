@@ -1,8 +1,4 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
-version: 2
+version: 2.1
 
 ruby_image: &ruby_image
   circleci/ruby:2.5.3-node-browsers
@@ -10,10 +6,9 @@ ruby_image: &ruby_image
 bundle_cache_key: &bundle_cache_key
   v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-jobs:
-  build_and_test:
+executors:
+  docker-exec:
     docker:
-      # specify the version you desire here
       - image: *ruby_image
         environment:
           CC_TEST_REPORTER_ID: 'c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f'
@@ -21,9 +16,6 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: root
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/postgres:9.4
         environment:
           POSTGRES_USER: root
@@ -31,11 +23,15 @@ jobs:
 
       - image: circleci/node:10.1.0-browsers
 
+
+jobs:
+  build_and_test:
+    executor: docker-exec
+
     working_directory: ~/salmon_run
 
     steps:
       - checkout
-
       - run:
           name: Install System Dependencies
           command: |
@@ -45,11 +41,9 @@ jobs:
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome*.deb
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
           - *bundle_cache_key
-          # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
       - run:
@@ -70,7 +64,6 @@ jobs:
             - ./vendor/bundle
           key: *bundle_cache_key
 
-      # Database setup
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
 
@@ -96,7 +89,6 @@ jobs:
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
 
-      # collect reports
       - store_test_results:
           path: ~/rspec
 
