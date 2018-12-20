@@ -32,3 +32,4 @@ Rails/HasManyOrHasOneDependent:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'config/**/*'
