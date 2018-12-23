@@ -25,8 +25,7 @@ executors:
           POSTGRES_DB: salmon_run_test
 
       - image: circleci/node:10.1.0-browsers
-      - image: bash
-
+      - image: alpine:edge
 
 jobs:
   build_and_test:
