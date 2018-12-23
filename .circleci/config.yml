@@ -7,7 +7,7 @@ bundle_cache_key: &bundle_cache_key
   v1-dependencies-{{ checksum "Gemfile.lock" }}
 
 orbs:
-  todays-imas-idol-command: yutagoto/todays-imas-idol@dev:first
+  todays-imas-idol-command: yutagoto/todays-imas-idol@0.0.1
 
 executors:
   docker-exec:
