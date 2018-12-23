@@ -6,6 +6,9 @@ ruby_image: &ruby_image
 bundle_cache_key: &bundle_cache_key
   v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+orbs:
+  todays-imas-idol-command: yutagoto/todays-imas-idol@dev:first
+
 executors:
   docker-exec:
     docker:
@@ -88,6 +91,8 @@ jobs:
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+
+      - todays-imas-idol-command/echo-todays-imas-idol
 
       - store_test_results:
           path: ~/rspec
