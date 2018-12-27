@@ -6,11 +6,15 @@ ruby_image: &ruby_image
 bundle_cache_key: &bundle_cache_key
   v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+orbs:
+  todays-imas-idol: yutagoto/todays-imas-idol@0.1.0
+
 executors:
   docker-exec:
     docker:
       - image: *ruby_image
         environment:
+          TZ: Asia/Tokyo
           CC_TEST_REPORTER_ID: 'c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f'
           RAILS_ENV: test
           PGHOST: 127.0.0.1
@@ -23,9 +27,10 @@ executors:
 
       - image: circleci/node:10.1.0-browsers
 
-
 jobs:
   build_and_test:
+    environment:
+      TZ: Asia/Tokyo
     executor: docker-exec
 
     working_directory: ~/salmon_run
@@ -88,6 +93,8 @@ jobs:
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+
+      - todays-imas-idol/echo-todays-imas-idol
 
       - store_test_results:
           path: ~/rspec
