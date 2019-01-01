@@ -1,6 +1,6 @@
 <div id="salmon">
   <div class="uk-section">
-    <div class="uk-container">
+    <div class="uk-container-large uk-align-center">
       <h1 id="content" class="uk-heading-divider">すぷらとぅーん2 サーモンラン開催履歴</h1>
       <div id="openingEvent">
         <template v-if="isOpen">
@@ -11,6 +11,7 @@
                 <th>回</th>
                 <th>開始日時</th>
                 <th>終了日時</th>
+                <th>開催時間</th>
                 <th>ステージ</th>
                 <th>ブキ1</th>
                 <th>ブキ2</th>
@@ -23,6 +24,7 @@
                 <td>{{openingEvent.id}}</td>
                 <td>{{openingEvent.start_at}}</td>
                 <td>{{openingEvent.end_at}}</td>
+                <td>{{openingEvent.hours}}時間</td>
                 <td>{{openingEvent.stage_name}}</td>
                 <td v-for="weapon in openingEvent.weapons">
                   {{weapon.name}}<br>
@@ -34,7 +36,7 @@
         </template>
       </div>
     </div>
-    <div class="uk-container">
+    <div class="uk-container-large uk-align-center">
       <h2 id="content" class="">検索</h2>
       <form class="form" id="search-form">
         <div uk-grid>
@@ -65,6 +67,7 @@
               <th>回</th>
               <th>開始日時</th>
               <th>終了日時</th>
+              <th>時間</th>
               <th>ステージ</th>
               <th>ブキ1</th>
               <th>ブキ2</th>
@@ -77,6 +80,7 @@
               <td><a v-bind:href="event.show_url" class="uk-link-muted">{{event.id}}</a></td>
               <td>{{event.start_at}}</td>
               <td>{{event.end_at}}</td>
+              <td>{{event.hours}}時間</td>
               <td><a v-bind:href="event.stage.show_url" class="uk-link-muted">{{event.stage.name}}</a></td>
               <td v-for="weapon in event.weapons">
                 {{weapon.name}}
