@@ -20,12 +20,6 @@ Style/FrozenStringLiteralComment:
 Style/Documentation:
   Enabled: false
 
-Style/AsciiComments:
-  Enabled: false
-
-Style/ClassAndModuleChildren:
-  Enabled: false
-
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
 
@@ -38,3 +32,4 @@ Rails/HasManyOrHasOneDependent:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+    - 'config/**/*'

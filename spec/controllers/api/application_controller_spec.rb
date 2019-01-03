@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::ApplicationController, type: :controller do
+describe Api::ApplicationController, type: :controller do
   describe 'rescue_from' do
     context 'MaintenanceException' do
       controller do
