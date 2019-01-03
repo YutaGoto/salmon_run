@@ -21,3 +21,10 @@ task 'db:migrate:reset' => :environment do
   Rake::Task['db:create'].invoke
   Rake::Task['ridgepole:apply'].invoke
 end
+
+task 'db:migrate:reset_and_seed' => :environment do
+  Rake::Task['db:drop'].invoke
+  Rake::Task['db:create'].invoke
+  Rake::Task['ridgepole:apply'].invoke
+  Rake::Task['db:seed'].invoke
+end
