@@ -1,0 +1,15 @@
+ja:
+  add: 追加
+  edit: 編集
+  delete: 削除
+  login: ログイン
+  logout: ログアウト
+  views:
+    pagination:
+      truncate: ...
+  enumerize:
+    salmon:
+      salmon_type:
+        normal: ふつうシャケ
+        boss: オオモノシャケ
+        special: とくしゅ
