@@ -31,6 +31,7 @@ Splatoon2のサーモン・ランブキ変遷
 *   [Greenkeeper](https://greenkeeper.io/)
 *   [CodeClimate](https://codeclimate.com/)
 *   [Codacy](https://www.codacy.com/)
+*   [Depfu](https://depfu.com/)
 
 ## 初期設定
 
