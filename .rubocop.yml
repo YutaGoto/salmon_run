@@ -1,3 +1,6 @@
+require:
+  - "rubocop-md"
+
 AllCops:
   Exclude:
     - 'bin/*'
