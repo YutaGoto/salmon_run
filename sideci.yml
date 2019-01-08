@@ -1,0 +1,6 @@
+linter:
+  rubocop:
+    gems:
+      - rubocop-md
+    options:
+      config: .rubocop.yml
