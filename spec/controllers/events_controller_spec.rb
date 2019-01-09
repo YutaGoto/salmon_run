@@ -15,6 +15,7 @@ describe EventsController, type: :controller do
 
   describe 'events#show' do
     let(:params) { { id: event.id } }
+
     it 'returns http success' do
       get :index, params: params
       expect(response).to have_http_status(:success)

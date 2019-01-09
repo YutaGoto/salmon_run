@@ -1,16 +1,21 @@
 require 'rails_helper'
 
-feature 'Events', type: :system do
-  background do
-    events_weapon = FactoryBot.create :events_weapon
-    event = events_weapon.event
-    @stage = event.stage
-  end
-  context 'show' do
-    scenario 'To Show stage informations' do
-      visit stage_path(@stage)
-      expect(page).to have_content @stage.name
+describe 'Events', type: :system do
+  context 'with show action' do
+    it 'To show h1 content' do
+      events_weapon = FactoryBot.create :events_weapon
+      stage = events_weapon.event.stage
+
+      visit stage_path(stage)
       expect(page).to have_content 'すぷらとぅーん2 サーモンラン'
+    end
+
+    it 'To Show stage informations' do
+      events_weapon = FactoryBot.create :events_weapon
+      stage = events_weapon.event.stage
+
+      visit stage_path(stage)
+      expect(page).to have_content stage.name
     end
   end
 end

@@ -20,6 +20,9 @@ RSpec.describe Stage, type: :model do
   describe '#weapon_count' do
     it 'ステージに紐づくブキの回数が取得できる' do
       expect(stage.weapon_count(weapon.id)).to eq 1
+    end
+
+    it '存在しないブキIDの場合は0が返る' do
       expect(stage.weapon_count(0)).to eq 0
     end
   end
