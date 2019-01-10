@@ -2,6 +2,7 @@ linter:
   rubocop:
     gems:
       - rubocop-md
+      - rubocop-performance
       - rubocop-rspec
     options:
       config: .rubocop.yml
