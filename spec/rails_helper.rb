@@ -56,11 +56,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.before(:each) do
+  config.before do
     Bullet.start_request if Bullet.enable?
   end
 
-  config.after(:each) do
+  config.after do
     if Bullet.enable?
       Bullet.perform_out_of_channel_notifications if Bullet.notification?
       Bullet.end_request

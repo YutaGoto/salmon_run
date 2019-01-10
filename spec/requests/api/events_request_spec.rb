@@ -14,7 +14,7 @@ describe 'Api::Event', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    context 'params[:stages]' do
+    context 'when params have [:stages]' do
       it 'returns http success' do
         params = { stages: stage.id }
         get api_events_path params
@@ -28,7 +28,7 @@ describe 'Api::Event', type: :request do
       end
     end
 
-    context 'params[:weapons]' do
+    context 'when params have [:weapons]' do
       it 'returns http success' do
         params = { weapons: weapon.id }
         get api_events_path params

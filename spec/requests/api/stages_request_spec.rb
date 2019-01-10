@@ -14,6 +14,7 @@ describe 'Api::Stage', type: :request do
 
   describe 'api_stage#show' do
     let(:params) { { id: stage.id } }
+
     it 'returns http success' do
       get api_stage_path params
       expect(response).to have_http_status(:success)

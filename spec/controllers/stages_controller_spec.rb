@@ -8,6 +8,7 @@ describe StagesController, type: :controller do
 
   describe 'stage#show' do
     let(:params) { { id: stage.id } }
+
     it 'returns http success' do
       get :show, params: params
       expect(response).to have_http_status(:success)

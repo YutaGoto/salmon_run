@@ -1,5 +1,6 @@
 require:
-  - "rubocop-md"
+  - rubocop-md
+  - rubocop-rspec
 
 AllCops:
   Exclude:
@@ -30,6 +31,9 @@ Lint/UriEscapeUnescape:
   Enabled: false
 
 Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
   Enabled: false
 
 Metrics/BlockLength:
