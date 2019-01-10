@@ -68,6 +68,7 @@ group :development, :test do
   # a Ruby static code analyzer
   gem 'rubocop', require: false
   gem 'rubocop-md'
+  gem 'rubocop-performance'
   gem 'rubocop-rspec'
 
   # The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes.
