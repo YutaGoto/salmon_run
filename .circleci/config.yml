@@ -16,7 +16,7 @@ executors:
       - image: *ruby_image
         environment:
           TZ: Asia/Tokyo
-          CC_TEST_REPORTER_ID: 'c4d8f2b21e4a0af7b3fd7d4c679296b36840811826fff835064dae9ffca2231f'
+          CC_TEST_REPORTER_ID: ${CC_TEST_REPORTER_ID}
           RAILS_ENV: test
           PGHOST: 127.0.0.1
           PGUSER: root
