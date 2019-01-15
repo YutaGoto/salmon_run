@@ -1,4 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe ApplicationCable::Connection do
+describe ApplicationCable::Connection do
 end

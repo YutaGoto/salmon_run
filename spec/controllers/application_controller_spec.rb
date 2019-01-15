@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe ApplicationController, type: :controller do
   describe 'rescue_from' do
-    context 'MaintenanceException' do
+    context 'when to happen MaintenanceException' do
       controller do
         def index
           raise MaintenanceException, 'MaintenanceException'
@@ -11,10 +11,10 @@ describe ApplicationController, type: :controller do
       before { get :index }
 
       it { expect(response.content_type).to eq('text/html') }
-      it { expect(response).to have_http_status(503) }
+      it { expect(response).to have_http_status(:service_unavailable) }
     end
 
-    context 'ApplicationException' do
+    context 'when to happen ApplicationException' do
       controller do
         def index
           raise ApplicationException, 'ApplicationException'
@@ -23,10 +23,10 @@ describe ApplicationController, type: :controller do
       before { get :index }
 
       it { expect(response.content_type).to eq('text/html') }
-      it { expect(response).to have_http_status(500) }
+      it { expect(response).to have_http_status(:internal_server_error) }
     end
 
-    context 'GoneException' do
+    context 'when to happen GoneException' do
       controller do
         def index
           raise GoneException, 'GoneException'
@@ -35,10 +35,10 @@ describe ApplicationController, type: :controller do
       before { get :index }
 
       it { expect(response.content_type).to eq('text/html') }
-      it { expect(response).to have_http_status(410) }
+      it { expect(response).to have_http_status(:gone) }
     end
 
-    context 'NotFoundException' do
+    context 'when to happen NotFoundException' do
       controller do
         def index
           raise NotFoundException, 'NotFoundException'
@@ -47,10 +47,10 @@ describe ApplicationController, type: :controller do
       before { get :index }
 
       it { expect(response.content_type).to eq('text/html') }
-      it { expect(response).to have_http_status(404) }
+      it { expect(response).to have_http_status(:not_found) }
     end
 
-    context 'AuthorityException' do
+    context 'when to happen AuthorityException' do
       controller do
         def index
           raise AuthorityException, 'AuthorityException'
@@ -59,10 +59,10 @@ describe ApplicationController, type: :controller do
       before { get :index }
 
       it { expect(response.content_type).to eq('text/html') }
-      it { expect(response).to have_http_status(401) }
+      it { expect(response).to have_http_status(:unauthorized) }
     end
 
-    context 'InputErrorException' do
+    context 'when to happen InputErrorException' do
       controller do
         def index
           raise InputErrorException, 'InputErrorException'
@@ -71,10 +71,10 @@ describe ApplicationController, type: :controller do
       before { get :index }
 
       it { expect(response.content_type).to eq('text/html') }
-      it { expect(response).to have_http_status(400) }
+      it { expect(response).to have_http_status(:bad_request) }
     end
 
-    context 'Exception' do
+    context 'when to happen Exception' do
       controller do
         def index
           raise Exception, 'Exception'
@@ -83,7 +83,7 @@ describe ApplicationController, type: :controller do
       before { get :index }
 
       it { expect(response.content_type).to eq('text/html') }
-      it { expect(response).to have_http_status(500) }
+      it { expect(response).to have_http_status(:internal_server_error) }
     end
   end
 end

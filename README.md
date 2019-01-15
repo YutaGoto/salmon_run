@@ -31,6 +31,7 @@ Splatoon2のサーモン・ランブキ変遷
 *   [Greenkeeper](https://greenkeeper.io/)
 *   [CodeClimate](https://codeclimate.com/)
 *   [Codacy](https://www.codacy.com/)
+*   [Depfu](https://depfu.com/)
 
 ## 初期設定
 
@@ -72,6 +73,7 @@ docker rmi [IMAGE ID]
 *   [Rails5の練習をしている件9](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B69-aa11e2e22193)
 *   [Rails5の練習をしている件10](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B610-9caea56d8ceb)
 *   [Rails5の練習をしている件11](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B611-1a96f0c42c03)
+*   [Rails5の練習をしている件12](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B612-7686dacc71ce)
 
 
 ## Contributing

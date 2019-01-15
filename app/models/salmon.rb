@@ -12,4 +12,11 @@
 #
 
 class Salmon < ApplicationRecord
+  extend Enumerize
+
+  enumerize :salmon_type, in: {
+    normal: 1,
+    boss: 2,
+    special: 3
+  }, scope: true
 end

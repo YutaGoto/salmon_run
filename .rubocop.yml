@@ -1,3 +1,8 @@
+require:
+  - rubocop-md
+  - rubocop-performance
+  - rubocop-rspec
+
 AllCops:
   Exclude:
     - 'bin/*'
@@ -27,6 +32,9 @@ Lint/UriEscapeUnescape:
   Enabled: false
 
 Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
   Enabled: false
 
 Metrics/BlockLength:
