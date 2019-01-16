@@ -43,6 +43,10 @@ gem 'webpacker'
 
 gem 'enumerize'
 
+# This repository contains various Ruby and Rails integrations for Elasticsearch
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '5.x'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '5.x'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -73,6 +77,10 @@ group :development, :test do
 
   # The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes.
   gem 'bullet'
+
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
 end
 
 group :development do

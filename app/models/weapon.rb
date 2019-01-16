@@ -1,3 +1,5 @@
+require 'elasticsearch/model'
+
 # == Schema Information
 #
 # Table name: weapons
@@ -10,6 +12,9 @@
 #
 
 class Weapon < ApplicationRecord
+  include Elasticsearch::Model
+  include Searchable
+
   has_many :events_weapons
   has_many :events, through: :events_weapons
 
