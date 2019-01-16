@@ -58,7 +58,7 @@ jobs:
       - run: bundle exec rails db:schema:load
       - run:
           name: Code smell detector by Reek
-          command: bundle exec reek /app -c .todo.reek
+          command: bundle exec reek /app -c .reek
       - run:
           name: Analysis of security vulnerabilities by brakeman
           command: bundle exec brakeman
