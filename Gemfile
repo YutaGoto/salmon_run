@@ -81,6 +81,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
@@ -92,6 +93,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
   # gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
