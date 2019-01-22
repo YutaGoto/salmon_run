@@ -74,10 +74,10 @@ group :development, :test do
   # The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes.
   gem 'bullet'
 
-  gem 'pry-rails'
-  gem 'pry-doc'
-  gem 'pry-stack_explorer'
   gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
@@ -92,7 +92,6 @@ group :development do
 
   gem 'better_errors'
   gem 'binding_of_caller'
-
 end
 
 group :test do
