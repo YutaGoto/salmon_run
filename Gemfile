@@ -73,6 +73,11 @@ group :development, :test do
 
   # The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes.
   gem 'bullet'
+
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -84,6 +89,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
   # gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
 end
 
 group :test do
