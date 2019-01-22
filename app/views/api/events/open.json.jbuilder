@@ -5,8 +5,8 @@ json.data do
   if @is_open
     json.event do
       json.id @opening_event.id
-      json.start_at @opening_event.start_at.strftime('%Y/%m/%d %H:%M')
-      json.end_at @opening_event.end_at.strftime('%Y/%m/%d %H:%M')
+      json.start_at l @opening_event.start_at, format: :short
+      json.end_at l @opening_event.end_at, format: :short
       json.hours((@opening_event.end_at - @opening_event.start_at).seconds_to_hours)
       json.stage_name @opening_event.stage.name
       json.weapons do
