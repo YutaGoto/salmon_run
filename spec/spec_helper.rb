@@ -103,7 +103,9 @@ RSpec.configure do |config|
 
   # elasticsearch config
   config.before(:each, elasticsearch: true) do
-    Elasticsearch::Extensions::Test::Cluster.start(command: '~/elasticsearch-5.6.14/bin/elasticsearch', port: 9250, nodes: 1)
+    unless Elasticsearch::Extensions::Test::Cluster.running?(command: '~/elasticsearch-5.6.14/bin/elasticsearch', port: 9250, nodes: 1)
+      Elasticsearch::Extensions::Test::Cluster.start(command: '~/elasticsearch-5.6.14/bin/elasticsearch', port: 9250, nodes: 1)
+    end
   end
 
   config.after :each, elasticsearch: true do

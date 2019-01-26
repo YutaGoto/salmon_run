@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Api::Event', type: :request do
+describe 'Api::Event', type: :request, elasticsearch: true do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }

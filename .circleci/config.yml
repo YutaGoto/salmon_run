@@ -100,7 +100,6 @@ jobs:
       - ruby-orbs/bundle-install
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
-      - run: ./elasticsearch-5.6.14/bin/elasticsearch -d --http.port=9250 --transport.host=localhost
       - run: mkdir ~/rspec
       - run:
           name: Run rspec in parallel
@@ -109,9 +108,6 @@ jobs:
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
-          environment:
-            RAILS_ENV: test
-            TEST_CLUSTER_COMMAND: ./elasticsearch-5.6.14/bin/elasticsearch --http.port=9250 --transport.host=localhost
 
       - todays-imas-idol/echo-todays-imas-idol
 
