@@ -106,6 +106,10 @@ RSpec.configure do |config|
     Elasticsearch::Extensions::Test::Cluster.start(command: '~/elasticsearch-5.6.14/bin/elasticsearch', port: 9250, nodes: 1)
   end
 
+  config.after :each, elasticsearch: true do
+    Elasticsearch::Model.client.indices.delete index: '_all'
+  end
+
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
   end
