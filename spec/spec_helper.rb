@@ -103,11 +103,15 @@ RSpec.configure do |config|
 
   # elasticsearch config
   config.before(:all, elasticsearch: true) do
-    Elasticsearch::Extensions::Test::Cluster.start(command: '~/elasticsearch-5.6.14/bin/elasticsearch', number_of_nodes: 1)
+    unless Elasticsearch::Extensions::Test::Cluster.running?(command: '~/elasticsearch-5.6.14/bin/elasticsearch', number_of_nodes: 1, version: '5.6.14')
+      Elasticsearch::Extensions::Test::Cluster.start(command: '~/elasticsearch-5.6.14/bin/elasticsearch', number_of_nodes: 1, version: '5.6.14')
+    end
   end
 
   config.after(:all, elasticsearch: true) do
-    Elasticsearch::Extensions::Test::Cluster.stop(command: '~/elasticsearch-5.6.14/bin/elasticsearch', number_of_nodes: 1)
+    if Elasticsearch::Extensions::Test::Cluster.running?(command: '~/elasticsearch-5.6.14/bin/elasticsearch', number_of_nodes: 1, version: '5.6.14')
+      Elasticsearch::Extensions::Test::Cluster.stop(command: '~/elasticsearch-5.6.14/bin/elasticsearch', number_of_nodes: 1, version: '5.6.14')
+    end
   end
 
   Capybara.register_driver :selenium do |app|
