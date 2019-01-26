@@ -8,7 +8,7 @@ describe 'Api::Event', type: :request, elasticsearch: true do
   let(:other_stage) { FactoryBot.create :stage }
   let(:other_weapon) { FactoryBot.create :weapon }
 
-  before do
+  before :all do
     Weapon.create_index!
     Weapon.import
   end

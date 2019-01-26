@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Events', type: :system, elasticsearch: true do
-  before do
+  before :all do
     Weapon.create_index!
     Weapon.import
   end

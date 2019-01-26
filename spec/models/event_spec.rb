@@ -18,7 +18,7 @@ RSpec.describe Event, type: :model, elasticsearch: true do
   let(:weapon) { events_weapon.weapon }
   let(:stage) { event.stage }
 
-  before do
+  before :all do
     Weapon.create_index!
     Weapon.import
   end

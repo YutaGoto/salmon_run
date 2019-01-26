@@ -37,6 +37,9 @@ Rails/HasManyOrHasOneDependent:
 RSpec/EmptyExampleGroup:
   Enabled: false
 
+RSpec/BeforeAfterAll:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
