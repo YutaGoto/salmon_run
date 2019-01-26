@@ -109,7 +109,7 @@ RSpec.configure do |config|
   end
 
   config.after :each, elasticsearch: true do
-    Elasticsearch::Model.client.indices.delete index: 'es_weapon_test'
+    Elasticsearch::Model.client.indices.delete index: "es_weapon_#{Rails.env}"
     Elasticsearch::Extensions::Test::Cluster.stop(command: '~/elasticsearch-5.6.14/bin/elasticsearch', port: 9250, nodes: 1)
   end
 
