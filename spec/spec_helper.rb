@@ -109,7 +109,7 @@ RSpec.configure do |config|
   end
 
   config.after :each, elasticsearch: true do
-    Elasticsearch::Model.client.indices.delete index: '_all'
+    Elasticsearch::Model.client.indices.delete index: 'es_weapon_test'
   end
 
   Capybara.register_driver :selenium do |app|
