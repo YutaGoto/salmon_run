@@ -21,6 +21,6 @@ class Event < ApplicationRecord
   validates :stage_id, presence: true
 
   scope :by_stage_id, ->(stage_id) { where(stage_id: stage_id) if stage_id.present? }
-  scope :by_weapon_id, ->(weapon_id) { joins(:events_weapons).where(events_weapons: { weapon_id: weapon_id }) if weapon_id.present? }
+  scope :by_weapon, ->(weapon) { joins(:events_weapons).where(events_weapons: { weapon_id: weapon.id }) if weapon.present? }
   scope :opening, ->(time = Time.zone.now) { where('start_at <= ?', time).where('end_at >= ?', time) }
 end

@@ -27,4 +27,9 @@ class Weapon < ApplicationRecord
   def last_weapon_event
     events_weapons.joins(:event).where('events.start_at <= ?', Time.zone.now).last(2).first
   end
+
+  def self.weapon_search(word)
+    word = '' if word.nil?
+    Weapon.search(query: { term: { name: word } }).records
+  end
 end

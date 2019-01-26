@@ -58,6 +58,7 @@ GEM
     annotate (2.7.4)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
+    ansi (1.5.0)
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -110,6 +111,9 @@ GEM
       elasticsearch-transport (= 5.0.5)
     elasticsearch-api (5.0.5)
       multi_json
+    elasticsearch-extensions (0.0.30)
+      ansi
+      elasticsearch
     elasticsearch-transport (5.0.5)
       faraday
       multi_json
@@ -343,6 +347,7 @@ DEPENDENCIES
   byebug
   capybara
   chromedriver-helper
+  elasticsearch-extensions
   elasticsearch-model!
   elasticsearch-rails!
   enumerize

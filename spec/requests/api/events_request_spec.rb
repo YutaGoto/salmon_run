@@ -8,6 +8,11 @@ describe 'Api::Event', type: :request do
   let(:other_stage) { FactoryBot.create :stage }
   let(:other_weapon) { FactoryBot.create :weapon }
 
+  before do
+    Weapon.create_index!
+    Weapon.import
+  end
+
   describe 'api_event#index' do
     it 'returns http success' do
       get api_events_path

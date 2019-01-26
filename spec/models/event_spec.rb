@@ -18,9 +18,14 @@ RSpec.describe Event, type: :model do
   let(:weapon) { events_weapon.weapon }
   let(:stage) { event.stage }
 
-  describe 'scope by_weapon_id' do
+  before do
+    Weapon.create_index!
+    Weapon.import
+  end
+
+  describe 'scope by_weapon' do
     it 'weapon_id指定でイベントを参照できる' do
-      expect(Event.by_weapon_id(weapon.id)).to include event
+      expect(Event.by_weapon(weapon)).to include event
     end
   end
 

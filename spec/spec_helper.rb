@@ -17,6 +17,8 @@ require 'simplecov'
 require 'capybara/rspec'
 require 'nokogiri'
 require 'selenium-webdriver'
+require 'elasticsearch/extensions/test/cluster'
+require 'elasticsearch/model'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -96,6 +98,13 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
+  Elasticsearch::Model.client = Elasticsearch::Client.new(host: "localhost:9250")
+
+  # elasticsearch config
+  config.before(:each, elasticsearch: true) do
+    Elasticsearch::Extensions::Test::Cluster.start(command: '~/elasticsearch-5.6.14/bin/elasticsearch', port: 9250, nodes: 1)
+  end
 
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
