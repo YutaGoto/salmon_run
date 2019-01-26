@@ -67,12 +67,8 @@ jobs:
     working_directory: ~/salmon_run
     steps:
       - checkout
-      cache_directories:
-        - elasticsearch-5.6.14
-      post:
-        - if [[ ! -e elasticsearch-5.6.14 ]]; then wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.14.tar.gz && tar -xvf elasticsearch-5.6.14.tar.gz && elasticsearch-5.6.14/bin/elasticsearch-plugin install analysis-kuromoji; fi
-        - elasticsearch-5.6.14/bin/elasticsearch: {background: true}
-        - sleep 10 && wget --waitretry=5 --retry-connrefused -v http://127.0.0.1:9250/
+      - restore_cache:
+          key: job-medley-elasticsearch
       - run:
           name: Install System Dependencies
           command: |
@@ -81,6 +77,17 @@ jobs:
             export CHROME_BIN=/usr/bin/google-chrome
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome*.deb
+      - run:
+          name: Elasticsearch install
+          command: |
+            wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-5.6.14.tar.gz && \
+              tar -xvf elasticsearch-5.6.14.tar.gz && \
+              if [ -z "`elasticsearch-5.6.14/bin/plugin -l | grep analysis-kuromoji`" ]; then \
+              elasticsearch-5.6.14/bin/plugin -install elasticsearch/elasticsearch-analysis-kuromoji/5.6.14; fi
+      - save_cache:
+          key: job-medley-elasticsearch
+          paths:
+            - ./elasticsearch-5.6.14
 
       - run:
           name: Setup Code Climate test-reporter
@@ -101,6 +108,9 @@ jobs:
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+          environment:
+            RAILS_ENV: test
+            TEST_CLUSTER_COMMAND: elasticsearch-5.6.14/bin/elasticsearch
 
       - todays-imas-idol/echo-todays-imas-idol
 
