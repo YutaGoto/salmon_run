@@ -99,7 +99,7 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 
-  Elasticsearch::Model.client = Elasticsearch::Client.new(host: "localhost:9250")
+  Elasticsearch::Model.client = Elasticsearch::Client.new(host: 'localhost:9250')
 
   # elasticsearch config
   config.before(:each, elasticsearch: true) do
