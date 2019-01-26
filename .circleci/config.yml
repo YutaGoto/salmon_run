@@ -105,8 +105,7 @@ jobs:
           name: Run rspec in parallel
           command: |
             ./cc-test-reporter before-build
-            bundle exec rspec --format progress \
-                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            bundle exec rspec --format progress
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
 
       - todays-imas-idol/echo-todays-imas-idol
