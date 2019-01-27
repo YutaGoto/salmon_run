@@ -22,6 +22,7 @@ Splatoon2のサーモン・ランブキ変遷
 *   yarn version: 1.12.3
 *   Vue: v2.5.17
 *   uikit: 3.0.0-rc.25
+*   elasticsearch: 5.6.14
 
 ### tools
 
