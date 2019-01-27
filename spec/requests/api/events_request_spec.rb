@@ -1,12 +1,17 @@
 require 'rails_helper'
 
-describe 'Api::Event', type: :request do
+describe 'Api::Event', type: :request, elasticsearch: true do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }
   let(:stage) { event.stage }
   let(:other_stage) { FactoryBot.create :stage }
   let(:other_weapon) { FactoryBot.create :weapon }
+
+  before :all do
+    Weapon.create_index!
+    Weapon.import
+  end
 
   describe 'api_event#index' do
     it 'returns http success' do

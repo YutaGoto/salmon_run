@@ -20,24 +20,55 @@ executors:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
           PGUSER: root
-
       - image: circleci/postgres:9.4
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: salmon_run_test
-
       - image: circleci/node:10.1.0-browsers
 
 jobs:
-  build_and_test:
-    environment:
-      TZ: Asia/Tokyo
+  lint:
     executor: docker-exec
-
     working_directory: ~/salmon_run
-
     steps:
       - checkout
+      - run:
+          name: install dependencies packages
+          command: yarn
+      - ruby-orbs/bundle-install
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
+      - run:
+          name: RuboCop check
+          command: bundle exec rubocop
+      - todays-imas-idol/echo-todays-imas-idol
+
+  check:
+    executor: docker-exec
+    working_directory: ~/salmon_run
+    steps:
+      - checkout
+      - run:
+          name: install dependencies packages
+          command: yarn
+      - ruby-orbs/bundle-install
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
+      - run:
+          name: Code smell detector by Reek
+          command: bundle exec reek /app -c .reek
+      - run:
+          name: Analysis of security vulnerabilities by brakeman
+          command: bundle exec brakeman
+      - todays-imas-idol/echo-todays-imas-idol
+
+  test:
+    executor: docker-exec
+    working_directory: ~/salmon_run
+    steps:
+      - checkout
+      - restore_cache:
+          key: job-elasticsearch
       - run:
           name: Install System Dependencies
           command: |
@@ -46,36 +77,30 @@ jobs:
             export CHROME_BIN=/usr/bin/google-chrome
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome*.deb
+      - run:
+          name: Elasticsearch install
+          command: |
+            wget -O ~/elasticsearch-5.6.14.tar.gz https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.14.tar.gz && \
+              tar -xvf ~/elasticsearch-5.6.14.tar.gz -C ~/ && \
+              if [ -z "`~/elasticsearch-5.6.14/bin/elasticsearch-plugin list | grep analysis-kuromoji`" ]; then \
+              ~/elasticsearch-5.6.14/bin/elasticsearch-plugin install analysis-kuromoji; fi
+      - save_cache:
+          key: job-elasticsearch
+          paths:
+            - ~/elasticsearch-5.6.14
 
       - run:
           name: Setup Code Climate test-reporter
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-
       - run:
           name: install dependencies packages
           command: yarn
-
       - ruby-orbs/bundle-install
-
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
-
-      - run:
-          name: RuboCop check
-          command: bundle exec rubocop
-
-      - run:
-          name: Code smell detector by Reek
-          command: bundle exec reek /app -c .todo.reek
-
-      - run:
-          name: Analysis of security vulnerabilities by brakeman
-          command: bundle exec brakeman
-
       - run: mkdir ~/rspec
-
       - run:
           name: Run rspec in parallel
           command: |
@@ -93,4 +118,9 @@ workflows:
   version: 2
   build:
     jobs:
-    - build_and_test
+      - lint
+      - check
+      - test:
+          requires:
+            - lint
+            - check

@@ -12,15 +12,20 @@
 
 require 'rails_helper'
 
-RSpec.describe Event, type: :model do
+RSpec.describe Event, type: :model, elasticsearch: true do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }
   let(:stage) { event.stage }
 
-  describe 'scope by_weapon_id' do
+  before :all do
+    Weapon.create_index!
+    Weapon.import
+  end
+
+  describe 'scope by_weapon' do
     it 'weapon_id指定でイベントを参照できる' do
-      expect(Event.by_weapon_id(weapon.id)).to include event
+      expect(Event.by_weapon(weapon)).to include event
     end
   end
 

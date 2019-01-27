@@ -1,0 +1,18 @@
+---
+detectors:
+  IrresponsibleModule:
+    enabled: false
+  DuplicateMethodCall:
+    max_calls: 2
+  TooManyStatements:
+    enabled: true
+    exclude:
+    - initialize
+    max_statements: 10
+  UncommunicativeMethodName:
+    accept:
+      - "render*"
+directories:
+  "app/controller":
+    InstanceVariableAssumption:
+      enabled: false
