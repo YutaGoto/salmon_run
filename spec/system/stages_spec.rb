@@ -1,19 +1,21 @@
 require 'rails_helper'
 
 describe 'Stages', type: :system do
-  context 'with index action' do
-    it 'To Show Events informations' do
-      visit events_path
-      expect(page).to have_content 'すぷらとぅーん2 サーモンラン開催履歴'
-    end
-  end
-
   context 'with show action' do
-    it 'To Show Event informations' do
+    it 'To show h1 content' do
       events_weapon = FactoryBot.create :events_weapon
-      event = events_weapon.event
-      visit event_path(event)
-      expect(page).to have_content 'すぷらとぅーん2 サーモンラン 詳細'
+      stage = events_weapon.event.stage
+
+      visit stage_path(stage)
+      expect(page).to have_content 'すぷらとぅーん2 サーモンラン'
+    end
+
+    it 'To Show stage informations' do
+      events_weapon = FactoryBot.create :events_weapon
+      stage = events_weapon.event.stage
+
+      visit stage_path(stage)
+      expect(page).to have_content stage.name
     end
   end
 end
