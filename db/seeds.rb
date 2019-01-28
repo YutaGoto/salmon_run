@@ -84,5 +84,3 @@ Salmon.seed(
   { id: 14, salmon_type: 3, name: 'シャケコプター', image_url: '' },
   { id: 15, salmon_type: 3, name: 'ハコビヤ', image_url: '' },
 )
-
-Rake::Task['salmon:exec'].invoke

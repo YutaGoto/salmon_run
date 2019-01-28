@@ -26,3 +26,9 @@ task 'db:migrate:reset_and_seed' => :environment do
   Rake::Task['db:migrate:reset'].invoke
   Rake::Task['db:seed'].invoke
 end
+
+task 'db:migrate:reset_and_seed_with_data' => :environment do
+  Rake::Task['db:migrate:reset'].invoke
+  Rake::Task['db:seed'].invoke
+  Rake::Task['salmon:exec'].invoke
+end

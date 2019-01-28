@@ -1,26 +1,35 @@
 require 'rails_helper'
 
-describe 'Events', type: :system, elasticsearch: true do
-  before :all do
-    Weapon.create_index!
-    Weapon.import
+describe 'Events', type: :system do
+  context 'with index action' do
+    it 'To Show Events informations' do
+      visit events_path
+      expect(page).to have_content 'すぷらとぅーん2 サーモンラン開催履歴'
+    end
+
+    it 'To Show stage information' do
+      events_weapon = FactoryBot.create :events_weapon
+      stage = events_weapon.event.stage
+
+      visit events_path
+      expect(page).to have_content stage.name
+    end
+
+    it 'To Show weapon information' do
+      events_weapon = FactoryBot.create :events_weapon
+      weapon = events_weapon.weapon
+
+      visit events_path
+      expect(page).to have_content weapon.name
+    end
   end
 
   context 'with show action' do
-    it 'To show h1 content' do
+    it 'To Show Event informations' do
       events_weapon = FactoryBot.create :events_weapon
-      stage = events_weapon.event.stage
-
-      visit stage_path(stage)
-      expect(page).to have_content 'すぷらとぅーん2 サーモンラン'
-    end
-
-    it 'To Show stage informations' do
-      events_weapon = FactoryBot.create :events_weapon
-      stage = events_weapon.event.stage
-
-      visit stage_path(stage)
-      expect(page).to have_content stage.name
+      event = events_weapon.event
+      visit event_path(event)
+      expect(page).to have_content 'すぷらとぅーん2 サーモンラン 詳細'
     end
   end
 end
