@@ -81,7 +81,6 @@ docker rmi [IMAGE ID]
 
 *   [Elasticsearch-railsをやる](https://medium.com/@gggooottto/elasticsearch-rails%E3%82%92%E3%82%84%E3%82%8B%E8%A8%98%E4%BA%8B-b2e2b3476bc6)
 
-
 ## Contributing
 
 1.  Fork it!
