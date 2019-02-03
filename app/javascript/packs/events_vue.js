@@ -1,8 +1,8 @@
 /* eslint no-console: 0 */
 // import Vue from 'vue'
 
-import Vue from 'vue/dist/vue.esm';
-import axios from 'axios';
+import Vue from "vue/dist/vue.esm";
+import axios from "axios";
 
 var app = new Vue({
   el: "#salmon",

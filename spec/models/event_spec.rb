@@ -12,7 +12,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Event, type: :model, elasticsearch: true do
+describe Event, type: :model, elasticsearch: true do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }

@@ -11,7 +11,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Stage, type: :model do
+describe Stage, type: :model do
   let(:events_weapon) { FactoryBot.create :events_weapon }
   let(:event) { events_weapon.event }
   let(:weapon) { events_weapon.weapon }
