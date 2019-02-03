@@ -16,7 +16,7 @@ Splatoon2のサーモン・ランブキ変遷
 
 ## Spec
 
-*   Ruby version: 2.6.0
+*   Ruby version: 2.6.1
 *   Rails version: 5.2.2
 *   PostgreSQL version: 10.5
 *   yarn version: 1.12.3
@@ -76,6 +76,7 @@ docker rmi [IMAGE ID]
 *   [Rails5の練習をしている件11](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B611-1a96f0c42c03)
 *   [Rails5の練習をしている件12](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B612-7686dacc71ce)
 *   [Rails5の練習をしている件13](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B613-67761b607bc8)
+*   [Rails5の練習をしている件14](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B614-3fcbd3dd539d)
 
 ### 番外編
 
