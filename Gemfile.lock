@@ -111,7 +111,7 @@ GEM
       elasticsearch-transport (= 5.0.5)
     elasticsearch-api (5.0.5)
       multi_json
-    elasticsearch-extensions (0.0.30)
+    elasticsearch-extensions (0.0.31)
       ansi
       elasticsearch
     elasticsearch-transport (5.0.5)
