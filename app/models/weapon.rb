@@ -13,7 +13,7 @@ require 'elasticsearch/model'
 
 class Weapon < ApplicationRecord
   include Elasticsearch::Model
-  include Searchable
+  include WeaponSearchable
 
   has_many :events_weapons
   has_many :events, through: :events_weapons
