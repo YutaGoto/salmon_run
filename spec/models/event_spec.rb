@@ -19,8 +19,8 @@ describe Event, type: :model, elasticsearch: true do
   let(:stage) { event.stage }
 
   before :all do
-    Weapon.create_index!
-    Weapon.import
+    Weapon.__elasticsearch__.create_index! force: true
+    Weapon.__elasticsearch__.import
   end
 
   describe 'scope by_weapon' do
