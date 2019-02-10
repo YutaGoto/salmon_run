@@ -79,6 +79,7 @@ docker rmi [IMAGE ID]
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B612-7686dacc71ce" >Rails5の練習をしている件12</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B613-67761b607bc8" >Rails5の練習をしている件13</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B614-3fcbd3dd539d" >Rails5の練習をしている件14</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B615-470ac03a05ae" >Rails5の練習をしている件15</a></li>
   </ul>
 </details>
 
