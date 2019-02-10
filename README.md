@@ -6,7 +6,6 @@ Splatoon2のサーモン・ランブキ変遷
 
 [![CircleCI](https://circleci.com/gh/YutaGoto/salmon_run.svg?style=svg)](https://circleci.com/gh/YutaGoto/salmon_run)
 [![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
-[![codebeat badge](https://codebeat.co/badges/1ea02ea6-2394-4f03-aa37-0e789b79525a)](https://codebeat.co/projects/github-com-yutagoto-salmon_run-develop)
 [![Greenkeeper badge](https://badges.greenkeeper.io/YutaGoto/salmon_run.svg)](https://greenkeeper.io/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/maintainability)](https://codeclimate.com/github/YutaGoto/salmon_run/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/test_coverage)](https://codeclimate.com/github/YutaGoto/salmon_run/test_coverage)
@@ -63,20 +62,26 @@ docker rmi [IMAGE ID]
 
 ## 活動報告
 
-*   [Rails5の練習をしている件](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B6-a9b46a0fb6e5)
-*   [Rails5の練習をしている件2](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B62-d4fdce635bcc)
-*   [Rails5の練習をしている件3](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B63-40398a24e7b1)
-*   [Rails5の練習をしている件4](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B64-a506426e1f71)
-*   [Rails5の練習をしている件5](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B65-da554d093d73)
-*   [Rails5の練習をしている件6](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B66-f0c80e802560)
-*   [Rails5の練習をしている件7](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B67-d28b7f3dc276)
-*   [Rails5の練習をしている件8](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B68-4fe7a6ff8911)
-*   [Rails5の練習をしている件9](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B69-aa11e2e22193)
-*   [Rails5の練習をしている件10](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B610-9caea56d8ceb)
-*   [Rails5の練習をしている件11](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B611-1a96f0c42c03)
-*   [Rails5の練習をしている件12](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B612-7686dacc71ce)
-*   [Rails5の練習をしている件13](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B613-67761b607bc8)
-*   [Rails5の練習をしている件14](https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B614-3fcbd3dd539d)
+<details>
+  <summary>Blog List</summary>
+  <ul>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B6-a9b46a0fb6e5" >Rails5の練習をしている件</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B62-d4fdce635bcc" >Rails5の練習をしている件2</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B63-40398a24e7b1" >Rails5の練習をしている件3</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B64-a506426e1f71" >Rails5の練習をしている件4</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B65-da554d093d73" >Rails5の練習をしている件5</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B66-f0c80e802560" >Rails5の練習をしている件6</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B67-d28b7f3dc276" >Rails5の練習をしている件7</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B68-4fe7a6ff8911" >Rails5の練習をしている件8</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B69-aa11e2e22193" >Rails5の練習をしている件9</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B610-9caea56d8ceb" >Rails5の練習をしている件10</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B611-1a96f0c42c03" >Rails5の練習をしている件11</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B612-7686dacc71ce" >Rails5の練習をしている件12</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B613-67761b607bc8" >Rails5の練習をしている件13</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B614-3fcbd3dd539d" >Rails5の練習をしている件14</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B615-470ac03a05ae" >Rails5の練習をしている件15</a></li>
+  </ul>
+</details>
 
 ### 番外編
 
