@@ -12,6 +12,9 @@ rules:
       - "spec/**/*"
       - ".ciecleci/**/*"
       - "README.md"
+    justification:
+      - When you mean a service different from GitHub
+      - When GitHub is renamed
     fail:
       - Github
     pass:
@@ -32,3 +35,19 @@ rules:
       - "README.md"
     pass: JavaScript
 
+  - id: com.yougoto.salmon.salmon
+    pattern:
+      - さーもんらん
+      - サーモン・ラン
+    message: サーモンランにしたくない?
+    glob:
+      - "app/**/*"
+      - "config/**/*"
+      - "db/**/*"
+      - "lib/**/*"
+      - "public/**/*"
+      - "schemas/**/*"
+      - "spec/**/*"
+      - ".ciecleci/**/*"
+      - "README.md"
+    pass: サーモンラン
