@@ -1,0 +1,34 @@
+rules:
+  - id: com.yougoto.salmon.github
+    pattern: Github
+    message: Do you want to write GitHub?
+    glob:
+      - "app/**/*"
+      - "config/**/*"
+      - "db/**/*"
+      - "lib/**/*"
+      - "public/**/*"
+      - "schemas/**/*"
+      - "spec/**/*"
+      - ".ciecleci/**/*"
+      - "README.md"
+    fail:
+      - Github
+    pass:
+      - GitHub
+
+  - id: com.yougoto.salmon.javascript
+    pattern: Javascript
+    message: Is this a typo for "JavaScript"?
+    glob:
+      - "app/**/*"
+      - "config/**/*"
+      - "db/**/*"
+      - "lib/**/*"
+      - "public/**/*"
+      - "schemas/**/*"
+      - "spec/**/*"
+      - ".ciecleci/**/*"
+      - "README.md"
+    pass: JavaScript
+

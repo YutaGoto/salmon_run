@@ -32,15 +32,15 @@ jobs:
     working_directory: ~/salmon_run
     steps:
       - checkout
-      - run:
-          name: install dependencies packages
-          command: yarn
       - ruby-orbs/bundle-install
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       - run:
           name: RuboCop check
           command: bundle exec rubocop
+      - run:
+          name: Regexp based customizable linter
+          command: bundle exec goodcheck check
       - todays-imas-idol/echo-todays-imas-idol
 
   check:
@@ -48,9 +48,6 @@ jobs:
     working_directory: ~/salmon_run
     steps:
       - checkout
-      - run:
-          name: install dependencies packages
-          command: yarn
       - ruby-orbs/bundle-install
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
