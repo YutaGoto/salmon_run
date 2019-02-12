@@ -75,6 +75,9 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rspec'
 
+  # Regexp based customizable linter
+  gem 'goodcheck'
+
   # The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes.
   gem 'bullet'
 

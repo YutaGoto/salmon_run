@@ -1,0 +1,53 @@
+rules:
+  - id: com.yougoto.salmon.github
+    pattern: Github
+    message: Do you want to write GitHub?
+    glob:
+      - "app/**/*"
+      - "config/**/*"
+      - "db/**/*"
+      - "lib/**/*"
+      - "public/**/*"
+      - "schemas/**/*"
+      - "spec/**/*"
+      - ".ciecleci/**/*"
+      - "README.md"
+    justification:
+      - When you mean a service different from GitHub
+      - When GitHub is renamed
+    fail:
+      - Github
+    pass:
+      - GitHub
+
+  - id: com.yougoto.salmon.javascript
+    pattern: Javascript
+    message: Is this a typo for "JavaScript"?
+    glob:
+      - "app/**/*"
+      - "config/**/*"
+      - "db/**/*"
+      - "lib/**/*"
+      - "public/**/*"
+      - "schemas/**/*"
+      - "spec/**/*"
+      - ".ciecleci/**/*"
+      - "README.md"
+    pass: JavaScript
+
+  - id: com.yougoto.salmon.salmon
+    pattern:
+      - さーもんらん
+      - サーモン・ラン
+    message: サーモンランに統一して！
+    glob:
+      - "app/**/*"
+      - "config/**/*"
+      - "db/**/*"
+      - "lib/**/*"
+      - "public/**/*"
+      - "schemas/**/*"
+      - "spec/**/*"
+      - ".ciecleci/**/*"
+      - "README.md"
+    pass: サーモンラン
