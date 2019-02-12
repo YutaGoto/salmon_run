@@ -39,7 +39,7 @@ rules:
     pattern:
       - さーもんらん
       - サーモン・ラン
-    message: サーモンランにしたくない?
+    message: サーモンランに統一して！
     glob:
       - "app/**/*"
       - "config/**/*"
