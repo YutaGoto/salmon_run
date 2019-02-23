@@ -1,6 +1,6 @@
 # salmon_run
 
-Splatoon2のサーモン・ランブキ変遷
+Splatoon2のサーモンラン ブキ変遷
 
 このリポジトリは非公式のもので、完全に個人的な趣味で作っているものです。
 
@@ -18,7 +18,7 @@ Splatoon2のサーモン・ランブキ変遷
 *   Ruby version: 2.6.1
 *   Rails version: 5.2.2
 *   PostgreSQL version: 10.5
-*   yarn version: 1.12.3
+*   yarn version: 1.13.0
 *   Vue: v2.5.17
 *   uikit: 3.0.0-rc.25
 *   elasticsearch: 5.6.14
@@ -32,29 +32,6 @@ Splatoon2のサーモン・ランブキ変遷
 *   [CodeClimate](https://codeclimate.com/)
 *   [Codacy](https://www.codacy.com/)
 *   [Depfu](https://depfu.com/)
-
-## 初期設定
-
-```sh
-docker-compose build
-docker-compose run web bin/setup
-```
-
-### 起動コマンド
-
-```sh
-docker-compose up
-```
-
-### docker imageの削除
-
-```sh
-docker-compose down --rmi all
-docker images
-REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
-ruby                   2.6.0               hogehoge1234        6 days ago          869MB
-docker rmi [IMAGE ID]
-```
 
 ## サーモンラン とは
 
@@ -80,6 +57,7 @@ docker rmi [IMAGE ID]
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B613-67761b607bc8" >Rails5の練習をしている件13</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B614-3fcbd3dd539d" >Rails5の練習をしている件14</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B615-470ac03a05ae" >Rails5の練習をしている件15</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B616-23381a85a76" >Rails5の練習をしている件16</a></li>
   </ul>
 </details>
 
