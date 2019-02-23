@@ -60,8 +60,7 @@
           <thead>
             <tr>
               <th>回</th>
-              <th>開始日時</th>
-              <th>終了日時</th>
+              <th>日時</th>
               <th>時間</th>
               <th>ステージ</th>
               <th>ブキ1</th>
@@ -73,12 +72,14 @@
           <tbody>
             <tr v-for="event in events">
               <td><a v-bind:href="event.show_url" class="uk-link-muted">{{event.id}}</a></td>
-              <td>{{event.start_at}}</td>
-              <td>{{event.end_at}}</td>
+              <td>
+                <div>{{event.start_at}}</div><div class="uk-text-center">〜</div><div>{{event.end_at}}</div>
+              </td>
               <td>{{event.hours}}時間</td>
               <td><a v-bind:href="event.stage.show_url" class="uk-link-muted">{{event.stage.name}}</a></td>
               <td v-for="weapon in event.weapons">
                 {{weapon.name}}
+                <div><img v-bind:src='weapon.image_url' class="weapon-image-small" uk-img /></div>
               </td>
             </tr>
           </tbody>

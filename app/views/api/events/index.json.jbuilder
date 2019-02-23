@@ -14,6 +14,7 @@ json.data do
     json.weapons do
       json.array! event.weapons do |weapon|
         json.name weapon.name
+        json.image_url weapon.image_url
       end
     end
   end
