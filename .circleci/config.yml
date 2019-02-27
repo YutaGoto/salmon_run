@@ -46,6 +46,19 @@ jobs:
           command: bundle exec goodcheck check
       - todays-imas-idol/echo-todays-imas-idol
 
+  mdlint:
+    executor: docker-exec
+    working_directory: ~/salmon_run
+    steps:
+      - checkout
+      - run:
+          name: install dependencies packages
+          command: yarn
+      - run:
+          name: check markdown lint
+          command: yarn mdlint
+      - todays-imas-idol/echo-todays-imas-idol
+
   check:
     executor: docker-exec
     working_directory: ~/salmon_run
@@ -120,7 +133,9 @@ workflows:
     jobs:
       - lint
       - check
+      - mdlint
       - test:
           requires:
             - lint
             - check
+            - mdlint
