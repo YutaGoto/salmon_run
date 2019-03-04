@@ -2,7 +2,7 @@
   "name": "salmon_run",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "~4.0.0",
     "axios": "^0.18.0",
     "fontawesome": "latest",
     "npm": "^6.1.0",
