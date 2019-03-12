@@ -4,5 +4,6 @@ module Types
     field :start_at, Types::DateTimeType, null: false
     field :end_at, Types::DateTimeType, null: false
     field :stage, Types::StageType, null: false
+    field :events_weapons, [EventsWeaponType], null: true
   end
 end
