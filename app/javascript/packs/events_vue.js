@@ -26,8 +26,31 @@ var app = new Vue({
       }
     });
 
-    axios.get("/api/events").then((res) => {
-      this.events = res.data.data;
+    axios.post("/graphql", {
+        query: `{
+          events{
+            id
+            startAt
+            endAt
+            stage {name}
+            eventsWeapons {weapon {name}}
+          }
+        }`,
+        variables: null,
+        graphql: {
+          query: `{
+            events{
+              id
+              startAt
+              endAt
+              stage {name}
+              eventsWeapons {weapon {name}}
+            }
+          }`,
+          variables: null,
+        }
+    }).then((res) => {
+      this.events = res.data.data.events;
     });
 
     axios.get("/api/weapons").then((res) => {
