@@ -32,8 +32,16 @@ var app = new Vue({
             id
             startAt
             endAt
-            stage {name}
-            eventsWeapons {weapon {name}}
+            hours
+            stage {
+              name
+            }
+            eventsWeapons {
+              weapon{
+                name
+                imageUrl
+              }
+            }
           }
         }`,
         variables: null,
@@ -43,8 +51,16 @@ var app = new Vue({
               id
               startAt
               endAt
-              stage {name}
-              eventsWeapons {weapon {name}}
+              hours
+              stage {
+                name
+              }
+              eventsWeapons {
+                weapon{
+                  name
+                  imageUrl
+                }
+              }
             }
           }`,
           variables: null,
