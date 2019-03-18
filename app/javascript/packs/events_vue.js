@@ -21,25 +21,22 @@ var app = new Vue({
   mounted () {
     axios.get("/api/events/open").then((res) => {
       this.isOpen = res.data.data.is_open;
-      if (this.isOpen) {
+      if (this.isOpen)
         this.openingEvent = res.data.data.event;
-      }
     });
 
     axios.post("/graphql", {
-        query: `{
-          events{
-            id
-            startAt
-            endAt
-            hours
-            stage { name }
-            eventsWeapons {
-              weapon{ name imageUrl }
-            }
-          }
-        }`,
-        variables: null
+      query: `{
+        events{
+          id
+          startAt
+          endAt
+          hours
+          stage { name }
+          eventsWeapons { weapon{ name imageUrl } }
+        }
+      }`,
+      variables: null
     }).then((res) => {
       this.events = res.data.data.events;
     });
