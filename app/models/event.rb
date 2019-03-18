@@ -23,4 +23,8 @@ class Event < ApplicationRecord
   scope :by_stage_id, ->(stage_id) { where(stage_id: stage_id) if stage_id.present? }
   scope :by_weapon, ->(weapon) { joins(:events_weapons).where(events_weapons: { weapon_id: weapon.id }) if weapon.present? }
   scope :opening, ->(time = Time.zone.now) { where('start_at <= ?', time).where('end_at >= ?', time) }
+
+  def hours
+    (end_at - start_at).seconds_to_hours
+  end
 end
