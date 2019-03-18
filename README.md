@@ -16,12 +16,13 @@ Splatoon2のサーモンラン ブキ変遷
 ## Spec
 
 *   Ruby version: 2.6.1
-*   Rails version: 5.2.2
+*   Rails version: 5.2.2.1
 *   PostgreSQL version: 10.5
 *   yarn version: 1.13.0
 *   Vue: v2.5.17
 *   uikit: 3.0.0-rc.25
 *   elasticsearch: 5.6.14
+*   graphql: 1.9.3
 
 ### tools
 
@@ -58,6 +59,7 @@ Splatoon2のサーモンラン ブキ変遷
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B614-3fcbd3dd539d" >Rails5の練習をしている件14</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B615-470ac03a05ae" >Rails5の練習をしている件15</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B616-23381a85a76" >Rails5の練習をしている件16</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B617-38ac0566efb6" >Rails5の練習をしている件17</a></li>
   </ul>
 </details>
 
