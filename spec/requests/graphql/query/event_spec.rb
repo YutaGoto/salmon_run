@@ -28,7 +28,7 @@ describe 'event query', type: :request do
     QUERY
   end
 
-  context 'response body id event data' do
+  context 'when post event query' do
     it 'to get event id' do
       post graphql_path, params: { query: query }
       json = JSON.parse(response.body, symbolize_names: true)
