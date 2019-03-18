@@ -33,38 +33,13 @@ var app = new Vue({
             startAt
             endAt
             hours
-            stage {
-              name
-            }
+            stage { name }
             eventsWeapons {
-              weapon{
-                name
-                imageUrl
-              }
+              weapon{ name imageUrl }
             }
           }
         }`,
-        variables: null,
-        graphql: {
-          query: `{
-            events{
-              id
-              startAt
-              endAt
-              hours
-              stage {
-                name
-              }
-              eventsWeapons {
-                weapon{
-                  name
-                  imageUrl
-                }
-              }
-            }
-          }`,
-          variables: null,
-        }
+        variables: null
     }).then((res) => {
       this.events = res.data.data.events;
     });
