@@ -10,12 +10,20 @@ module Types
       description 'get opening events'
     end
 
+    field :stages, [StageType], null: true do
+      description 'get opening events'
+    end
+
     def events(weapon_name: nil, stage_id: nil)
       event_search(weapon_name, stage_id)
     end
 
     def opening
       Event.opening.last
+    end
+
+    def stages
+      Stage.all
     end
 
     private

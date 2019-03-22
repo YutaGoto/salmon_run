@@ -16,7 +16,7 @@ var app = new Vue({
       openingEvent: {},
       events: [],
       stages: [],
-      selectedWeapon: null,
+      weaponName: null,
       selectedStage: null,
     };
   },
@@ -39,23 +39,25 @@ var app = new Vue({
           stage { name }
           eventsWeapons { weapon{ name imageUrl countText} sinceLastEventTimes }
         }
+        stages{
+          id
+          name
+        }
       }`,
       variables: null
     }).then((res) => {
+      this.stages = res.data.data.stages;
       this.events = res.data.data.events;
       if (res.data.data.opening != null){
         this.isOpen = true;
         this.openingEvent = res.data.data.opening;
       }
     });
-
-    axios.get("/api/stages").then((res) => {
-      this.stages = res.data.data;
-    });
   },
   methods: {
     eventSearch () {
       axios.post("/graphql", {
+        operationName: "events",
         query: `query events ($weaponName: String $stageId: Int){
           events(weaponName: $weaponName stageId: $stageId){
             id
@@ -67,8 +69,8 @@ var app = new Vue({
           }
         }`,
         variables: {
-          "weaponName": this.selectedWeapon,
-          "stageId": this.selectedStage
+          "weaponName": this.weaponName,
+          "stageId": parseInt(this.selectedStage)
         }
       }).then((res) => {
         this.events = res.data.data.events;
