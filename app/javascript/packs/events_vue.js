@@ -3,6 +3,9 @@
 
 import Vue from "vue/dist/vue.esm";
 import axios from "axios";
+import { csrfToken } from "rails-ujs";
+
+axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
 
 var app = new Vue({
   el: "#salmon",
@@ -12,10 +15,9 @@ var app = new Vue({
       isOpen: false,
       openingEvent: {},
       events: [],
-      weapons: [],
       stages: [],
-      selectedWeapon: "",
-      selectedStage: "",
+      selectedWeapon: null,
+      selectedStage: null,
     };
   },
   mounted () {
@@ -46,16 +48,30 @@ var app = new Vue({
         this.openingEvent = res.data.data.opening;
       }
     });
+
+    axios.get("/api/stages").then((res) => {
+      this.stages = res.data.data;
+    });
   },
   methods: {
     eventSearch () {
-      axios.get("/api/events", {
-        params: {
-          weapons: this.selectedWeapon,
-          stages: this.selectedStage,
+      axios.post("/graphql", {
+        query: `query events ($weaponName: String $stageId: Int){
+          events(weaponName: $weaponName stageId: $stageId){
+            id
+            startAt
+            endAt
+            hours
+            stage { name }
+            eventsWeapons { weapon{ name imageUrl } }
+          }
+        }`,
+        variables: {
+          "weaponName": this.selectedWeapon,
+          "stageId": this.selectedStage
         }
       }).then((res) => {
-        this.events = res.data.data;
+        this.events = res.data.data.events;
       });
     }
   }
