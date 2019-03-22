@@ -1,32 +1,28 @@
 module Types
   class QueryType < Types::BaseObject
-    field :event, EventType, null: true do
-      description 'Find a event by ID'
-      argument :id, ID, required: true
-    end
-
     field :events, [EventType], null: true do
-      description 'get all events'
+      description 'get events'
       argument :weaponName, String, required: false
+      argument :stageId, Integer, required: false
     end
 
-    def event(id)
-      Event.find(id)
+    field :opening, EventType, null: true do
+      description 'get opening events'
     end
 
-    def events(weapon_name: nil)
-      if weapon_name.nil?
-        Event.all.includes(:stage, events_weapons: [:weapon])
-      else
-        event_search(weapon_name)
-      end
+    def events(weapon_name: nil, stage_id: nil)
+      event_search(weapon_name, stage_id)
+    end
+
+    def opening
+      Event.opening.last
     end
 
     private
 
-    def event_search(weapon_name)
+    def event_search(weapon_name, stage_id)
       weapon = Weapon.weapon_search(weapon_name).first
-      Event.by_weapon(weapon).includes(:stage, events_weapons: [:weapon])
+      Event.by_weapon(weapon).by_stage_id(stage_id).includes(:stage, events_weapons: [:weapon])
     end
   end
 end

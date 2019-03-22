@@ -14,6 +14,6 @@ class EventsWeapon < ApplicationRecord
   belongs_to :weapon
 
   def since_last_event_times
-    Event.opening.last.id - event.id - 1
+    Event.opening.last.id - EventsWeapon.where(weapon_id: weapon_id).last(2).first.event.id - 1
   end
 end

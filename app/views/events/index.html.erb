@@ -9,8 +9,7 @@
             <thead>
               <tr>
                 <th>回</th>
-                <th>開始日時</th>
-                <th>終了日時</th>
+                <th>日時</th>
                 <th>開催時間</th>
                 <th>ステージ</th>
                 <th>ブキ1</th>
@@ -22,13 +21,12 @@
             <tbody>
               <tr>
                 <td>{{openingEvent.id}}</td>
-                <td>{{openingEvent.start_at}}</td>
-                <td>{{openingEvent.end_at}}</td>
+                <td><div>{{openingEvent.startAt}}</div><div class="uk-text-center">〜</div><div>{{openingEvent.endAt}}</div></td>
                 <td>{{openingEvent.hours}}時間</td>
-                <td>{{openingEvent.stage_name}}</td>
-                <td v-for="weapon in openingEvent.weapons">
-                  {{weapon.name}}<br>
-                  {{weapon.count_text}}回目 {{weapon.since_last_event_time}}回ぶり
+                <td>{{openingEvent.stage.name}}</td>
+                <td v-for="eventsWeapon in openingEvent.eventsWeapons">
+                  {{eventsWeapon.weapon.name}}<br>
+                  {{eventsWeapon.weapon.countText}}回目 {{eventsWeapon.sinceLastEventTimes}}回ぶり
                 </td>
               </tr>
             </tbody>

@@ -19,12 +19,6 @@ var app = new Vue({
     };
   },
   mounted () {
-    axios.get("/api/events/open").then((res) => {
-      this.isOpen = res.data.data.is_open;
-      if (this.isOpen)
-        this.openingEvent = res.data.data.event;
-    });
-
     axios.post("/graphql", {
       query: `{
         events{
@@ -35,10 +29,22 @@ var app = new Vue({
           stage { name }
           eventsWeapons { weapon{ name imageUrl } }
         }
+        opening{
+          id
+          startAt
+          endAt
+          hours
+          stage { name }
+          eventsWeapons { weapon{ name imageUrl countText} sinceLastEventTimes }
+        }
       }`,
       variables: null
     }).then((res) => {
       this.events = res.data.data.events;
+      if (res.data.data.opening != null){
+        this.isOpen = true;
+        this.openingEvent = res.data.data.opening;
+      }
     });
 
     axios.get("/api/weapons").then((res) => {
