@@ -46,14 +46,6 @@ var app = new Vue({
         this.openingEvent = res.data.data.opening;
       }
     });
-
-    axios.get("/api/weapons").then((res) => {
-      this.weapons = res.data.data;
-    });
-
-    axios.get("/api/stages").then((res) => {
-      this.stages = res.data.data;
-    });
   },
   methods: {
     eventSearch () {
