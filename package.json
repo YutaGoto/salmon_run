@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "fontawesome": "latest",
     "npm": "^6.1.0",
+    "rails-ujs": "^5.2.2-1",
     "select2": "latest",
     "uikit": "^3.0.0-rc.25",
     "vue": "^2.5.17",
