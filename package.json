@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "gulp": "^4.0.0",
-    "markdownlint": "^0.12.0",
+    "markdownlint": "^0.13.0",
     "markdownlint-cli": "^0.14.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "3.2.1"
