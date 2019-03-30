@@ -379,7 +379,7 @@ DEPENDENCIES
   pry-rails
   pry-stack_explorer
   puma (~> 3.7)
-  rails (~> 5.2.2)
+  rails (~> 5.2.3)
   rails-controller-testing
   reek
   ridgepole
