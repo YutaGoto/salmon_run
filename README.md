@@ -16,7 +16,7 @@ Splatoon2のサーモンラン ブキ変遷
 ## Spec
 
 *   Ruby version: 2.6.1
-*   Rails version: 5.2.2.1
+*   Rails version: 5.2.3
 *   PostgreSQL version: 10.5
 *   yarn version: 1.13.0
 *   Vue: v2.5.17
@@ -60,12 +60,14 @@ Splatoon2のサーモンラン ブキ変遷
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B615-470ac03a05ae" >Rails5の練習をしている件15</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B616-23381a85a76" >Rails5の練習をしている件16</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B617-38ac0566efb6" >Rails5の練習をしている件17</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B618-2ef4c5f7ef0" >Rails5の練習をしている件18</a></li>
   </ul>
 </details>
 
 ### 番外編
 
 *   [Elasticsearch-railsをやる](https://medium.com/@gggooottto/elasticsearch-rails%E3%82%92%E3%82%84%E3%82%8B%E8%A8%98%E4%BA%8B-b2e2b3476bc6)
+*   [GraphQLをやる](https://medium.com/@gggooottto/graphql%E3%82%92%E3%82%84%E3%82%8B%E8%A8%98%E4%BA%8B-d265c3d88363)
 
 ## Contributing
 

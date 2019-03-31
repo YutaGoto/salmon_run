@@ -3,6 +3,9 @@
 
 import Vue from "vue/dist/vue.esm";
 import axios from "axios";
+import { csrfToken } from "rails-ujs";
+
+axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
 
 var app = new Vue({
   el: "#salmon",
@@ -12,19 +15,12 @@ var app = new Vue({
       isOpen: false,
       openingEvent: {},
       events: [],
-      weapons: [],
       stages: [],
-      selectedWeapon: "",
-      selectedStage: "",
+      weaponName: null,
+      selectedStage: null,
     };
   },
   mounted () {
-    axios.get("/api/events/open").then((res) => {
-      this.isOpen = res.data.data.is_open;
-      if (this.isOpen)
-        this.openingEvent = res.data.data.event;
-    });
-
     axios.post("/graphql", {
       query: `{
         events{
@@ -35,29 +31,49 @@ var app = new Vue({
           stage { name }
           eventsWeapons { weapon{ name imageUrl } }
         }
+        opening{
+          id
+          startAt
+          endAt
+          hours
+          stage { name }
+          eventsWeapons { weapon{ name imageUrl countText} sinceLastEventTimes }
+        }
+        stages{
+          id
+          name
+        }
       }`,
       variables: null
     }).then((res) => {
+      this.stages = res.data.data.stages;
       this.events = res.data.data.events;
-    });
-
-    axios.get("/api/weapons").then((res) => {
-      this.weapons = res.data.data;
-    });
-
-    axios.get("/api/stages").then((res) => {
-      this.stages = res.data.data;
+      if (res.data.data.opening != null){
+        this.isOpen = true;
+        this.openingEvent = res.data.data.opening;
+      }
     });
   },
   methods: {
     eventSearch () {
-      axios.get("/api/events", {
-        params: {
-          weapons: this.selectedWeapon,
-          stages: this.selectedStage,
+      axios.post("/graphql", {
+        operationName: "events",
+        query: `query events ($weaponName: String $stageId: Int){
+          events(weaponName: $weaponName stageId: $stageId){
+            id
+            startAt
+            endAt
+            hours
+            stage { name }
+            eventsWeapons { weapon{ name imageUrl } }
+          }
+        }`,
+        variables: {
+          "weaponName": this.weaponName,
+          "stageId": parseInt(this.selectedStage)
         }
       }).then((res) => {
-        this.events = res.data.data;
+        this.events = res.data.data.events;
       });
     }
   }
