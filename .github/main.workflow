@@ -3,8 +3,14 @@ workflow "create Master <- develop Pull Request" {
   resolves = ["Create Pull Request"]
 }
 
+action "Filter develop branch only" {
+  uses = "actions/bin/filter@master"
+  args = "branch develop"
+}
+
 action "Create Pull Request" {
   uses = "./.github/actions"
+  needs = ["Filter develop branch only"]
   secrets = [
     "GITHUB_TOKEN"
   ]
@@ -13,6 +19,5 @@ action "Create Pull Request" {
     PULL_REQUEST_BODY = "From GitHub Actions"
     BASE_BRANCH = "master"
     HEAD_BRANCH = "develop"
-    TEMP_SUFFIX = "_resolve_conflict"
   }
 }

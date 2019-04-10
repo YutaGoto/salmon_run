@@ -20,11 +20,6 @@ if [[ -z "$HEAD_BRANCH" ]]; then
     exit 1
 fi
 
-if [[ -z "$TEMP_SUFFIX" ]]; then
-    echo "Set the TEMP_SUFFIX env variable."
-    exit 1
-fi
-
 URI=https://api.github.com
 API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json"
@@ -35,12 +30,10 @@ JSON_HEADER="Content-Type:application/json"
 GITHUB_PULL_URL="${URI}/repos/${GITHUB_REPOSITORY}/pulls"
 GITHUB_REF_URL="${URI}/repos/${GITHUB_REPOSITORY}/git/refs"
 
-TEMP_BRANCH="${HEAD_BRANCH}${TEMP_SUFFIX}"
-
 # create ref
 data=$(cat <<EOF
 {
-  "ref": "refs/heads/${TEMP_BRANCH}",
+  "ref": "refs/heads/${HEAD_BRANCH}",
   "sha": "${GITHUB_SHA}"
 }
 EOF
@@ -58,7 +51,7 @@ data=$(cat <<EOF
   "title": "${PULL_REQUEST_TITLE}",
   "body": "${PULL_REQUEST_BODY}",
   "base": "${BASE_BRANCH}",
-  "head": "${TEMP_BRANCH}"
+  "head": "${HEAD_BRANCH}"
 }
 EOF
 )
