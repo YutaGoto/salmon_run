@@ -9,5 +9,5 @@ LABEL "maintainer"="YutsGoto <you.goto.510@gmail.com>"
 
 RUN apt update && apt install -y git jq curl
 
-ADD entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
