@@ -4,7 +4,7 @@ workflow "create Master <- develop Pull Request" {
 }
 
 action "Create Pull Request" {
-  uses = "./github/actions"
+  uses = "./.github/actions"
   secrets = [
     "GITHUB_TOKEN"
   ]
