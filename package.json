@@ -11,7 +11,7 @@
     "uikit": "^3.0.0-rc.25",
     "vue": "^2.5.17",
     "vue-loader": "15.7.0",
-    "vue-select": "^2.5.1",
+    "vue-select": "^3.0.0",
     "vue-template-compiler": "^2.5.17"
   },
   "devDependencies": {
