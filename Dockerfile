@@ -1,4 +1,4 @@
-FROM ruby:2.6.1
+FROM ruby:2.6.3
 ENV LANG C.UTF-8
 ENV APP_ROOT /my_app
 RUN apt-get update -qq && apt-get install -y build-essential postgresql-client
