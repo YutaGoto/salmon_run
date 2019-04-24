@@ -37,8 +37,8 @@ jobs:
             - salmon-run-{{ checksum "Gemfile.lock" }}
             - salmon-run-
       - run:
-          name: bundle update bundler
-          command: bundle update --bundler
+          name: update bundler
+          command: gem update bundler
       - run: bundle install --jobs=4 --retry=3 --path=vendor/bundle
       - save_cache:
           name: Saving cache salmon-run
@@ -82,8 +82,8 @@ jobs:
             - salmon-run-{{ checksum "Gemfile.lock" }}
             - salmon-run-
       - run:
-          name: bundle update bundler
-          command: bundle update --bundler
+          name: update bundler
+          command: gem update bundler
       - run: bundle install --jobs=4 --retry=3 --path=vendor/bundle
       - save_cache:
           name: Saving cache salmon-run
@@ -141,8 +141,8 @@ jobs:
             - salmon-run-{{ checksum "Gemfile.lock" }}
             - salmon-run-
       - run:
-          name: bundle update bundler
-          command: bundle update --bundler
+          name: update bundler
+          command: gem update bundler
       - run: bundle install --jobs=4 --retry=3 --path=vendor/bundle
       - save_cache:
           name: Saving cache salmon-run
