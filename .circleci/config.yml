@@ -8,7 +8,6 @@ bundle_cache_key: &bundle_cache_key
 
 orbs:
   todays-imas-idol: yutagoto/todays-imas-idol@volatile
-  ruby-orbs: sue445/ruby-orbs@1.3.10
 
 executors:
   docker-exec:
@@ -32,7 +31,20 @@ jobs:
     working_directory: ~/salmon_run
     steps:
       - checkout
-      - ruby-orbs/bundle-install
+      - restore_cache:
+          name: Restore cache salmon-run
+          keys:
+            - salmon-run-{{ checksum "Gemfile.lock" }}
+            - salmon-run-
+      - run:
+          name: update bundler
+          command: gem update bundler
+      - run: bundle install --jobs=4 --retry=3 --path=vendor/bundle
+      - save_cache:
+          name: Saving cache salmon-run
+          key: salmon-run-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       - run:
@@ -64,7 +76,20 @@ jobs:
     working_directory: ~/salmon_run
     steps:
       - checkout
-      - ruby-orbs/bundle-install
+      - restore_cache:
+          name: Restore cache salmon-run
+          keys:
+            - salmon-run-{{ checksum "Gemfile.lock" }}
+            - salmon-run-
+      - run:
+          name: update bundler
+          command: gem update bundler
+      - run: bundle install --jobs=4 --retry=3 --path=vendor/bundle
+      - save_cache:
+          name: Saving cache salmon-run
+          key: salmon-run-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       - run:
@@ -110,7 +135,20 @@ jobs:
       - run:
           name: install dependencies packages
           command: yarn
-      - ruby-orbs/bundle-install
+      - restore_cache:
+          name: Restore cache salmon-run
+          keys:
+            - salmon-run-{{ checksum "Gemfile.lock" }}
+            - salmon-run-
+      - run:
+          name: update bundler
+          command: gem update bundler
+      - run: bundle install --jobs=4 --retry=3 --path=vendor/bundle
+      - save_cache:
+          name: Saving cache salmon-run
+          key: salmon-run-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
       - run: mkdir ~/rspec
