@@ -4,10 +4,8 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
-    "fontawesome": "latest",
     "npm": "^6.1.0",
     "rails-ujs": "^5.2.2-1",
-    "select2": "latest",
     "uikit": "^3.1.4",
     "vue": "^2.5.17",
     "vue-loader": "15.7.0",
