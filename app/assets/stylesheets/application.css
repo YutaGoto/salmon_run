@@ -11,7 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
  *= require uikit/dist/css/uikit
- *= require select2/dist/css/select2
  *= require_tree .
  *= require_self
  */
