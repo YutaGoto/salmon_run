@@ -77,6 +77,7 @@ group :development, :test do
   gem 'rubocop-md'
   gem 'rubocop-performance'
   gem 'rubocop-rspec'
+  gem 'rubocop-yayoi'
 
   # Regexp based customizable linter
   gem 'goodcheck'
