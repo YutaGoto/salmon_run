@@ -97,7 +97,7 @@ jobs:
           command: bundle exec reek /app -c .reek
       - run:
           name: Analysis of security vulnerabilities by brakeman
-          command: bundle exec brakeman
+          command: bundle exec brakeman -A -w1 -z
       - todays-imas-idol/echo-todays-imas-idol
 
   test:
