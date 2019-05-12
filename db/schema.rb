@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "stage_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["stage_id"], name: "stage_index"
   end
 
   create_table "events_weapons", force: :cascade do |t|
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "weapon_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id", "weapon_id"], name: "events_weapons_index"
   end
 
   create_table "salmons", force: :cascade do |t|
@@ -53,4 +55,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "events", "stages", name: "fk_events_stages"
+  add_foreign_key "events_weapons", "events", name: "fk_events_weapons_events"
+  add_foreign_key "events_weapons", "weapons", name: "fk_events_weapons_weapons"
 end
