@@ -56,6 +56,9 @@ jobs:
       - run:
           name: Regexp based customizable linter
           command: bundle exec goodcheck check
+      - run:
+          name: Do not comment out unused code
+          command: bundle exec dont_comment app/**/*.rb spec/**/*.rb
       - todays-imas-idol/echo-todays-imas-idol
 
   mdlint:
