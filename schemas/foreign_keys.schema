@@ -1,0 +1,3 @@
+add_foreign_key "events_weapons", "events", name: "fk_events_weapons_events"
+add_foreign_key "events_weapons", "weapons", name: "fk_events_weapons_weapons"
+add_foreign_key "events", "stages", name: "fk_events_stages"
