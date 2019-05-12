@@ -77,6 +77,7 @@ group :development, :test do
   gem 'rubocop-md'
   gem 'rubocop-performance'
   gem 'rubocop-rspec'
+  gem 'rubocop-yayoi'
 
   # Regexp based customizable linter
   gem 'goodcheck'
@@ -88,6 +89,8 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+
+  gem 'dont_comment'
 end
 
 group :development do
@@ -103,6 +106,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 
+  # Do not comment out unused code, use version control system instead and remove it!
   gem 'graphiql-rails'
 end
 
