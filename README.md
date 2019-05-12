@@ -64,6 +64,7 @@ Splatoon2のサーモンラン ブキ変遷
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B618-2ef4c5f7ef0" >Rails5の練習をしている件18</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B619-e9ffd5f6ca3" >Rails5の練習をしている件19</a></li>
     <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B620-741f4c7271de" >Rails5の練習をしている件20</a></li>
+    <li><a href="https://medium.com/@gggooottto/rails5%E3%81%AE%E7%B7%B4%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E4%BB%B621-b6268a088198" >Rails5の練習をしている件21</a></li>
   </ul>
 </details>
 
