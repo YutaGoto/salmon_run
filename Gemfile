@@ -111,6 +111,6 @@ group :development do
 end
 
 group :test do
-  gem 'chromedriver-helper'
+  gem 'webdrivers', '~> 3.0'
   gem 'elasticsearch-extensions'
 end
