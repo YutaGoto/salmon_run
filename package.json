@@ -13,6 +13,9 @@
     "vue-template-compiler": "^2.5.17"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.2",
     "gulp": "^4.0.0",
     "markdownlint": "^0.14.0",
     "markdownlint-cli": "^0.15.0",
@@ -22,6 +25,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "frontend_install": "yarn install --modules-folder ./vendor/assets/components/",
-    "mdlint": "markdownlint README.md"
+    "mdlint": "markdownlint README.md",
+    "lint": "eslint --ext .vue --ext .js app/javascript"
   }
 }
