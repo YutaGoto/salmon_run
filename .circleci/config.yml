@@ -133,7 +133,7 @@ jobs:
       - run:
           name: Elasticsearch install
           command: |
-            wget -O ~/elasticsearch-7.1.0-linux-x86_64 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz && \
+            wget -O ~/elasticsearch-7.1.0-linux-x86_64 https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz && \
               tar -xvf ~/elasticsearch-7.1.0-linux-x86_64 -C ~/ && \
               if [ -z "`~/elasticsearch-7.1.0/bin/elasticsearch-plugin list | grep analysis-kuromoji`" ]; then \
               ~/elasticsearch-7.1.0/bin/elasticsearch-plugin install analysis-kuromoji; fi
