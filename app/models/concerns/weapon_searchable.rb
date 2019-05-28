@@ -7,7 +7,7 @@ module WeaponSearchable
     settings index: Rails.application.config.weapon_index_analysis['weapon_index_analysis']
 
     mappings dynamic: 'false' do
-      indexes "name", "analyzer": "kuromoji_analyzer"
+      indexes 'name', analyzer: 'kuromoji_analyzer'
     end
 
     def as_indexed_json(_options = {})
