@@ -1,13 +1,12 @@
 GIT
   remote: https://github.com/elastic/elasticsearch-rails.git
-  revision: bfdd2243f0de298547b2dc199e9a671cf72ccde6
-  branch: 5.x
+  revision: a67ecc1afc3a0615efa7ca6daecbb9132f61c318
   specs:
-    elasticsearch-model (5.1.0)
+    elasticsearch-model (7.0.0.pre)
       activesupport (> 3)
-      elasticsearch (~> 5)
+      elasticsearch (> 1)
       hashie
-    elasticsearch-rails (5.1.0)
+    elasticsearch-rails (7.0.0.pre)
 
 GEM
   remote: https://rubygems.org/

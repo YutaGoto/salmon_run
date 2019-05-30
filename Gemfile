@@ -44,8 +44,8 @@ gem 'webpacker'
 gem 'enumerize'
 
 # This repository contains various Ruby and Rails integrations for Elasticsearch
-gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '5.x'
-gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '5.x'
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails'
 
 gem 'graphql'
 gem 'graphql-batch'
