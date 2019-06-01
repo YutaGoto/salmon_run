@@ -76,6 +76,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-md'
   gem 'rubocop-performance'
+  gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'rubocop-yayoi'
 
