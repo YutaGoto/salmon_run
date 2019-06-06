@@ -113,5 +113,5 @@ end
 
 group :test do
   gem 'elasticsearch-extensions'
-  gem 'webdrivers', '~> 3.0'
+  gem 'webdrivers', '~> 4.0'
 end
