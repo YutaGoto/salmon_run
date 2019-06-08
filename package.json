@@ -5,7 +5,7 @@
     "@rails/webpacker": "3.5",
     "axios": "^0.18.1",
     "npm": "^6.9.0",
-    "rails-ujs": "^5.2.2-1",
+    "rails-ujs": "^5.2.3",
     "uikit": "^3.1.5",
     "vue": "^2.6.10",
     "vue-loader": "15.7.0",
