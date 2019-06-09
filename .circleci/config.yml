@@ -19,7 +19,7 @@ executors:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
           PGUSER: root
-      - image: circleci/postgres:9.4
+      - image: circleci/postgres:11.3
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: salmon_run_test
@@ -73,6 +73,18 @@ jobs:
           name: check markdown lint
           command: yarn mdlint
       - todays-imas-idol/echo-todays-imas-idol
+  eslint:
+    executor: docker-exec
+    working_directory: ~/salmon_run
+    steps:
+      - checkout
+      - run:
+          name: install dependencies packages
+          command: yarn
+      - run:
+          name: check frontend lint
+          command: yarn lint
+      - todays-imas-idol/echo-todays-imas-idol
 
   check:
     executor: docker-exec
@@ -121,14 +133,14 @@ jobs:
       - run:
           name: Elasticsearch install
           command: |
-            wget -O ~/elasticsearch-5.6.14.tar.gz https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.14.tar.gz && \
-              tar -xvf ~/elasticsearch-5.6.14.tar.gz -C ~/ && \
-              if [ -z "`~/elasticsearch-5.6.14/bin/elasticsearch-plugin list | grep analysis-kuromoji`" ]; then \
-              ~/elasticsearch-5.6.14/bin/elasticsearch-plugin install analysis-kuromoji; fi
+            wget -O ~/elasticsearch-7.1.0-linux-x86_64 https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz && \
+              tar -xvf ~/elasticsearch-7.1.0-linux-x86_64 -C ~/ && \
+              if [ -z "`~/elasticsearch-7.1.0/bin/elasticsearch-plugin list | grep analysis-kuromoji`" ]; then \
+              ~/elasticsearch-7.1.0/bin/elasticsearch-plugin install analysis-kuromoji; fi
       - save_cache:
           key: job-elasticsearch
           paths:
-            - ~/elasticsearch-5.6.14
+            - ~/elasticsearch-7.1.0
 
       - run:
           name: Setup Code Climate test-reporter
@@ -175,8 +187,10 @@ workflows:
       - lint
       - check
       - mdlint
+      - eslint
       - test:
           requires:
             - lint
             - check
             - mdlint
+            - eslint

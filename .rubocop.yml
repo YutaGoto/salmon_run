@@ -2,6 +2,8 @@ require:
   - rubocop-md
   - rubocop-performance
   - rubocop-rspec
+  - rubocop-rails
+  - rubocop-yayoi
 
 AllCops:
   Exclude:

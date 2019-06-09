@@ -44,8 +44,8 @@ gem 'webpacker'
 gem 'enumerize'
 
 # This repository contains various Ruby and Rails integrations for Elasticsearch
-gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails', branch: '5.x'
-gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails', branch: '5.x'
+gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails'
+gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails'
 
 gem 'graphql'
 gem 'graphql-batch'
@@ -76,6 +76,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-md'
   gem 'rubocop-performance'
+  gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'rubocop-yayoi'
 
@@ -111,6 +112,6 @@ group :development do
 end
 
 group :test do
-  gem 'chromedriver-helper'
   gem 'elasticsearch-extensions'
+  gem 'webdrivers', '~> 4.0'
 end

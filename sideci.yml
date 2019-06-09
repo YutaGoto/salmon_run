@@ -4,5 +4,7 @@ linter:
       - rubocop-md
       - rubocop-performance
       - rubocop-rspec
+      - rubocop-rails
+      - rubocop-yayoi
     options:
       config: .rubocop.yml
