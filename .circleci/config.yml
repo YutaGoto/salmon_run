@@ -19,7 +19,7 @@ executors:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
           PGUSER: root
-      - image: circleci/postgres:9.4
+      - image: circleci/postgres:11.3
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: salmon_run_test
