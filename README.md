@@ -9,6 +9,7 @@ Splatoon2のサーモンラン ブキ変遷
 [![Maintainability](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/maintainability)](https://codeclimate.com/github/YutaGoto/salmon_run/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/test_coverage)](https://codeclimate.com/github/YutaGoto/salmon_run/test_coverage)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/18d67d2bb23e488abbf5689766d5876a)](https://www.codacy.com/app/YutaGoto/salmon_run?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YutaGoto/salmon_run&amp;utm_campaign=Badge_Grade)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=YutaGoto/salmon_run)](https://dependabot.com)
 
 ![salmon](salmon.gif)
 
