@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-loader": "^2.1.2",
+    "eslint-loader": "^2.2.0",
     "eslint-plugin-vue": "^5.2.3",
     "gulp": "^4.0.2",
     "markdownlint": "^0.15.0",
