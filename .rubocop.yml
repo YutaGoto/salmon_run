@@ -12,9 +12,6 @@ AllCops:
     - 'vendor/**/*'
     - 'node_modules/**/*'
 
-Rails:
-  Enabled: true
-
 Metrics/LineLength:
   Max: 140
   Exclude:
