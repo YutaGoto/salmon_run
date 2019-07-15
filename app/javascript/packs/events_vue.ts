@@ -1,8 +1,10 @@
 /* eslint no-console: 0 */
 // import Vue from 'vue'
 
-import Vue from 'vue/dist/vue.esm';
+import Vue from 'vue';
 import axios from 'axios';
+
+//@ts-ignore
 import { csrfToken } from 'rails-ujs';
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken();
