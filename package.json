@@ -6,6 +6,7 @@
     "axios": "^0.18.1",
     "npm": "^6.10.1",
     "rails-ujs": "^5.2.3",
+    "ts-loader": "^6.0.4",
     "uikit": "^3.1.6",
     "vue": "^2.6.10",
     "vue-loader": "14.2.4",
@@ -13,12 +14,15 @@
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
+    "@types/vue": "^2.0.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-vue": "^5.2.3",
+    "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^4.0.2",
     "markdownlint": "^0.15.0",
     "markdownlint-cli": "^0.17.0",
+    "typescript": "^3.5.3",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "3.7.2"
   },

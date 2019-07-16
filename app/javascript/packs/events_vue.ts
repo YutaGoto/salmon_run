@@ -1,8 +1,10 @@
 /* eslint no-console: 0 */
 // import Vue from 'vue'
 
-import Vue from 'vue/dist/vue.esm';
+import Vue from 'vue';
 import axios from 'axios';
+
+//@ts-ignore
 import { csrfToken } from 'rails-ujs';
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken();
@@ -24,25 +26,16 @@ new Vue({
     axios.post('/graphql', {
       query: `{
         events{
-          id
-          startAt
-          endAt
-          hours
+          id startAt endAt hours
           stage { name }
           eventsWeapons { weapon{ name imageUrl } }
         }
         opening{
-          id
-          startAt
-          endAt
-          hours
+          id startAt endAt hours
           stage { name }
           eventsWeapons { weapon{ name imageUrl countText} sinceLastEventTimes }
         }
-        stages{
-          id
-          name
-        }
+        stages{ id name }
       }`,
       variables: null
     }).then((res) => {
@@ -60,10 +53,7 @@ new Vue({
         operationName: 'events',
         query: `query events ($weaponName: String $stageId: Int){
           events(weaponName: $weaponName stageId: $stageId){
-            id
-            startAt
-            endAt
-            hours
+            id startAt endAt hours
             stage { name }
             eventsWeapons { weapon{ name imageUrl } }
           }
