@@ -26,25 +26,16 @@ new Vue({
     axios.post('/graphql', {
       query: `{
         events{
-          id
-          startAt
-          endAt
-          hours
+          id startAt endAt hours
           stage { name }
           eventsWeapons { weapon{ name imageUrl } }
         }
         opening{
-          id
-          startAt
-          endAt
-          hours
+          id startAt endAt hours
           stage { name }
           eventsWeapons { weapon{ name imageUrl countText} sinceLastEventTimes }
         }
-        stages{
-          id
-          name
-        }
+        stages{ id name }
       }`,
       variables: null
     }).then((res) => {
@@ -62,10 +53,7 @@ new Vue({
         operationName: 'events',
         query: `query events ($weaponName: String $stageId: Int){
           events(weaponName: $weaponName stageId: $stageId){
-            id
-            startAt
-            endAt
-            hours
+            id startAt endAt hours
             stage { name }
             eventsWeapons { weapon{ name imageUrl } }
           }
