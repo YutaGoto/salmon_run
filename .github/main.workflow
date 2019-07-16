@@ -15,7 +15,7 @@ action "Create Pull Request" {
     "GITHUB_TOKEN"
   ]
   env = {
-    PULL_REQUEST_TITLE = "Actions sync master <- develop"
+    PULL_REQUEST_TITLE = "master from develop"
     PULL_REQUEST_BODY = "From GitHub Actions"
     BASE_BRANCH = "master"
     HEAD_BRANCH = "develop"
