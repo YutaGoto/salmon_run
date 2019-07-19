@@ -198,7 +198,6 @@ GEM
     puma (4.0.1)
       nio4r (~> 2.0)
     rack (2.0.7)
-    rack-cors (1.0.3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -338,7 +337,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webdrivers (4.1.0)
+    webdrivers (4.1.1)
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
       selenium-webdriver (>= 3.0, < 4.0)
@@ -383,7 +382,6 @@ DEPENDENCIES
   pry-rails
   pry-stack_explorer
   puma (~> 4.0)
-  rack-cors
   rails (~> 5.2.3)
   rails-controller-testing
   reek
