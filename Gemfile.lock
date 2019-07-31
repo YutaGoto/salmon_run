@@ -198,7 +198,6 @@ GEM
     puma (4.0.1)
       nio4r (~> 2.0)
     rack (2.0.7)
-    rack-cors (1.0.3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -281,7 +280,7 @@ GEM
     rubocop-rails (2.2.1)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
-    rubocop-rspec (1.33.0)
+    rubocop-rspec (1.34.1)
       rubocop (>= 0.60.0)
     rubocop-yayoi (0.1.0)
       rubocop (>= 0.67.2)
@@ -383,7 +382,6 @@ DEPENDENCIES
   pry-rails
   pry-stack_explorer
   puma (~> 4.0)
-  rack-cors
   rails (~> 5.2.3)
   rails-controller-testing
   reek
