@@ -1,6 +1,6 @@
 Weapon.seed(
   :id,
-  { id: 1, name: 'ランダム', image_url: 'https://app.splatoon2.nintendo.net/images/coop_weapons/746f7e90bc151334f0bf0d2a1f0987e311b03736.png' },
+  { id: 1, name: 'ランダム', image_url: 'https://app.splatoon2.nintendo.net/images/coop_weapons/7076c8181ab5c49d2ac91e43a2d945a46a99c17d.png' },
   { id: 2, name: 'クマサン印のブラスター', image_url: '' },
   { id: 3, name: 'クマサン印のシェルター', image_url: '' },
   { id: 4, name: 'クマサン印のチャージャー', image_url: '' },
