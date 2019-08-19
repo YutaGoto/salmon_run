@@ -25,25 +25,25 @@ describe Event, type: :model, elasticsearch: true do
 
   describe 'scope by_weapon' do
     it 'weapon_id指定でイベントを参照できる' do
-      expect(Event.by_weapon(weapon)).to include event
+      expect(described_class.by_weapon(weapon)).to include event
     end
   end
 
   describe 'scope by_stage_id' do
     it 'weapon_id指定でイベントを参照できる' do
-      expect(Event.by_stage_id(stage.id)).to include event
+      expect(described_class.by_stage_id(stage.id)).to include event
     end
   end
 
   describe 'scope opening' do
     it '時間内にイベントがあるときは引っかかる' do
       event
-      expect(Event.opening).to include event
+      expect(described_class.opening).to include event
     end
 
     it '時間内にイベントがないときは引っかからない' do
       event.update(start_at: Time.zone.now - 10.days, end_at: Time.zone.now - 9.days)
-      expect(Event.opening).not_to include event
+      expect(described_class.opening).not_to include event
     end
   end
 end
