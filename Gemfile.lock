@@ -280,7 +280,7 @@ GEM
     rubocop-rails (2.3.0)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
-    rubocop-rspec (1.33.0)
+    rubocop-rspec (1.35.0)
       rubocop (>= 0.60.0)
     rubocop-yayoi (0.1.2)
       rubocop (>= 0.74.0)
