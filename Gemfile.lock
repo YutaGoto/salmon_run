@@ -242,8 +242,8 @@ GEM
       psych (~> 3.1.0)
       rainbow (>= 2.0, < 4.0)
     regexp_parser (1.6.0)
-    ridgepole (0.7.8)
-      activerecord (>= 5.0.1, < 6)
+    ridgepole (0.8.0)
+      activerecord (>= 5.0.1, < 6.1)
       diffy
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
