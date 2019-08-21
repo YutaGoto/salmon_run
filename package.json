@@ -21,7 +21,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^4.0.2",
     "markdownlint": "^0.16.0",
-    "markdownlint-cli": "^0.17.0",
+    "markdownlint-cli": "^0.18.0",
     "typescript": "^3.5.3",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "3.8.0"
