@@ -8,13 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgresql:
-        image: postgresql
+      postgres:
+        image: postgres:11.3
+        env:
+          POSTGRES_USER: root
+          POSTGRES_DB: salmon_run_test
         ports:
-        - 5432
+        - 5432:5432
 
     steps:
-    - uses: actions/docker@master
     - uses: actions/checkout@master
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
