@@ -50,12 +50,12 @@ jobs:
       - run:
           name: RuboCop check
           command: bundle exec rubocop
-      - run:
-          name: goodcheck self check
-          command: bundle exec goodcheck test
-      - run:
-          name: Regexp based customizable linter
-          command: bundle exec goodcheck check
+      # - run:
+      #     name: goodcheck self check
+      #     command: bundle exec goodcheck test
+      # - run:
+      #     name: Regexp based customizable linter
+      #     command: bundle exec goodcheck check
       - run:
           name: Do not comment out unused code
           command: bundle exec dont_comment app/**/*.rb spec/**/*.rb
