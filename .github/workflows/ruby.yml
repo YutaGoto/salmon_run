@@ -7,6 +7,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    container:
+      image:  node:10.1.0-browsers
+
     services:
       postgres:
         image: postgres:11.3
@@ -26,6 +29,7 @@ jobs:
     - name: Build
       run: |
         sudo apt install libpq-dev
+        yarn
         gem install bundler
         bundle install --jobs=4 --retry=3 --path=vendor/bundle
         bundle exec rails db:create
