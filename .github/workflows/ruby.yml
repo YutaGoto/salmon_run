@@ -7,9 +7,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    container:
-      image:  node:10.1.0-browsers
-
     services:
       postgres:
         image: postgres:11.3
@@ -26,6 +23,11 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         version: 2.6.x
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install -g yarn
+    - run: yarn install
     - name: Build
       run: |
         sudo apt install libpq-dev
