@@ -7,6 +7,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      nginx:
+        image: nginx
+        ports:
+        - 8080:80
+      postgresql:
+        image: postgresql
+        ports:
+        - 5432
+
     steps:
     - uses: actions/checkout@master
     - name: Set up Ruby 2.6
