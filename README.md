@@ -15,7 +15,7 @@ Splatoon2のサーモンラン ブキ変遷
 
 ## Spec
 
-*   Ruby version: 2.6.3
+*   Ruby version: 2.6.4
 *   Rails version: 5.2.3
 *   PostgreSQL version: 11.3
 *   bundler version: 2.0.1
