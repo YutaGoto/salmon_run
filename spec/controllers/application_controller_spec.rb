@@ -3,7 +3,7 @@ require 'rails_helper'
 describe ApplicationController, type: :controller do
   describe 'rescue_from' do
     context 'when to happen MaintenanceException' do
-      controller do
+      controller(ApplicationController) do
         def index
           raise MaintenanceException, 'MaintenanceException'
         end
@@ -15,7 +15,7 @@ describe ApplicationController, type: :controller do
     end
 
     context 'when to happen ApplicationException' do
-      controller do
+      controller(ApplicationController) do
         def index
           raise ApplicationException, 'ApplicationException'
         end
@@ -27,7 +27,7 @@ describe ApplicationController, type: :controller do
     end
 
     context 'when to happen GoneException' do
-      controller do
+      controller(ApplicationController) do
         def index
           raise GoneException, 'GoneException'
         end
@@ -39,7 +39,7 @@ describe ApplicationController, type: :controller do
     end
 
     context 'when to happen NotFoundException' do
-      controller do
+      controller(ApplicationController) do
         def index
           raise NotFoundException, 'NotFoundException'
         end
@@ -51,7 +51,7 @@ describe ApplicationController, type: :controller do
     end
 
     context 'when to happen AuthorityException' do
-      controller do
+      controller(ApplicationController) do
         def index
           raise AuthorityException, 'AuthorityException'
         end
@@ -63,7 +63,7 @@ describe ApplicationController, type: :controller do
     end
 
     context 'when to happen InputErrorException' do
-      controller do
+      controller(ApplicationController) do
         def index
           raise InputErrorException, 'InputErrorException'
         end
@@ -75,7 +75,7 @@ describe ApplicationController, type: :controller do
     end
 
     context 'when to happen Exception' do
-      controller do
+      controller(ApplicationController) do
         def index
           raise Exception, 'Exception'
         end

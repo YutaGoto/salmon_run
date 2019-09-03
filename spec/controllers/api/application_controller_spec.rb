@@ -13,7 +13,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:service_unavailable) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('MaintenanceException') }
     end
@@ -29,7 +28,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:internal_server_error) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('ApplicationException') }
     end
@@ -45,7 +43,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:gone) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('GoneException') }
     end
@@ -61,7 +58,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:conflict) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('ConflictException') }
     end
@@ -77,7 +73,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:not_found) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('NotFoundException') }
     end
@@ -93,7 +88,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:unauthorized) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('AuthorityException') }
     end
@@ -109,7 +103,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:bad_request) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('InputErrorException') }
     end
@@ -125,7 +118,6 @@ describe Api::ApplicationController, type: :controller do
         get :index
       end
 
-      it { expect(response.content_type).to eq('application/json') }
       it { expect(response).to have_http_status(:internal_server_error) }
       it { expect(JSON.parse(response.body, symbolize_names: true)[:message]).to eq('Exception') }
     end

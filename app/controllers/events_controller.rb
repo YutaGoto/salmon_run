@@ -1,7 +1,5 @@
 class EventsController < ApplicationController
-  def index
-    raise MaintenanceException, 'MaintenanceException'
-  end
+  def index; end
 
   def show; end
 end

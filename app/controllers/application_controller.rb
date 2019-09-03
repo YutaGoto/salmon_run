@@ -10,31 +10,31 @@ class ApplicationController < ActionController::Base
 
   def render_400(exception = nil)
     @error_message = exception.try(:message)
-    render template: 'common/errors/400', status: :bad_request
+    render 'common/errors/400', status: :bad_request
   end
 
   def render_401(exception = nil)
     @error_message = exception.try(:message)
-    render template: 'common/errors/401', status: :unauthorized
+    render 'common/errors/401', status: :unauthorized
   end
 
   def render_404(exception = nil)
     @error_message = exception.try(:message)
-    render template: 'common/errors/404', status: :not_found
+    render 'common/errors/404', status: :not_found
   end
 
   def render_410(exception = nil)
     @error_message = exception.try(:message)
-    render template: 'common/errors/410', status: :gone
+    render 'common/errors/410', status: :gone
   end
 
   def render_500(exception)
     @error_message = exception.message
-    render template: 'common/errors/500', status: :internal_server_error
+    render 'common/errors/500', status: :internal_server_error
   end
 
   def render_503(exception = nil)
     @error_message = exception.try(:message)
-    render template: 'common/errors/503', status: :service_unavailable
+    render 'common/errors/503', status: :service_unavailable
   end
 end
