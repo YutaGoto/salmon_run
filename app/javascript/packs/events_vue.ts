@@ -27,7 +27,7 @@ new Vue({
       query: `{
         events{
           id startAt endAt hours
-          stage { name }
+          stage { id name }
           eventsWeapons { weapon{ name imageUrl } }
         }
         opening{

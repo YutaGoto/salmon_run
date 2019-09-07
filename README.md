@@ -15,15 +15,15 @@ Splatoon2のサーモンラン ブキ変遷
 
 ## Spec
 
-*   Ruby version: 2.6.3
-*   Rails version: 5.2.3
+*   Ruby version: 2.6.4
+*   Rails version: 6.0.0
 *   PostgreSQL version: 11.3
-*   bundler version: 2.0.1
-*   yarn version: 1.15.2
+*   bundler version: 2.0.2
+*   yarn version: 1.16.0
 *   Vue: v2.6.10
-*   uikit: 3.1.5
+*   uikit: 3.2.0
 *   elasticsearch: 7.1.0
-*   graphql: 1.9.6
+*   graphql: 1.9.9
 
 ### tools
 
