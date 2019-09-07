@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "4.0",
     "axios": "^0.18.1",
-    "npm": "^6.11.2",
+    "npm": "^6.11.3",
     "rails-ujs": "^5.2.3",
     "set-value": "^3.0.1",
     "ts-loader": "^6.0.4",
