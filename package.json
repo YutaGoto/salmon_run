@@ -24,7 +24,7 @@
     "markdownlint": "^0.16.0",
     "markdownlint-cli": "^0.18.0",
     "typescript": "^3.6.2",
-    "webpack-cli": "^3.3.8",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-server": "3.8.0"
   },
   "scripts": {
