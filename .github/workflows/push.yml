@@ -9,7 +9,7 @@ jobs:
     - name: Filter develop branch only
       uses: actions/bin/filter@master
       with:
-        args: branch develop
+        args: develop
     - name: Create Pull Request
       uses: ./.github/actions
       env:
