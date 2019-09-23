@@ -1,0 +1,20 @@
+on: push
+name: create Master <- develop Pull Request
+jobs:
+  filterDevelopBranchOnly:
+    name: Filter develop branch only
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Filter develop branch only
+      uses: actions/bin/filter@master
+      with:
+        args: branch develop
+    - name: Create Pull Request
+      uses: ./.github/actions
+      env:
+        BASE_BRANCH: master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        HEAD_BRANCH: develop
+        PULL_REQUEST_BODY: From GitHub Actions
+        PULL_REQUEST_TITLE: master from develop
