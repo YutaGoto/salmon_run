@@ -23,7 +23,7 @@
     "gulp": "^4.0.2",
     "markdownlint": "^0.16.0",
     "markdownlint-cli": "^0.18.0",
-    "typescript": "^3.6.2",
+    "typescript": "^3.6.3",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "3.8.1"
   },
