@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - develop
 name: create Master <- develop Pull Request
 jobs:
   craetaPullRequest:
@@ -6,10 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Filter develop branch only
-      uses: actions/bin/filter@master
-      with:
-        args: branch develop
     - name: Create Pull Request
       uses: ./.github/actions
       env:
