@@ -8,7 +8,7 @@
     "rails-ujs": "^5.2.3",
     "set-value": "^3.0.1",
     "ts-loader": "^6.2.0",
-    "uikit": "^3.2.0",
+    "uikit": "^3.2.1",
     "vue": "^2.6.10",
     "vue-loader": "14.2.4",
     "vue-select": "^3.2.0",
