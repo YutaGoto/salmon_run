@@ -21,7 +21,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^4.0.2",
-    "markdownlint": "^0.16.0",
+    "markdownlint": "^0.17.0",
     "markdownlint-cli": "^0.18.0",
     "typescript": "^3.6.3",
     "webpack-cli": "^3.3.9",
