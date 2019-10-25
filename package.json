@@ -7,7 +7,7 @@
     "npm": "^6.11.3",
     "rails-ujs": "^5.2.3",
     "set-value": "^3.0.1",
-    "ts-loader": "^6.2.0",
+    "ts-loader": "^6.2.1",
     "uikit": "^3.2.2",
     "vue": "^2.6.10",
     "vue-loader": "14.2.4",
