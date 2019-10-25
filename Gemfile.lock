@@ -84,7 +84,7 @@ GEM
     bindex (0.8.1)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    brakeman (4.6.1)
+    brakeman (4.7.0)
     builder (3.2.3)
     bullet (6.0.2)
       activesupport (>= 3.0.0)
