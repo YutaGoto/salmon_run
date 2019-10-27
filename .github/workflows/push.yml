@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - develop
+name: create Master <- develop Pull Request
+jobs:
+  craetaPullRequest:
+    name: craete pull request
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Create Pull Request
+      uses: ./.github/actions
+      env:
+        BASE_BRANCH: master
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        HEAD_BRANCH: develop
+        PULL_REQUEST_BODY: From GitHub Actions
+        PULL_REQUEST_TITLE: master from develop
