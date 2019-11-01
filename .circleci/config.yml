@@ -55,7 +55,7 @@ jobs:
           command: bundle exec goodcheck check
       - run:
           name: Do not comment out unused code
-          command: bundle exec dont_comment app/**/*.rb spec/**/*.r
+          command: bundle exec dont_comment app/**/*.rb spec/**/*.rb
 
   mdlint:
     executor: docker-exec
@@ -106,7 +106,7 @@ jobs:
           command: bundle exec reek /app -c .reek
       - run:
           name: Analysis of security vulnerabilities by brakeman
-          command: bundle exec brakeman -A -w1 -
+          command: bundle exec brakeman -A -w1 -z
 
   test:
     executor: docker-exec
