@@ -6,9 +6,6 @@ ruby_image: &ruby_image
 bundle_cache_key: &bundle_cache_key
   v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-orbs:
-  todays-imas-idol: yutagoto/todays-imas-idol@volatile
-
 executors:
   docker-exec:
     docker:
@@ -59,7 +56,6 @@ jobs:
       - run:
           name: Do not comment out unused code
           command: bundle exec dont_comment app/**/*.rb spec/**/*.rb
-      - todays-imas-idol/echo-todays-imas-idol
 
   mdlint:
     executor: docker-exec
@@ -72,7 +68,6 @@ jobs:
       - run:
           name: check markdown lint
           command: yarn mdlint
-      - todays-imas-idol/echo-todays-imas-idol
   eslint:
     executor: docker-exec
     working_directory: ~/salmon_run
@@ -84,7 +79,6 @@ jobs:
       - run:
           name: check frontend lint
           command: yarn lint
-      - todays-imas-idol/echo-todays-imas-idol
 
   check:
     executor: docker-exec
@@ -113,7 +107,6 @@ jobs:
       - run:
           name: Analysis of security vulnerabilities by brakeman
           command: bundle exec brakeman -A -w1 -z
-      - todays-imas-idol/echo-todays-imas-idol
 
   test:
     executor: docker-exec
@@ -174,8 +167,6 @@ jobs:
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
-
-      - todays-imas-idol/echo-todays-imas-idol
 
       - store_test_results:
           path: ~/rspec
