@@ -67,7 +67,7 @@ jobs:
           command: yarn
       - run:
           name: check markdown lint
-          command: yarn mdlin
+          command: yarn mdlint
   eslint:
     executor: docker-exec
     working_directory: ~/salmon_run
@@ -78,7 +78,7 @@ jobs:
           command: yarn
       - run:
           name: check frontend lint
-          command: yarn lin
+          command: yarn lint
 
   check:
     executor: docker-exec
