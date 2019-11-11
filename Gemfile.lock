@@ -140,7 +140,7 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    goodcheck (2.4.2)
+    goodcheck (2.4.3)
       activesupport (>= 4.0, < 7.0)
       httpclient (~> 2.8.3)
       rainbow (~> 3.0.0)
