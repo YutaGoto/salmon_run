@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@types/vue": "^2.0.0",
-    "eslint": "^5.16.0",
+    "eslint": "^6.6.0",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-vue": "^6.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
