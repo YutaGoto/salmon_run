@@ -18,7 +18,7 @@
     "@types/vue": "^2.0.0",
     "eslint": "^6.6.0",
     "eslint-loader": "^3.0.2",
-    "eslint-plugin-vue": "^6.0.0",
+    "eslint-plugin-vue": "^6.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^4.0.2",
     "markdownlint": "^0.17.1",
