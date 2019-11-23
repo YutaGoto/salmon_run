@@ -22,6 +22,5 @@ module SalmonRun
     config.time_zone = 'Tokyo'
     config.assets.initialize_on_precompile = false
     config.generators.javascript_engine = :js
-    config.weapon_index_analysis = config_for(:weapon_index_analysis)
   end
 end

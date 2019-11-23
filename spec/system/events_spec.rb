@@ -2,11 +2,6 @@ require 'rails_helper'
 
 describe 'Events', type: :system, elasticsearch: true do
   context 'with index action' do
-    before :all do
-      Weapon.__elasticsearch__.create_index! force: true
-      Weapon.__elasticsearch__.import
-    end
-
     it 'To Show Events informations' do
       visit events_path
       expect(page).to have_content 'すぷらとぅーん2 サーモンラン開催履歴'

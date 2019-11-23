@@ -22,7 +22,6 @@ Splatoon2のサーモンラン ブキ変遷
 *   yarn version: 1.19.1
 *   Vue: v2.6.10
 *   uikit: 3.2.3
-*   elasticsearch: 7.1.0
 *   graphql: 1.9.15
 
 ### tools
