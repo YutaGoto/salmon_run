@@ -109,6 +109,9 @@ group :development do
 
   # Do not comment out unused code, use version control system instead and remove it!
   gem 'graphiql-rails'
+
+  # Gradual Typing for Ruby
+  gem 'steep'
 end
 
 group :test do
