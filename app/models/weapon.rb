@@ -25,6 +25,7 @@ class Weapon < ApplicationRecord
 
   def self.weapon_search(word)
     return [] if word.nil?
+
     Weapon.where('name like ?', "%#{word}%")
   end
 end
