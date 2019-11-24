@@ -18,11 +18,6 @@ describe Event, type: :model, elasticsearch: true do
   let(:weapon) { events_weapon.weapon }
   let(:stage) { event.stage }
 
-  before :all do
-    Weapon.__elasticsearch__.create_index! force: true
-    Weapon.__elasticsearch__.import
-  end
-
   describe 'scope by_weapon' do
     it 'weapon_id指定でイベントを参照できる' do
       expect(described_class.by_weapon(weapon)).to include event
