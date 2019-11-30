@@ -17,7 +17,7 @@ module SalmonRun
     # the framework and any gems in your application.
     config.i18n.default_locale = :ja
     config.i18n.fallbacks = [I18n.default_locale]
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    config.assets.paths << Rails.root.join('vendor/assets/components')
     config.active_record.default_timezone = :local
     config.time_zone = 'Tokyo'
     config.assets.initialize_on_precompile = false
