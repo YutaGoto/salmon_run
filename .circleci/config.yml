@@ -113,8 +113,6 @@ jobs:
     working_directory: ~/salmon_run
     steps:
       - checkout
-      - restore_cache:
-          key: job-elasticsearch
       - run:
           name: Install System Dependencies
           command: |
@@ -123,17 +121,6 @@ jobs:
             export CHROME_BIN=/usr/bin/google-chrome
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome*.deb
-      - run:
-          name: Elasticsearch install
-          command: |
-            wget -O ~/elasticsearch-7.1.0-linux-x86_64 https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz && \
-              tar -xvf ~/elasticsearch-7.1.0-linux-x86_64 -C ~/ && \
-              if [ -z "`~/elasticsearch-7.1.0/bin/elasticsearch-plugin list | grep analysis-kuromoji`" ]; then \
-              ~/elasticsearch-7.1.0/bin/elasticsearch-plugin install analysis-kuromoji; fi
-      - save_cache:
-          key: job-elasticsearch
-          paths:
-            - ~/elasticsearch-7.1.0
 
       - run:
           name: Setup Code Climate test-reporter

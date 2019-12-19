@@ -54,7 +54,7 @@ new Vue({
         query: `query events ($weaponName: String $stageId: Int){
           events(weaponName: $weaponName stageId: $stageId){
             id startAt endAt hours
-            stage { name }
+            stage { id name }
             eventsWeapons { weapon{ name imageUrl } }
           }
         }`,

@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.1'
+gem 'rails', '~> 6.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -42,10 +42,6 @@ gem 'ridgepole'
 gem 'webpacker'
 
 gem 'enumerize'
-
-# This repository contains various Ruby and Rails integrations for Elasticsearch
-gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails'
-gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails'
 
 gem 'graphql'
 gem 'graphql-batch'
@@ -112,6 +108,5 @@ group :development do
 end
 
 group :test do
-  gem 'elasticsearch-extensions'
   gem 'webdrivers', '~> 4.1'
 end
