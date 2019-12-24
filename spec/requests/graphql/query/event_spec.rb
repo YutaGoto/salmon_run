@@ -18,11 +18,6 @@ describe 'event query', type: :request, elasticsearch: true do
     QUERY
   end
 
-  before :all do
-    Weapon.__elasticsearch__.create_index! force: true
-    Weapon.__elasticsearch__.import
-  end
-
   context 'when post event query' do
     it 'to get event id' do
       post graphql_path, params: { query: query, variables: nil }

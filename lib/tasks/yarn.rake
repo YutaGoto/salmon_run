@@ -1,3 +1,3 @@
-task :js_deps_install do
+task js_deps_install: :environment do
   sh 'yarn install'
 end
