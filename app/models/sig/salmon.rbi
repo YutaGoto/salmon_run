@@ -1,0 +1,2 @@
+class Salmon
+end
