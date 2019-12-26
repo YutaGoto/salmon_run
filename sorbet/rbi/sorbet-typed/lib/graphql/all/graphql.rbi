@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/graphql/all/graphql.rbi
 #
-# typed: true
+# typed: strong
 
 module GraphQL::Schema::Member::HasFields
   def field(*args, **kwargs, &block); end
