@@ -13,7 +13,6 @@ describe 'Stages', type: :system do
     it 'To Show stage informations' do
       events_weapon = FactoryBot.create :events_weapon
       stage = events_weapon.event.stage
-
       visit stage_path(stage)
       expect(page).to have_content stage.name
     end
