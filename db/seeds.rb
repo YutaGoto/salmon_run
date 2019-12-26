@@ -1,3 +1,4 @@
+# typed: strict
 Weapon.seed(
   :id,
   { id: 1, name: 'ランダム', image_url: 'https://app.splatoon2.nintendo.net/images/coop_weapons/7076c8181ab5c49d2ac91e43a2d945a46a99c17d.png' },

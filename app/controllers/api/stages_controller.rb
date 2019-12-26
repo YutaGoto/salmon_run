@@ -1,3 +1,4 @@
+# typed: true
 module Api
   class StagesController < Api::ApplicationController
     def index

@@ -1,3 +1,4 @@
+# typed: false
 require 'rails_helper'
 
 describe 'Events', type: :request do

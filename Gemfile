@@ -49,9 +49,6 @@ gem 'graphql-batch'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara'
-  gem 'selenium-webdriver'
 
   # testing framework
   gem 'factory_bot_rails'
@@ -88,6 +85,9 @@ group :development, :test do
   gem 'pry-stack_explorer'
 
   gem 'dont_comment'
+
+  gem 'sorbet'
+  gem 'sorbet-runtime'
 end
 
 group :development do
@@ -105,8 +105,4 @@ group :development do
 
   # Do not comment out unused code, use version control system instead and remove it!
   gem 'graphiql-rails'
-end
-
-group :test do
-  gem 'webdrivers', '~> 4.1'
 end

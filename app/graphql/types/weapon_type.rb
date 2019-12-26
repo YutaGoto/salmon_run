@@ -1,3 +1,4 @@
+# typed: strict
 module Types
   class WeaponType < Types::BaseObject
     field :name, String, null: false

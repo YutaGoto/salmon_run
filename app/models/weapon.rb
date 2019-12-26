@@ -1,3 +1,4 @@
+# typed: true
 # == Schema Information
 #
 # Table name: weapons

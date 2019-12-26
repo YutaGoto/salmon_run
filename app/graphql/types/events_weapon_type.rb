@@ -1,3 +1,4 @@
+# typed: strict
 module Types
   class EventsWeaponType < Types::BaseObject
     field :event, Types::EventType, null: false
