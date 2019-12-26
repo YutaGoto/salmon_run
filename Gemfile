@@ -87,7 +87,6 @@ group :development, :test do
   gem 'dont_comment'
 
   gem 'sorbet'
-  gem 'sorbet-runtime'
   gem 'sorbet-rails'
 end
 
