@@ -1,3 +1,4 @@
+# typed: true
 module Api
   class EventsController < Api::ApplicationController
     def index

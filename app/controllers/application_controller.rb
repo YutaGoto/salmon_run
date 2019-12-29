@@ -1,3 +1,4 @@
+# typed: false
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   rescue_from Exception, with: :render_500 unless Rails.env.development?

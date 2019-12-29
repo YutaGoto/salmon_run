@@ -12,10 +12,11 @@ AllCops:
     - 'vendor/**/*'
     - 'node_modules/**/*'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 140
   Exclude:
     - 'spec/**/*'
+    - '**/*.md'
 
 Style/MixinUsage:
   Enabled: false

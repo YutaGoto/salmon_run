@@ -1,3 +1,4 @@
+# typed: false
 require 'rails_helper'
 
 describe 'Api::Event', type: :request, elasticsearch: true do

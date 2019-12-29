@@ -1,3 +1,4 @@
+# typed: false
 module Api
   class ApplicationController < ::ApplicationController
     layout false

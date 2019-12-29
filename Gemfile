@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.5'
+ruby '2.7.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -49,6 +49,7 @@ gem 'graphql-batch'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -88,6 +89,9 @@ group :development, :test do
   gem 'pry-stack_explorer'
 
   gem 'dont_comment'
+
+  gem 'sorbet'
+  gem 'sorbet-rails'
 end
 
 group :development do
@@ -108,5 +112,5 @@ group :development do
 end
 
 group :test do
-  gem 'webdrivers', '~> 4.1'
+  gem 'webdrivers', '~> 4.2'
 end
