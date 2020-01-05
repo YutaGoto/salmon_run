@@ -1,4 +1,3 @@
-# typed: false
 # == Schema Information
 #
 # Table name: stages

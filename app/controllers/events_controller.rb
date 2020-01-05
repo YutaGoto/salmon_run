@@ -1,4 +1,3 @@
-# typed: true
 class EventsController < ApplicationController
   def index; end
 
