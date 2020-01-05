@@ -1,3 +1,4 @@
+# typed: strong
 # NotFound 404
 class NotFoundException < StandardError; end
 

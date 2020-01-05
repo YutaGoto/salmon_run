@@ -89,9 +89,6 @@ group :development, :test do
   gem 'pry-stack_explorer'
 
   gem 'dont_comment'
-
-  gem 'sorbet'
-  gem 'sorbet-rails'
 end
 
 group :development do

@@ -93,8 +93,6 @@ GEM
     coderay (1.1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    commander (4.4.7)
-      highline (~> 2.0.0)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
     debug_inspector (0.0.3)
@@ -131,7 +129,6 @@ GEM
     graphql-batch (0.4.2)
       graphql (>= 1.3, < 2)
       promise.rb (~> 0.7.2)
-    highline (2.0.3)
     httpclient (2.8.3)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
@@ -163,10 +160,6 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     parallel (1.19.1)
-    parlour (1.0.0)
-      commander (~> 4.4.0)
-      rainbow (~> 3.0.0)
-      sorbet-runtime
     parser (2.6.5.0)
       ast (~> 2.4.0)
     pg (1.2.0)
@@ -300,12 +293,6 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    sorbet (0.5.5181)
-      sorbet-static (= 0.5.5181)
-    sorbet-rails (0.5.9.1)
-      parlour (~> 1.0)
-    sorbet-runtime (0.5.5181)
-    sorbet-static (0.5.5181-universal-darwin-14)
     sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -395,8 +382,6 @@ DEPENDENCIES
   seed-fu (~> 2.3)
   selenium-webdriver
   simplecov
-  sorbet
-  sorbet-rails
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)

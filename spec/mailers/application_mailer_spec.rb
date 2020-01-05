@@ -1,4 +1,4 @@
-# typed: strict
+# typed: false
 require 'rails_helper'
 
 describe ApplicationMailer, type: :mailer do

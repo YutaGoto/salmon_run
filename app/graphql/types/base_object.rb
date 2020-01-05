@@ -1,4 +1,3 @@
-# typed: strong
 module Types
   class BaseObject < GraphQL::Schema::Object
   end
