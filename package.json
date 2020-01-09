@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.2",
-    "axios": "^0.18.1",
+    "axios": "^0.19.1",
     "npm": "^6.13.4",
     "rails-ujs": "^5.2.4",
     "set-value": "^3.0.1",
