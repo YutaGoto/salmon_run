@@ -365,8 +365,8 @@ DEPENDENCIES
   pry-doc
   pry-rails
   pry-stack_explorer
-  puma (~> 4.3)
-  rails (~> 6.0.2)
+  puma
+  rails
   rails-controller-testing
   reek
   ridgepole
