@@ -42,6 +42,12 @@ jobs:
         POSTGRES_PASSWORD: postgres
     - name: lint
       run: bundle exec rubocop
+    - name: setup chrome
+      run: |
+        sudo apt install -y libappindicator1 fonts-liberation
+        export CHROME_BIN=/usr/bin/google-chrome
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome*.deb
     - name: run RSpec
       run: COVERAGE=true bundle exec rspec  --require rails_helper
       env:
