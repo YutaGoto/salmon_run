@@ -69,12 +69,12 @@
           </thead>
           <tbody>
             <tr v-for="event in events">
-              <td><a v-bind:href="event.show_url" class="uk-link-muted">{{event.id}}</a></td>
+              <td><a v-bind:href="`/events/${event.id}`" class="uk-link-muted">{{event.id}}</a></td>
               <td>
                 <div>{{event.startAt}}</div><div class="uk-text-center">〜</div><div>{{event.endAt}}</div>
               </td>
               <td>{{event.hours}}時間</td>
-              <td><a v-bind:href="event.stage.show_url" class="uk-link-muted">{{event.stage.name}}</a></td>
+              <td><a v-bind:href="`stages/${event.stage.id}`" class="uk-link-muted">{{event.stage.name}}</a></td>
               <td v-for="eventsWeapon in event.eventsWeapons">
                 {{eventsWeapon.weapon.name}}
                 <div><img v-bind:src='eventsWeapon.weapon.imageUrl' class="weapon-image-small" uk-img /></div>

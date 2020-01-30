@@ -17,8 +17,6 @@ require 'simplecov'
 require 'capybara/rspec'
 require 'nokogiri'
 require 'selenium-webdriver'
-require 'elasticsearch/extensions/test/cluster'
-require 'elasticsearch/model'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -98,21 +96,6 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
-
-  Elasticsearch::Model.client = Elasticsearch::Client.new(host: 'localhost:9250')
-
-  # elasticsearch config
-  config.before(:all, elasticsearch: true) do
-    unless Elasticsearch::Extensions::Test::Cluster.running?(command: '~/elasticsearch-7.1.0/bin/elasticsearch', number_of_nodes: 1, version: '7.1.0')
-      Elasticsearch::Extensions::Test::Cluster.start(command: '~/elasticsearch-7.1.0/bin/elasticsearch', number_of_nodes: 1, version: '7.1.0')
-    end
-  end
-
-  config.after(:all, elasticsearch: true) do
-    if Elasticsearch::Extensions::Test::Cluster.running?(command: '~/elasticsearch-7.1.0/bin/elasticsearch', number_of_nodes: 1, version: '7.1.0')
-      Elasticsearch::Extensions::Test::Cluster.stop(command: '~/elasticsearch-7.1.0/bin/elasticsearch', number_of_nodes: 1, version: '7.1.0')
-    end
-  end
 
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)

@@ -8,11 +8,6 @@ describe 'Api::Event', type: :request, elasticsearch: true do
   let(:other_stage) { FactoryBot.create :stage }
   let(:other_weapon) { FactoryBot.create_list :weapon, 3 }
 
-  before :all do
-    Weapon.__elasticsearch__.create_index! force: true
-    Weapon.__elasticsearch__.import
-  end
-
   describe 'api_event#index' do
     it 'returns http success' do
       get api_events_path

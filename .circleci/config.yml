@@ -1,13 +1,10 @@
 version: 2.1
 
 ruby_image: &ruby_image
-  circleci/ruby:2.6.3-node-browsers
+  circleci/ruby:2.7.0-node-browsers
 
 bundle_cache_key: &bundle_cache_key
   v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-orbs:
-  todays-imas-idol: yutagoto/todays-imas-idol@volatile
 
 executors:
   docker-exec:
@@ -59,7 +56,6 @@ jobs:
       - run:
           name: Do not comment out unused code
           command: bundle exec dont_comment app/**/*.rb spec/**/*.rb
-      - todays-imas-idol/echo-todays-imas-idol
 
   mdlint:
     executor: docker-exec
@@ -72,7 +68,6 @@ jobs:
       - run:
           name: check markdown lint
           command: yarn mdlint
-      - todays-imas-idol/echo-todays-imas-idol
   eslint:
     executor: docker-exec
     working_directory: ~/salmon_run
@@ -84,7 +79,6 @@ jobs:
       - run:
           name: check frontend lint
           command: yarn lint
-      - todays-imas-idol/echo-todays-imas-idol
 
   check:
     executor: docker-exec
@@ -113,15 +107,12 @@ jobs:
       - run:
           name: Analysis of security vulnerabilities by brakeman
           command: bundle exec brakeman -A -w1 -z
-      - todays-imas-idol/echo-todays-imas-idol
 
   test:
     executor: docker-exec
     working_directory: ~/salmon_run
     steps:
       - checkout
-      - restore_cache:
-          key: job-elasticsearch
       - run:
           name: Install System Dependencies
           command: |
@@ -130,17 +121,6 @@ jobs:
             export CHROME_BIN=/usr/bin/google-chrome
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome*.deb
-      - run:
-          name: Elasticsearch install
-          command: |
-            wget -O ~/elasticsearch-7.1.0-linux-x86_64 https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.1.0-linux-x86_64.tar.gz && \
-              tar -xvf ~/elasticsearch-7.1.0-linux-x86_64 -C ~/ && \
-              if [ -z "`~/elasticsearch-7.1.0/bin/elasticsearch-plugin list | grep analysis-kuromoji`" ]; then \
-              ~/elasticsearch-7.1.0/bin/elasticsearch-plugin install analysis-kuromoji; fi
-      - save_cache:
-          key: job-elasticsearch
-          paths:
-            - ~/elasticsearch-7.1.0
 
       - run:
           name: Setup Code Climate test-reporter
@@ -174,8 +154,6 @@ jobs:
             bundle exec rspec --format progress \
                               $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
-
-      - todays-imas-idol/echo-todays-imas-idol
 
       - store_test_results:
           path: ~/rspec

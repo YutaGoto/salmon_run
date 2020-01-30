@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.3'
+ruby '2.7.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -8,11 +8,11 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,16 +43,13 @@ gem 'webpacker'
 
 gem 'enumerize'
 
-# This repository contains various Ruby and Rails integrations for Elasticsearch
-gem 'elasticsearch-model', github: 'elastic/elasticsearch-rails'
-gem 'elasticsearch-rails', github: 'elastic/elasticsearch-rails'
-
 gem 'graphql'
 gem 'graphql-batch'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -96,7 +93,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5', '< 3.3'
   gem 'web-console', '>= 3.3.0'
 
   gem 'annotate'
@@ -112,6 +109,5 @@ group :development do
 end
 
 group :test do
-  gem 'elasticsearch-extensions'
-  gem 'webdrivers', '~> 4.1'
+  gem 'webdrivers', '~> 4.2'
 end
