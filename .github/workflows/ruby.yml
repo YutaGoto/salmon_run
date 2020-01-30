@@ -26,6 +26,9 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
+    - uses: nanasess/setup-chromedriver@master
+      with:
+        chromedriver-version: '77.0.3865.40'
     - run: gem install bundler
     - run: sudo apt install libpq-dev
     - run: bundle install --jobs=4 --retry=3
@@ -42,12 +45,6 @@ jobs:
         POSTGRES_PASSWORD: postgres
     - name: lint
       run: bundle exec rubocop
-    - name: setup chrome
-      run: |
-        sudo apt install -y libappindicator1 fonts-liberation
-        export CHROME_BIN=/usr/bin/google-chrome
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo dpkg -i google-chrome*.deb
     - name: run RSpec
       run: COVERAGE=true bundle exec rspec  --require rails_helper
       env:
