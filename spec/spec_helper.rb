@@ -98,13 +98,12 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
 
   Capybara.register_driver :selenium do |app|
-    Capybara::Selenium::Driver.new(app, browser: :chrome)
+    options = Selenium::WebDriver::Chrome::Options.new
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--no-sandbox')
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
   end
-
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--headless')
-  options.add_argument('--disable-gpu')
-  options.add_argument('--no-sandbox')
 
   config.include Capybara::DSL
   SimpleCov.start 'rails'
