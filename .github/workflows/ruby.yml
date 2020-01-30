@@ -36,6 +36,10 @@ jobs:
         cp config/database.github-sction.yml config/database.yml
         bundle exec rails db:create
         bundle exec rails db:schema:load
+      env:
+        RAILS_ENV: test
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
     - name: lint
       run: bundle exec rubocop
     - name: run RSpec
