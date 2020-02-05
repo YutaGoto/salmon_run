@@ -1,4 +1,3 @@
-# typed: strict
 # == Schema Information
 #
 # Table name: salmons

@@ -1,4 +1,3 @@
-# typed: false
 Types::DateTimeType = GraphQL::ScalarType.define do
   name 'DateTimeType'
 

@@ -1,4 +1,3 @@
-# typed: true
 module Types
   class QueryType < Types::BaseObject
     field :events, [EventType], null: true do

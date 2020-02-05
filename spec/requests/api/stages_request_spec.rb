@@ -1,4 +1,3 @@
-# typed: false
 require 'rails_helper'
 
 describe 'Api::Stage', type: :request do

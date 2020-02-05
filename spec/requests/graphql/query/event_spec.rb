@@ -1,4 +1,3 @@
-# typed: false
 require 'rails_helper'
 
 describe 'event query', type: :request, elasticsearch: true do

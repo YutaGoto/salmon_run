@@ -1,4 +1,3 @@
-# typed: true
 module Api
   class WeaponsController < Api::ApplicationController
     def index
