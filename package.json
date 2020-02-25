@@ -25,7 +25,7 @@
     "markdownlint-cli": "^0.21.0",
     "typescript": "^3.8.2",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "3.10.2"
+    "webpack-dev-server": "3.10.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
