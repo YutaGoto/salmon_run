@@ -7,3 +7,7 @@ linter:
       - rubocop-rails
       - rubocop-yayoi
     config: .rubocop.yml
+  eslint:
+    npm_install: "development"
+  stylelint:
+    npm_install: false
