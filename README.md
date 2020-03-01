@@ -21,7 +21,7 @@ Splatoon2のサーモンラン ブキ変遷
 *   bundler version: 2.1.2
 *   yarn version: 1.21.1
 *   Vue: v2.6.11
-*   uikit: 3.2.6
+*   uikit: 3.3.3
 
 ### tools
 

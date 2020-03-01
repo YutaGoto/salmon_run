@@ -6,5 +6,8 @@ linter:
       - rubocop-rspec
       - rubocop-rails
       - rubocop-yayoi
-    options:
-      config: .rubocop.yml
+    config: .rubocop.yml
+  eslint:
+    npm_install: "development"
+  stylelint:
+    npm_install: false
