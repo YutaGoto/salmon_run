@@ -1,11 +1,11 @@
 FROM ruby:2.7.0
 ENV LANG C.UTF-8
 ENV APP_ROOT /my_app
-RUN apt-get update -qq && apt-get install -y build-essential postgresql-client
+RUN apt-get update -qq && apt-get install -y --no-install-recommends build-essential postgresql-client
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install -y yarn
+RUN apt-get update && apt-get install -y --no-install-recommends yarn
 RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
 ADD Gemfile ${APP_ROOT}/Gemfile
