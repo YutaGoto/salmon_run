@@ -230,7 +230,7 @@ GEM
       rainbow (>= 2.0, < 4.0)
     regexp_parser (1.6.0)
     rexml (3.2.4)
-    ridgepole (0.8.6)
+    ridgepole (0.8.7)
       activerecord (>= 5.0.1, < 6.1)
       diffy
     rspec (3.8.0)
@@ -339,7 +339,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yard (0.9.20)
-    zeitwerk (2.2.2)
+    zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
