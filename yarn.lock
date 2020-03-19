@@ -10287,10 +10287,10 @@ vue-loader@15.9.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-select@^3.9.1:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-3.9.1.tgz#00ed379fcad99eff97eb187341837f251d603707"
-  integrity sha512-s6CUcX8O8fgi7ArOvF6Si80kKvImxqPOovTj77peiqMxsuZBGJey4w5/SUy1Hy9P0xU3xELWHkHvyetdQhhkqQ==
+vue-select@^3.9.3:
+  version "3.9.3"
+  resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-3.9.3.tgz#124093b60f28d742b62ec4f4801266a0f6889590"
+  integrity sha512-+yVyPr+2lbzLjbdnXQ8pJ/MEH1aA2PO6iDjdIQajlUTd1Z1F+2ET21BcHpbJpRxmyzogqZQgAOUGugvsLG0sDQ==
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
