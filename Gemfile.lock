@@ -134,7 +134,7 @@ GEM
     jaro_winkler (1.5.4)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
-    json (2.2.0)
+    json (2.3.0)
     kwalify (0.7.2)
     libv8 (7.3.492.27.1)
     listen (3.2.1)
