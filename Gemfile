@@ -109,5 +109,5 @@ group :development do
 end
 
 group :test do
-  gem 'webdrivers', '~> 4.2'
+  gem 'webdrivers', '~> 4.3'
 end
