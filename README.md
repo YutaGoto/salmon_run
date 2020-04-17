@@ -16,12 +16,12 @@ Splatoon2のサーモンラン ブキ変遷
 ## Spec
 
 *   Ruby version: 2.7.0
-*   Rails version: 6.0.2.1
+*   Rails version: 6.0.2.2
 *   PostgreSQL version: 11.3
 *   bundler version: 2.1.2
-*   yarn version: 1.21.1
+*   yarn version: 1.22.4
 *   Vue: v2.6.11
-*   uikit: 3.3.3
+*   uikit: 3.4.1
 
 ### tools
 
