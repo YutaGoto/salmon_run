@@ -10,7 +10,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      it { expect(response).to render_template('common/errors/503')}
+      it { expect(response).to render_template('common/errors/503') }
     end
 
     context 'when to happen ApplicationException' do
@@ -21,7 +21,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      it { expect(response).to render_template('common/errors/500')}
+      it { expect(response).to render_template('common/errors/500') }
     end
 
     context 'when to happen GoneException' do
@@ -32,7 +32,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      it { expect(response).to render_template('common/errors/410')}
+      it { expect(response).to render_template('common/errors/410') }
     end
 
     context 'when to happen NotFoundException' do
@@ -43,7 +43,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      it { expect(response).to render_template('common/errors/404')}
+      it { expect(response).to render_template('common/errors/404') }
     end
 
     context 'when to happen AuthorityException' do
@@ -54,7 +54,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      it { expect(response).to render_template('common/errors/401')}
+      it { expect(response).to render_template('common/errors/401') }
     end
 
     context 'when to happen InputErrorException' do
@@ -65,7 +65,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      it { expect(response).to render_template('common/errors/400')}
+      it { expect(response).to render_template('common/errors/400') }
     end
 
     context 'when to happen Exception' do
@@ -76,7 +76,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      it { expect(response).to render_template('common/errors/500')}
+      it { expect(response).to render_template('common/errors/500') }
     end
   end
 end
