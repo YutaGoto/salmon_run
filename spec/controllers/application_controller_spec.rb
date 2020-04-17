@@ -10,8 +10,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      pending { expect(response.content_type).to eq('text/html') }
-      pending { expect(response).to have_http_status(:service_unavailable) }
+      it { expect(response).to render_template('common/errors/503') }
     end
 
     context 'when to happen ApplicationException' do
@@ -22,8 +21,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      pending { expect(response.content_type).to eq('text/html') }
-      pending { expect(response).to have_http_status(:internal_server_error) }
+      it { expect(response).to render_template('common/errors/500') }
     end
 
     context 'when to happen GoneException' do
@@ -34,8 +32,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      pending { expect(response.content_type).to eq('text/html') }
-      pending { expect(response).to have_http_status(:gone) }
+      it { expect(response).to render_template('common/errors/410') }
     end
 
     context 'when to happen NotFoundException' do
@@ -46,8 +43,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      pending { expect(response.content_type).to eq('text/html') }
-      pending { expect(response).to have_http_status(:not_found) }
+      it { expect(response).to render_template('common/errors/404') }
     end
 
     context 'when to happen AuthorityException' do
@@ -58,8 +54,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      pending { expect(response.content_type).to eq('text/html') }
-      pending { expect(response).to have_http_status(:unauthorized) }
+      it { expect(response).to render_template('common/errors/401') }
     end
 
     context 'when to happen InputErrorException' do
@@ -70,8 +65,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      pending { expect(response.content_type).to eq('text/html') }
-      pending { expect(response).to have_http_status(:bad_request) }
+      it { expect(response).to render_template('common/errors/400') }
     end
 
     context 'when to happen Exception' do
@@ -82,8 +76,7 @@ describe ApplicationController, type: :controller do
       end
       before { get :index }
 
-      pending { expect(response.content_type).to eq('text/html') }
-      pending { expect(response).to have_http_status(:internal_server_error) }
+      it { expect(response).to render_template('common/errors/500') }
     end
   end
 end
