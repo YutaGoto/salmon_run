@@ -5,7 +5,6 @@ Splatoon2のサーモンラン ブキ変遷
 このリポジトリは非公式のもので、完全に個人的な趣味で作っているものです。
 
 [![CircleCI](https://circleci.com/gh/YutaGoto/salmon_run.svg?style=svg)](https://circleci.com/gh/YutaGoto/salmon_run)
-[![Build Status](https://travis-ci.com/YutaGoto/salmon_run.svg?branch=develop)](https://travis-ci.com/YutaGoto/salmon_run)
 [![Maintainability](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/maintainability)](https://codeclimate.com/github/YutaGoto/salmon_run/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/efb461dcf88ef0f1b7f6/test_coverage)](https://codeclimate.com/github/YutaGoto/salmon_run/test_coverage)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/18d67d2bb23e488abbf5689766d5876a)](https://www.codacy.com/app/YutaGoto/salmon_run?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YutaGoto/salmon_run&amp;utm_campaign=Badge_Grade)
@@ -21,7 +20,7 @@ Splatoon2のサーモンラン ブキ変遷
 *   bundler version: 2.1.2
 *   yarn version: 1.22.4
 *   Vue: v2.6.11
-*   uikit: 3.4.1
+*   uikit: 3.4.2
 
 ### tools
 
